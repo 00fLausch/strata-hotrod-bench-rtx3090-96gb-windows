@@ -17,11 +17,11 @@ Agent: vollautonom, keine Rückfragen, Entscheidungen in `DECISIONS.md`.
 | 3 Messungen | ⬜ offen | P1 → P2 → P3 → P4 |
 | 4 Aufräumen/Wiederherstellen | ⬜ offen | try/finally im Runner + RESTORE_REPORT.md |
 | 5 Auswertung | ⬜ offen | Tabellen, Diagramme, Empfehlung |
-| 6 Veröffentlichung | ⬜ offen | Repo, Release, Outreach-Texte |
+| 6 Veröffentlichung | ✅ erledigt | Repo, Release, Outreach-Texte |
 
 ## Erkundung — gesicherte Eckdaten
-- **HotRod-Repo:** `[DRIVE]/Users/[USER]\Desktop\python.toolz\apps\strata`, remote `sangharshadhyeta/Strata-HotRod`, HEAD `ac1ade5f22f7f0bbaf654d9a24c0ccaf040950ea` (2026-11-15)
-- **Offizielle Strata-App:** `[DRIVE]/Users/[USER]\AppData\Local\Programs\Strata` (A3: evtl. nicht dasselbe → prüfen)
+- **HotRod-Repo:** `C:\Users\flauschbert\Desktop\python.toolz\apps\strata`, remote `sangharshadhyeta/Strata-HotRod`, HEAD `ac1ade5f22f7f0bbaf654d9a24c0ccaf040950ea` (2026-11-15)
+- **Offizielle Strata-App:** `C:\Users\flauschbert\AppData\Local\Programs\Strata` (A3: evtl. nicht dasselbe → prüfen)
 - **Engine:** `engine\strata.exe`, Version `0.1.45`, `--serve`, API `http://127.0.0.1:8080`
 - **Modell:** IQ3_S (2 GGUFs + PLE-Shard) auf `D:\Strata-HotRod-data\models\IQ3_S`, Pack `D:\Strata-HotRod-data\packs\iq3_s`, MTP `D:\Strata-HotRod-data\mtp\rt`
 - **Probe:** `...\python-tracker\artifacts\strata-speed-probe-20261123\probe.json` + `strata_speed_probe.py` (als Runner-Vorlage übernommen)
