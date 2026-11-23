@@ -1,0 +1,152 @@
+{
+  "status": "complete",
+  "test_id": "J1_parallel_2",
+  "block": "J1",
+  "priority": 4,
+  "label": "2 parallele Requests",
+  "spec": {
+    "args": {
+      "--vram-reserve-mib": 512
+    }
+  },
+  "parallel": 2,
+  "engine_facts": {
+    "expert_slots": 8791,
+    "expert_cache_mib": 17104,
+    "expert_slots_primary": 8791,
+    "vram_free_mib": 0,
+    "arena_mib": 47962,
+    "kv": "int8",
+    "kv_resident": 32768,
+    "prefill_cap": 16384,
+    "spec": 6,
+    "spec_min_p": "0.50",
+    "vram_elastic": 1,
+    "pool_workers": 7,
+    "pcie_gen": 4,
+    "pcie_width": 4,
+    "disk_read_mb": 6.122936256671144,
+    "disk_write_mb": 0.05991864226711823,
+    "ram_used": 71609401344,
+    "ram_total": 103001423872,
+    "gpu_temp": 75,
+    "gpu_power": 305.652
+  },
+  "gpu": {
+    "n_samples": 11,
+    "power_w_mean": 282.05,
+    "power_w_max": 318.51,
+    "temp_c_mean": 71.55,
+    "temp_c_max": 75.0,
+    "mem_used_mib_mean": 0.0,
+    "mem_used_mib_max": 0.0,
+    "util_pct_mean": 90.18,
+    "util_pct_max": 99.0,
+    "ram_pct_mean": 69.47,
+    "ram_pct_max": 69.5,
+    "cpu_pct_mean": 50.57,
+    "cpu_pct_max": 59.5,
+    "ram_used_gib_mean": 66.67,
+    "ram_used_gib_max": 66.7
+  },
+  "summary": {
+    "group_wall_s": {
+      "n": 5,
+      "median": 4.359,
+      "q1": 4.313,
+      "q3": 4.359,
+      "iqr": 0.046,
+      "min": 4.203,
+      "max": 4.703,
+      "ci95_low": 4.203,
+      "ci95_high": 4.703,
+      "mean": 4.3874
+    },
+    "aggregate_decode_tps": {
+      "n": 5,
+      "median": 133.444,
+      "q1": 133.25,
+      "q3": 135.984,
+      "iqr": 2.734,
+      "min": 130.699,
+      "max": 139.293,
+      "ci95_low": 130.699,
+      "ci95_high": 139.293,
+      "mean": 134.534
+    }
+  },
+  "records": [
+    {
+      "rep": 0,
+      "group_wall_s": 4.703,
+      "aggregate_decode_tps": 130.699,
+      "per_request_decode_tps": [
+        64.886,
+        65.813
+      ],
+      "ttft_s": [
+        0.609,
+        2.797
+      ],
+      "errors": []
+    },
+    {
+      "rep": 1,
+      "group_wall_s": 4.203,
+      "aggregate_decode_tps": 139.293,
+      "per_request_decode_tps": [
+        69.637,
+        69.656
+      ],
+      "ttft_s": [
+        0.297,
+        2.406
+      ],
+      "errors": []
+    },
+    {
+      "rep": 2,
+      "group_wall_s": 4.313,
+      "aggregate_decode_tps": 135.984,
+      "per_request_decode_tps": [
+        68.81,
+        67.174
+      ],
+      "ttft_s": [
+        2.5,
+        0.313
+      ],
+      "errors": []
+    },
+    {
+      "rep": 3,
+      "group_wall_s": 4.359,
+      "aggregate_decode_tps": 133.444,
+      "per_request_decode_tps": [
+        65.453,
+        67.991
+      ],
+      "ttft_s": [
+        0.312,
+        2.515
+      ],
+      "errors": []
+    },
+    {
+      "rep": 4,
+      "group_wall_s": 4.359,
+      "aggregate_decode_tps": 133.25,
+      "per_request_decode_tps": [
+        64.998,
+        68.252
+      ],
+      "ttft_s": [
+        0.297,
+        2.531
+      ],
+      "errors": []
+    }
+  ],
+  "finished_at": "2026-11-23T22:20:17",
+  "attempts": 2
+}

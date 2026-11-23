@@ -1,0 +1,7 @@
+{
+  "status": "failed",
+  "test_id": "I2_parity_mtp_off",
+  "block": "I2",
+  "reason": "nicht möglich: natives IQ-Pack erfordert --spec >= 2; Engine startet ohne MTP nicht (Log: native pack needs --native SHARD1, --spec T >= 2 and --prefill CHUNK)",
+  "finished_at": "2026-11-23T20:11:00"
+}

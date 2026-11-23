@@ -1,0 +1,1263 @@
+version: '1.0'
+created: '2026-11-23'
+seed: 20261123
+note: Blocke in Prioritaetsreihenfolge; innerhalb eines Blocks randomisiert. A2 absichtlich
+  geordnet.
+defaults:
+  n: 8
+  prompts: &id001
+  - chat_de
+  - chat_en
+  - coding
+  - math_reasoning
+  spec:
+    args:
+      --vram-reserve-mib: 512
+  request:
+    temperature: 0.6
+    top_p: 0.95
+    top_k: 20
+    max_tokens: 128
+    seed: 20261123
+    reasoning_effort: none
+  ready_timeout: 2400
+  request_timeout: 1800
+  retries: 1
+  telemetry: true
+  telemetry_rate: 1.0
+  record_timeline: false
+tests:
+- id: A1_default
+  block: A1
+  priority: 1
+  label: strata bench run, Default-Config
+  kind: command
+  command:
+  - [DRIVE]/Users/[USER]\Desktop\python.toolz\apps\strata\.venv\Scripts\python.exe
+  - [DRIVE]/Users/[USER]\Desktop\python.toolz\apps\strata\tools\strata_bench.py
+  - --url
+  - http://127.0.0.1:8080
+  - --out
+  - D:\strata-bench\artifacts\a1-default
+  spec:
+    env:
+      STRATA_LA_LEARN: '0'
+      STRATA_HC_Q8: '0'
+      STRATA_KVA: '0'
+      STRATA_ROUTE_RESIDENT: '0'
+      STRATA_SWAP2_MAX: '0'
+  timeout: 3600
+- id: A1_current
+  block: A1
+  priority: 1
+  label: strata bench run, aktuelle Config
+  kind: command
+  command:
+  - [DRIVE]/Users/[USER]\Desktop\python.toolz\apps\strata\.venv\Scripts\python.exe
+  - [DRIVE]/Users/[USER]\Desktop\python.toolz\apps\strata\tools\strata_bench.py
+  - --url
+  - http://127.0.0.1:8080
+  - --out
+  - D:\strata-bench\artifacts\a1-current
+  timeout: 3600
+- id: A2_noise_start
+  block: A2_1
+  priority: 1
+  label: Rauschmessung start
+  prompts:
+  - chat_de
+  - coding
+  n: 8
+- id: A2_noise_middle
+  block: A2_2
+  priority: 1
+  label: Rauschmessung middle
+  prompts:
+  - chat_de
+  - coding
+  n: 8
+- id: A2_noise_end
+  block: A2_3
+  priority: 1
+  label: Rauschmessung end
+  prompts:
+  - chat_de
+  - coding
+  n: 8
+- id: T1_recorder_off
+  block: T1_1
+  priority: 1
+  label: Telemetrie-Recorder AUS (Baseline)
+  telemetry: false
+  prompts: *id001
+  n: 8
+- id: T1_recorder_on
+  block: T1_2
+  priority: 1
+  label: Telemetrie-Recorder AN (1 Hz)
+  telemetry: true
+  prompts: *id001
+  n: 8
+- id: T1_record_off
+  block: T1_3
+  priority: 1
+  label: Timeline-Record AUS
+  record_timeline: false
+  prompts: *id001
+  n: 8
+- id: T1_record_on
+  block: T1_4
+  priority: 1
+  label: Timeline-Record AN
+  record_timeline: true
+  prompts: *id001
+  n: 8
+- id: B1_reserve_256
+  block: B1
+  priority: 1
+  label: vram-reserve-mib 256
+  spec:
+    args:
+      --vram-reserve-mib: 256
+  prompts: *id001
+  n: 8
+- id: B1_reserve_512
+  block: B1_0
+  priority: 1
+  label: vram-reserve-mib 512
+  spec:
+    args:
+      --vram-reserve-mib: 512
+  prompts: *id001
+  n: 8
+- id: B1_reserve_700
+  block: B1
+  priority: 1
+  label: vram-reserve-mib 700
+  spec:
+    args:
+      --vram-reserve-mib: 700
+  prompts: *id001
+  n: 8
+- id: B1_reserve_1024
+  block: B1
+  priority: 1
+  label: vram-reserve-mib 1024
+  spec:
+    args:
+      --vram-reserve-mib: 1024
+  prompts: *id001
+  n: 8
+- id: B1_reserve_1536
+  block: B1
+  priority: 1
+  label: vram-reserve-mib 1536
+  spec:
+    args:
+      --vram-reserve-mib: 1536
+  prompts: *id001
+  n: 8
+- id: B1_reserve_2048
+  block: B1
+  priority: 1
+  label: vram-reserve-mib 2048
+  spec:
+    args:
+      --vram-reserve-mib: 2048
+  prompts: *id001
+  n: 8
+- id: B1_reserve_2560
+  block: B1
+  priority: 1
+  label: vram-reserve-mib 2560
+  spec:
+    args:
+      --vram-reserve-mib: 2560
+  prompts: *id001
+  n: 8
+- id: B1_reserve_3072
+  block: B1
+  priority: 1
+  label: vram-reserve-mib 3072
+  spec:
+    args:
+      --vram-reserve-mib: 3072
+  prompts: *id001
+  n: 8
+- id: B1_reserve_4096
+  block: B1
+  priority: 1
+  label: vram-reserve-mib 4096
+  spec:
+    args:
+      --vram-reserve-mib: 4096
+  prompts: *id001
+  n: 8
+- id: C1_auto_4096_32k
+  block: C1
+  priority: 1
+  label: prefill auto:4096, 32K-Prompt
+  spec:
+    args:
+      --prefill: auto:4096
+  prompts: &id002
+  - long_32k
+  n: 8
+  request:
+    temperature: 0.6
+    max_tokens: 16
+    reasoning_effort: none
+- id: C1_auto_4096_128k
+  block: C1
+  priority: 1
+  label: prefill auto:4096, 128K-Prompt
+  spec:
+    args:
+      --prefill: auto:4096
+  prompts: &id003
+  - long_128k
+  n: 5
+  request:
+    temperature: 0.6
+    max_tokens: 16
+    reasoning_effort: none
+  request_timeout: 3600
+- id: C1_auto_8192_32k
+  block: C1
+  priority: 1
+  label: prefill auto:8192, 32K-Prompt
+  spec:
+    args:
+      --prefill: auto:8192
+  prompts: *id002
+  n: 8
+  request:
+    temperature: 0.6
+    max_tokens: 16
+    reasoning_effort: none
+- id: C1_auto_8192_128k
+  block: C1
+  priority: 1
+  label: prefill auto:8192, 128K-Prompt
+  spec:
+    args:
+      --prefill: auto:8192
+  prompts: *id003
+  n: 5
+  request:
+    temperature: 0.6
+    max_tokens: 16
+    reasoning_effort: none
+  request_timeout: 3600
+- id: C1_auto_16384_32k
+  block: C1
+  priority: 1
+  label: prefill auto:16384, 32K-Prompt
+  spec:
+    args:
+      --prefill: auto:16384
+  prompts: *id002
+  n: 8
+  request:
+    temperature: 0.6
+    max_tokens: 16
+    reasoning_effort: none
+- id: C1_auto_16384_128k
+  block: C1
+  priority: 1
+  label: prefill auto:16384, 128K-Prompt
+  spec:
+    args:
+      --prefill: auto:16384
+  prompts: *id003
+  n: 5
+  request:
+    temperature: 0.6
+    max_tokens: 16
+    reasoning_effort: none
+  request_timeout: 3600
+- id: C1_auto_32768_32k
+  block: C1
+  priority: 1
+  label: prefill auto:32768, 32K-Prompt
+  spec:
+    args:
+      --prefill: auto:32768
+  prompts: *id002
+  n: 8
+  request:
+    temperature: 0.6
+    max_tokens: 16
+    reasoning_effort: none
+- id: C1_auto_32768_128k
+  block: C1
+  priority: 1
+  label: prefill auto:32768, 128K-Prompt
+  spec:
+    args:
+      --prefill: auto:32768
+  prompts: *id003
+  n: 5
+  request:
+    temperature: 0.6
+    max_tokens: 16
+    reasoning_effort: none
+  request_timeout: 3600
+- id: D7_len_84
+  block: D7
+  priority: 1
+  label: Prompt-Länge 84 Tokens
+  prompts:
+  - chat_de
+  n: 8
+  request:
+    temperature: 0.6
+    max_tokens: 96
+    reasoning_effort: none
+- id: D7_len_500
+  block: D7
+  priority: 1
+  label: Prompt-Länge 500 Tokens
+  prompts:
+  - len_500
+  n: 8
+  request:
+    temperature: 0.6
+    max_tokens: 96
+    reasoning_effort: none
+- id: D7_len_2k
+  block: D7
+  priority: 1
+  label: Prompt-Länge 2k Tokens
+  prompts:
+  - len_2k
+  n: 8
+  request:
+    temperature: 0.6
+    max_tokens: 96
+    reasoning_effort: none
+- id: D7_len_8k
+  block: D7
+  priority: 1
+  label: Prompt-Länge 8k Tokens
+  prompts:
+  - len_8k
+  n: 8
+  request:
+    temperature: 0.6
+    max_tokens: 96
+    reasoning_effort: none
+- id: D1_ctx_4k
+  block: D1
+  priority: 1
+  label: Kontext-Sweep 4k
+  prompts:
+  - long_4k
+  n: 8
+  request:
+    temperature: 0.6
+    max_tokens: 16
+    reasoning_effort: none
+  request_timeout: 3600
+- id: D1_ctx_16k
+  block: D1
+  priority: 1
+  label: Kontext-Sweep 16k
+  prompts:
+  - long_16k
+  n: 8
+  request:
+    temperature: 0.6
+    max_tokens: 16
+    reasoning_effort: none
+  request_timeout: 3600
+- id: D1_ctx_32k
+  block: D1
+  priority: 1
+  label: Kontext-Sweep 32k
+  prompts:
+  - long_32k
+  n: 8
+  request:
+    temperature: 0.6
+    max_tokens: 16
+    reasoning_effort: none
+  request_timeout: 3600
+- id: D1_ctx_64k
+  block: D1
+  priority: 1
+  label: Kontext-Sweep 64k
+  prompts:
+  - long_64k
+  n: 8
+  request:
+    temperature: 0.6
+    max_tokens: 16
+    reasoning_effort: none
+  request_timeout: 3600
+- id: D1_ctx_128k
+  block: D1
+  priority: 1
+  label: Kontext-Sweep 128k
+  prompts:
+  - long_128k
+  n: 8
+  request:
+    temperature: 0.6
+    max_tokens: 16
+    reasoning_effort: none
+  request_timeout: 3600
+- id: D1_ctx_200k
+  block: D1
+  priority: 1
+  label: Kontext-Sweep 200K (262144-max-context)
+  spec:
+    args:
+      --max-context: 262144
+  prompts:
+  - long_200k
+  n: 3
+  request:
+    temperature: 0.6
+    max_tokens: 16
+    reasoning_effort: none
+  request_timeout: 5400
+  ready_timeout: 3600
+- id: E1_learn_from_empty
+  block: E1
+  priority: 2
+  label: Lernkurve ab leeren Lerndaten (150 Requests)
+  kind: learning
+  clear_learning: true
+  n: 150
+  prompts:
+  - chat_de
+  - coding
+- id: E3_train_coding_measure_chat
+  block: E3
+  priority: 2
+  label: Coding einlernen, Chat messen
+  kind: learning
+  clear_learning: true
+  n: 80
+  prompts:
+  - chat_de
+  - chat_en
+  warmup_id: coding
+- id: E3_train_chat_measure_coding
+  block: E3
+  priority: 2
+  label: Chat einlernen, Coding messen
+  kind: learning
+  clear_learning: true
+  n: 80
+  prompts:
+  - coding
+  warmup_id: chat_de
+- id: E4_de_vs_en
+  block: E4
+  priority: 2
+  label: Deutsch vs. Englisch, identische Aufgabe
+  prompts:
+  - chat_de
+  - chat_en
+  n: 8
+- id: F1_la_learn_off
+  block: F1
+  priority: 2
+  label: Look-ahead-Lernen aus
+  spec:
+    env:
+      STRATA_LA_LEARN: '0'
+  prompts: *id001
+  n: 8
+- id: F1_hc_q8_off
+  block: F1
+  priority: 2
+  label: Hyperconnection Q8 aus
+  spec:
+    env:
+      STRATA_HC_Q8: '0'
+  prompts: *id001
+  n: 8
+- id: F1_kva_off
+  block: F1
+  priority: 2
+  label: STRATA_KVA aus
+  spec:
+    env:
+      STRATA_KVA: '0'
+  prompts: *id001
+  n: 8
+- id: F1_route_resident_off
+  block: F1
+  priority: 2
+  label: Route-Resident aus
+  spec:
+    env:
+      STRATA_ROUTE_RESIDENT: '0'
+  prompts: *id001
+  n: 8
+- id: F1_swap2_off
+  block: F1
+  priority: 2
+  label: SWAP2 aus
+  spec:
+    env:
+      STRATA_SWAP2_MAX: '0'
+  prompts: *id001
+  n: 8
+- id: F1_no_ple_prefetch
+  block: F1
+  priority: 2
+  label: PLE-Prefetch aus
+  spec:
+    args:
+      --no-ple-prefetch: null
+  prompts: *id001
+  n: 8
+- id: F1_no_hit_poke
+  block: F1
+  priority: 2
+  label: Hit-Poke aus
+  spec:
+    args:
+      --no-hit-poke: null
+  prompts: *id001
+  n: 8
+- id: F1_expert_cache_per_layer
+  block: F1
+  priority: 2
+  label: Expert-Cache per Layer
+  spec:
+    args:
+      --expert-cache-per-layer: null
+  prompts: *id001
+  n: 8
+- id: F1_ple_io_mmap
+  block: F1
+  priority: 2
+  label: PLE-IO mmap
+  spec:
+    args:
+      --ple-io: mmap
+  prompts: *id001
+  n: 8
+- id: F1_ple_io_ram
+  block: F1
+  priority: 2
+  label: PLE-IO ram
+  spec:
+    args:
+      --ple-io: ram
+  prompts: *id001
+  n: 8
+- id: F1_no_pool
+  block: F1
+  priority: 2
+  label: CPU-Expert-Pool aus
+  spec:
+    args:
+      --no-pool: null
+  prompts: *id001
+  n: 8
+- id: F1_kv_grow
+  block: F1
+  priority: 2
+  label: KV-Grow an
+  spec:
+    args:
+      --kv-grow: null
+  prompts: *id001
+  n: 8
+- id: F1_suffix_draft_0
+  block: F1
+  priority: 2
+  label: Suffix-Draft aus
+  spec:
+    args:
+      --suffix-draft: 0
+  prompts: *id001
+  n: 8
+- id: F1_prompt_cache_0
+  block: F1
+  priority: 2
+  label: Prompt-Cache aus
+  spec:
+    args:
+      --prompt-cache: 0
+  prompts: *id001
+  n: 8
+- id: F1_prefill_head_alias
+  block: F1
+  priority: 2
+  label: Prefill-Head-Alias an
+  spec:
+    args:
+      --prefill-head-alias: null
+  prompts: *id001
+  n: 8
+- id: F2_mtp_off
+  block: F2
+  priority: 2
+  label: MTP/Speculative aus
+  spec:
+    args:
+      --mtp: null
+      --spec: null
+      --spec-min-p: null
+  prompts: *id001
+  n: 8
+  request: null
+- id: F2_spec_2
+  block: F2
+  priority: 2
+  label: Spec-Verification 2
+  spec:
+    args:
+      --spec: 2
+  prompts: *id001
+  n: 8
+  request: null
+- id: F2_spec_6
+  block: F2
+  priority: 2
+  label: Spec-Verification 6
+  spec:
+    args:
+      --spec: 6
+  prompts: *id001
+  n: 8
+  request: null
+- id: F2_temp_0
+  block: F2
+  priority: 2
+  label: Temperatur 0
+  spec: {}
+  prompts: *id001
+  n: 8
+  request:
+    temperature: 0.0
+- id: F2_temp_1
+  block: F2
+  priority: 2
+  label: Temperatur 1.0
+  spec: {}
+  prompts: *id001
+  n: 8
+  request:
+    temperature: 1.0
+- id: G2_ram_limit_65536
+  block: G2
+  priority: 2
+  label: RAM-Tier 64 GiB
+  spec:
+    args:
+      --memory-limit-mib: 65536
+  prompts: *id001
+  n: 5
+- id: G2_ram_limit_49152
+  block: G2
+  priority: 2
+  label: RAM-Tier 48 GiB
+  spec:
+    args:
+      --memory-limit-mib: 49152
+  prompts: *id001
+  n: 5
+- id: G2_ram_limit_30720
+  block: G2
+  priority: 2
+  label: RAM-Tier 30 GiB
+  spec:
+    args:
+      --memory-limit-mib: 30720
+  prompts: *id001
+  n: 5
+- id: D6_convcache_0
+  block: D6
+  priority: 2
+  label: Conversation-Cache 0 MiB
+  spec:
+    args:
+      --conversation-cache-mib: 0
+  prompts:
+  - chat_de
+  n: 8
+  warmup_id: long_4k
+- id: D6_convcache_512
+  block: D6
+  priority: 2
+  label: Conversation-Cache 512 MiB
+  spec:
+    args:
+      --conversation-cache-mib: 512
+  prompts:
+  - chat_de
+  n: 8
+  warmup_id: long_4k
+- id: D6_convcache_2048
+  block: D6
+  priority: 2
+  label: Conversation-Cache 2048 MiB
+  spec:
+    args:
+      --conversation-cache-mib: 2048
+  prompts:
+  - chat_de
+  n: 8
+  warmup_id: long_4k
+- id: TL_chat_de
+  block: TL
+  priority: 2
+  label: 'Decode-Timeline Record: chat_de'
+  record_timeline: true
+  prompts:
+  - chat_de
+  n: 3
+  request:
+    max_tokens: 256
+  request_timeout: 1200
+- id: TL_coding
+  block: TL
+  priority: 2
+  label: 'Decode-Timeline Record: coding'
+  record_timeline: true
+  prompts:
+  - coding
+  n: 3
+  request:
+    max_tokens: 256
+  request_timeout: 1200
+- id: TL_math_reasoning
+  block: TL
+  priority: 2
+  label: 'Decode-Timeline Record: math_reasoning'
+  record_timeline: true
+  prompts:
+  - math_reasoning
+  n: 3
+  request:
+    max_tokens: 256
+  request_timeout: 1200
+- id: I1_needle_32k
+  block: I1
+  priority: 2
+  label: Needle-Recall 32k
+  kind: command
+  command:
+  - [DRIVE]/Users/[USER]\Desktop\python.toolz\apps\strata\.venv\Scripts\python.exe
+  - [DRIVE]/Users/[USER]\Desktop\python.toolz\apps\strata\tools\needle_bench.py
+  - --url
+  - http://127.0.0.1:8080
+  - --lengths
+  - 32k
+  - --depths
+  - 10,50,90
+  - --out
+  - D:\strata-bench\artifacts\needles-32k.json
+  timeout: 5400
+  ready_timeout: 2400
+- id: I1_needle_128k
+  block: I1
+  priority: 2
+  label: Needle-Recall 128k
+  kind: command
+  command:
+  - [DRIVE]/Users/[USER]\Desktop\python.toolz\apps\strata\.venv\Scripts\python.exe
+  - [DRIVE]/Users/[USER]\Desktop\python.toolz\apps\strata\tools\needle_bench.py
+  - --url
+  - http://127.0.0.1:8080
+  - --lengths
+  - 128k
+  - --depths
+  - 10,50,90
+  - --out
+  - D:\strata-bench\artifacts\needles-128k.json
+  timeout: 5400
+  ready_timeout: 2400
+- id: B6_stability_40
+  block: B6
+  priority: 3
+  label: Stabilitaet ueber 40 Requests
+  prompts: *id001
+  n: 10
+- id: C2_auto_4096_r512
+  block: C2
+  priority: 3
+  label: Wechselwirkung auto:4096 x Reserve 512
+  spec:
+    args:
+      --prefill: auto:4096
+      --vram-reserve-mib: 512
+  prompts: *id002
+  n: 5
+  request:
+    max_tokens: 16
+- id: C2_auto_4096_r2048
+  block: C2
+  priority: 3
+  label: Wechselwirkung auto:4096 x Reserve 2048
+  spec:
+    args:
+      --prefill: auto:4096
+      --vram-reserve-mib: 2048
+  prompts: *id002
+  n: 5
+  request:
+    max_tokens: 16
+- id: C2_auto_16384_r512
+  block: C2
+  priority: 3
+  label: Wechselwirkung auto:16384 x Reserve 512
+  spec:
+    args:
+      --prefill: auto:16384
+      --vram-reserve-mib: 512
+  prompts: *id002
+  n: 5
+  request:
+    max_tokens: 16
+- id: C2_auto_16384_r2048
+  block: C2
+  priority: 3
+  label: Wechselwirkung auto:16384 x Reserve 2048
+  spec:
+    args:
+      --prefill: auto:16384
+      --vram-reserve-mib: 2048
+  prompts: *id002
+  n: 5
+  request:
+    max_tokens: 16
+- id: C3_decode_after_128k
+  block: C3
+  priority: 3
+  label: Decode direkt nach 128K-Prefill
+  prompts:
+  - chat_de
+  n: 5
+  warmup_id: long_128k
+  request_timeout: 3600
+- id: C3_decode_after_short
+  block: C3
+  priority: 3
+  label: Decode nach kurzem Prompt
+  prompts:
+  - chat_de
+  n: 5
+  warmup_id: chat_de
+- id: D2_maxctx_131072
+  block: D2
+  priority: 3
+  label: --max-context 131072 bei kurzen Prompts
+  spec:
+    args:
+      --max-context: 131072
+  prompts: *id001
+  n: 5
+  ready_timeout: 2400
+- id: D2_maxctx_262144
+  block: D2
+  priority: 3
+  label: --max-context 262144 bei kurzen Prompts
+  spec:
+    args:
+      --max-context: 262144
+  prompts: *id001
+  n: 5
+  ready_timeout: 3600
+- id: D3_kv_fp16
+  block: D3
+  priority: 3
+  label: KV-Cache-Variante fp16
+  spec:
+    args:
+      --kv: fp16
+  prompts:
+  - chat_de
+  - chat_en
+  - coding
+  - math_reasoning
+  - long_4k
+  n: 5
+- id: D3_kv_int8
+  block: D3
+  priority: 3
+  label: KV-Cache-Variante int8
+  spec:
+    args:
+      --kv: int8
+  prompts:
+  - chat_de
+  - chat_en
+  - coding
+  - math_reasoning
+  - long_4k
+  n: 5
+- id: D3_kv_q4_0
+  block: D3
+  priority: 3
+  label: KV-Cache-Variante q4_0
+  spec:
+    args:
+      --kv: q4_0
+  prompts:
+  - chat_de
+  - chat_en
+  - coding
+  - math_reasoning
+  - long_4k
+  n: 5
+- id: D3_kv_k8v4
+  block: D3
+  priority: 3
+  label: KV-Cache-Variante k8v4
+  spec:
+    args:
+      --kv: k8v4
+  prompts:
+  - chat_de
+  - chat_en
+  - coding
+  - math_reasoning
+  - long_4k
+  n: 5
+- id: D4_output_512
+  block: D4
+  priority: 3
+  label: Lange Ausgabe 512 Tokens
+  prompts:
+  - chat_de
+  n: 5
+  request:
+    max_tokens: 512
+    temperature: 0.6
+  request_timeout: 3600
+- id: D4_output_2048
+  block: D4
+  priority: 3
+  label: Lange Ausgabe 2048 Tokens
+  prompts:
+  - chat_de
+  n: 5
+  request:
+    max_tokens: 2048
+    temperature: 0.6
+  request_timeout: 3600
+- id: D4_output_8192
+  block: D4
+  priority: 3
+  label: Lange Ausgabe 8192 Tokens
+  prompts:
+  - chat_de
+  n: 5
+  request:
+    max_tokens: 8192
+    temperature: 0.6
+  request_timeout: 3600
+- id: D5_multiturn_long_4k
+  block: D5
+  priority: 3
+  label: Mehrturn-Verlauf long_4k
+  prompts:
+  - chat_de
+  n: 5
+  warmup_id: long_4k
+  request_timeout: 3600
+- id: D5_multiturn_long_32k
+  block: D5
+  priority: 3
+  label: Mehrturn-Verlauf long_32k
+  prompts:
+  - chat_de
+  n: 5
+  warmup_id: long_32k
+  request_timeout: 3600
+- id: D5_multiturn_long_128k
+  block: D5
+  priority: 3
+  label: Mehrturn-Verlauf long_128k
+  prompts:
+  - chat_de
+  n: 5
+  warmup_id: long_128k
+  request_timeout: 3600
+- id: E5_persist_after_restart
+  block: E5
+  priority: 3
+  label: Persistenz des Gelernten nach Neustart
+  kind: learning
+  clear_learning: false
+  n: 40
+  prompts:
+  - chat_de
+- id: F3_reasoning_none
+  block: F3
+  priority: 3
+  label: Reasoning-Budget none
+  prompts: *id001
+  n: 5
+  request:
+    reasoning_effort: none
+    max_tokens: 256
+  request_timeout: 3600
+- id: F3_reasoning_low
+  block: F3
+  priority: 3
+  label: Reasoning-Budget low
+  prompts: *id001
+  n: 5
+  request:
+    reasoning_effort: low
+    max_tokens: 256
+  request_timeout: 3600
+- id: F3_reasoning_medium
+  block: F3
+  priority: 3
+  label: Reasoning-Budget medium
+  prompts: *id001
+  n: 5
+  request:
+    reasoning_effort: medium
+    max_tokens: 256
+  request_timeout: 3600
+- id: F3_reasoning_high
+  block: F3
+  priority: 3
+  label: Reasoning-Budget high
+  prompts: *id001
+  n: 5
+  request:
+    reasoning_effort: high
+    max_tokens: 256
+  request_timeout: 3600
+- id: F4_host_core_last
+  block: F4
+  priority: 3
+  label: Host-Core last
+  spec:
+    args:
+      --host-core: last
+  prompts: *id001
+  n: 5
+- id: F4_aux_cpus_auto
+  block: F4
+  priority: 3
+  label: Aux-CPUs auto
+  spec:
+    args:
+      --aux-cpus: auto
+  prompts: *id001
+  n: 5
+- id: F4_pool_workers_4
+  block: F4
+  priority: 3
+  label: Pool-Workers 4
+  spec:
+    args:
+      --pool-workers: 4
+  prompts: *id001
+  n: 5
+- id: F4_pool_workers_8
+  block: F4
+  priority: 3
+  label: Pool-Workers 8
+  spec:
+    args:
+      --pool-workers: 8
+  prompts: *id001
+  n: 5
+- id: F5_best_combination
+  block: F5
+  priority: 3
+  label: Kombination der besten Einzel-Schalter
+  spec:
+    args:
+      --prefill: auto:8192
+      --vram-reserve-mib: 2048
+    env:
+      STRATA_LA_LEARN: '1'
+  prompts: *id001
+  n: 8
+- id: H1_power_350W
+  block: H1
+  priority: 3
+  label: Power-Limit 350 W
+  kind: power
+  spec:
+    watts: 350
+  prompts: *id001
+  n: 5
+- id: H1_power_300W
+  block: H1
+  priority: 3
+  label: Power-Limit 300 W
+  kind: power
+  spec:
+    watts: 300
+  prompts: *id001
+  n: 5
+- id: H1_power_250W
+  block: H1
+  priority: 3
+  label: Power-Limit 250 W
+  kind: power
+  spec:
+    watts: 250
+  prompts: *id001
+  n: 5
+- id: H1_power_200W
+  block: H1
+  priority: 3
+  label: Power-Limit 200 W
+  kind: power
+  spec:
+    watts: 200
+  prompts: *id001
+  n: 5
+- id: I2_parity_mtp_on
+  block: I2
+  priority: 3
+  label: Output-Paritaet MTP an
+  spec: {}
+  prompts:
+  - chat_de
+  - math_reasoning
+  n: 5
+  request:
+    temperature: 0.0
+    seed: 20261123
+- id: I2_parity_mtp_off
+  block: I2
+  priority: 3
+  label: Output-Paritaet MTP aus
+  spec:
+    args:
+      --mtp: null
+      --spec: null
+      --spec-min-p: null
+  prompts:
+  - chat_de
+  - math_reasoning
+  n: 5
+  request:
+    temperature: 0.0
+    seed: 20261123
+- id: J1_parallel_1
+  block: J1
+  priority: 4
+  label: 1 paralleler Request
+  kind: concurrent
+  parallel: 1
+  n: 5
+- id: J1_parallel_2
+  block: J1
+  priority: 4
+  label: 2 parallele Requests
+  kind: concurrent
+  parallel: 2
+  n: 5
+- id: J1_parallel_4
+  block: J1
+  priority: 4
+  label: 4 parallele Requests
+  kind: concurrent
+  parallel: 4
+  n: 5
+- id: J2_soak_90min
+  block: J2
+  priority: 4
+  label: Dauertest 90 min
+  kind: soak
+  duration_s: 5400
+- id: J3_oversized
+  block: J3
+  priority: 4
+  label: Zu grosser Prompt
+  kind: error
+  mode: oversized
+- id: J3_abort_prefill
+  block: J3
+  priority: 4
+  label: Abbruch mitten im Prefill
+  kind: error
+  mode: abort
+- id: K1_vram_elastic_off
+  block: K
+  priority: 3
+  label: '[Agent-Vorschlag] --vram-elastic aus'
+  spec:
+    args:
+      --vram-elastic: null
+  prompts: *id001
+  n: 5
+- id: K2_config_reserve_2048
+  block: K
+  priority: 3
+  label: '[Agent-Vorschlag] Config-Reserve 2048 (statt 1792)'
+  spec:
+    config_keys:
+      vram_reserve_mib: 2048
+  prompts: *id001
+  n: 5
+- id: K4_vision_off
+  block: K
+  priority: 3
+  label: '[Agent-Vorschlag] Vision aus (VRAM-Rueckgewinn)'
+  spec:
+    args:
+      --vision: null
+    config_keys:
+      ui_vision_enabled: false
+  prompts: *id001
+  n: 5
+- id: K6_expert_cache_off
+  block: K
+  priority: 3
+  label: '[Agent-Vorschlag] Expert-Cache aus'
+  spec:
+    args:
+      --expert-cache: null
+  prompts: *id001
+  n: 5
+- id: K7_kv_grow_long
+  block: K
+  priority: 3
+  label: '[Agent-Vorschlag] KV-Grow bei 32K'
+  spec:
+    args:
+      --kv-grow: null
+  prompts: *id002
+  n: 5
+  request:
+    max_tokens: 16
+- id: A3_official_vs_hotrod
+  block: A3
+  priority: 4
+  label: Offizielles Strata vs. HotRod
+  kind: command
+  command:
+  - [DRIVE]/Users/[USER]\Desktop\python.toolz\apps\strata\.venv\Scripts\python.exe
+  - -c
+  - 'print(''SKIP: offizielle Strata-Engine nicht mit diesem Modell/Pack konfiguriert;
+    manuell moeglich'')'
+  timeout: 120
+- id: G3_defender
+  block: G4
+  priority: 4
+  label: Defender-Ausnahme an/aus
+  kind: defender
+  spec:
+    path: D:\Strata-HotRod-data
+  prompts: *id001
+  n: 5
+- id: H2_power_plan
+  block: H2
+  priority: 4
+  label: Energieplan Hoechstleistung
+  kind: plan
+  spec:
+    guid: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c
+  prompts: *id001
+  n: 5

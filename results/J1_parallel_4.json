@@ -1,0 +1,172 @@
+{
+  "status": "complete",
+  "test_id": "J1_parallel_4",
+  "block": "J1",
+  "priority": 4,
+  "label": "4 parallele Requests",
+  "spec": {
+    "args": {
+      "--vram-reserve-mib": 512
+    }
+  },
+  "parallel": 4,
+  "engine_facts": {
+    "expert_slots": 8791,
+    "expert_cache_mib": 17104,
+    "expert_slots_primary": 8791,
+    "vram_free_mib": 0,
+    "arena_mib": 47962,
+    "kv": "int8",
+    "kv_resident": 32768,
+    "prefill_cap": 16384,
+    "spec": 6,
+    "spec_min_p": "0.50",
+    "vram_elastic": 1,
+    "pool_workers": 7,
+    "pcie_gen": 4,
+    "pcie_width": 4,
+    "disk_read_mb": 1.8146536498298298,
+    "disk_write_mb": 0.1381526441228471,
+    "ram_used": 71619100672,
+    "ram_total": 103001423872,
+    "gpu_temp": 65,
+    "gpu_power": 271.929
+  },
+  "gpu": {
+    "n_samples": 22,
+    "power_w_mean": 291.9,
+    "power_w_max": 316.04,
+    "temp_c_mean": 72.18,
+    "temp_c_max": 75.0,
+    "mem_used_mib_mean": 0.0,
+    "mem_used_mib_max": 0.0,
+    "util_pct_mean": 92.14,
+    "util_pct_max": 99.0,
+    "ram_pct_mean": 69.49,
+    "ram_pct_max": 69.5,
+    "cpu_pct_mean": 54.65,
+    "cpu_pct_max": 63.9,
+    "ram_used_gib_mean": 66.67,
+    "ram_used_gib_max": 66.7
+  },
+  "summary": {
+    "group_wall_s": {
+      "n": 5,
+      "median": 8.344,
+      "q1": 8.297,
+      "q3": 8.485,
+      "iqr": 0.188,
+      "min": 8.281,
+      "max": 9.781,
+      "ci95_low": 8.281,
+      "ci95_high": 9.781,
+      "mean": 8.6376
+    },
+    "aggregate_decode_tps": {
+      "n": 5,
+      "median": 279.448,
+      "q1": 274.225,
+      "q3": 281.849,
+      "iqr": 7.624,
+      "min": 245.289,
+      "max": 283.564,
+      "ci95_low": 245.289,
+      "ci95_high": 283.564,
+      "mean": 272.875
+    }
+  },
+  "records": [
+    {
+      "rep": 0,
+      "group_wall_s": 9.781,
+      "aggregate_decode_tps": 245.289,
+      "per_request_decode_tps": [
+        50.962,
+        62.224,
+        68.027,
+        64.077
+      ],
+      "ttft_s": [
+        0.656,
+        5.531,
+        3.359,
+        7.812
+      ],
+      "errors": []
+    },
+    {
+      "rep": 1,
+      "group_wall_s": 8.344,
+      "aggregate_decode_tps": 279.448,
+      "per_request_decode_tps": [
+        69.9,
+        70.5,
+        67.977,
+        71.072
+      ],
+      "ttft_s": [
+        4.5,
+        2.422,
+        0.297,
+        6.578
+      ],
+      "errors": []
+    },
+    {
+      "rep": 2,
+      "group_wall_s": 8.281,
+      "aggregate_decode_tps": 283.564,
+      "per_request_decode_tps": [
+        69.223,
+        67.607,
+        77.854,
+        68.88
+      ],
+      "ttft_s": [
+        4.359,
+        0.313,
+        2.453,
+        6.469
+      ],
+      "errors": []
+    },
+    {
+      "rep": 3,
+      "group_wall_s": 8.297,
+      "aggregate_decode_tps": 281.849,
+      "per_request_decode_tps": [
+        72.092,
+        72.06,
+        70.699,
+        66.998
+      ],
+      "ttft_s": [
+        0.313,
+        4.407,
+        2.344,
+        6.422
+      ],
+      "errors": []
+    },
+    {
+      "rep": 4,
+      "group_wall_s": 8.485,
+      "aggregate_decode_tps": 274.225,
+      "per_request_decode_tps": [
+        69.003,
+        68.278,
+        71.23,
+        65.715
+      ],
+      "ttft_s": [
+        2.344,
+        4.453,
+        0.297,
+        6.594
+      ],
+      "errors": []
+    }
+  ],
+  "finished_at": "2026-11-23T22:18:28",
+  "attempts": 2
+}

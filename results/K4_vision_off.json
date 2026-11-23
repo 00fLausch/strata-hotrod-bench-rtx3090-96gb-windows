@@ -1,0 +1,7 @@
+{
+  "status": "failed",
+  "test_id": "K4_vision_off",
+  "error": "Engine-Prozess beendet sich sofort (ungueltige Flags) — kein Load zu erwarten",
+  "traceback": "Traceback (most recent call last):\n  File \"D:\\strata-bench\\runner\\bench.py\", line 1162, in main\n    if old.get(\"status\") == \"complete\":\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\strata-bench\\runner\\bench.py\", line 974, in run_test\n    finally:\n             \n  File \"D:\\strata-bench\\runner\\bench.py\", line 557, in run_http_test\n    }\n      \n  File \"D:\\strata-bench\\runner\\bench.py\", line 270, in wait_loaded\n    raise TimeoutError(\"Engine-Prozess beendet sich sofort (ungueltige Flags) — kein Load zu erwarten\")\nTimeoutError: Engine-Prozess beendet sich sofort (ungueltige Flags) — kein Load zu erwarten\n",
+  "attempts": 2
+}
