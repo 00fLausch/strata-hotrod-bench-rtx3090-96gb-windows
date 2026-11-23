@@ -1,92 +1,117 @@
 # Strata-HotRod Benchmark — RTX 3090 24 GB / 96 GB DDR4 / Windows 10
 
-Reproduzierbare Benchmark-Reihe (120 Läufe) für **Strata-HotRod**
-(`sangharshadhyeta/Strata-HotRod`, Commit `ac1ade5f`, Engine 0.1.45) mit
-**Qwen3.8-Flash-Next IQ3_S** (ISTA-DASLab GSQ-RCO, ~78 GB) — inklusive
-Live-Telemetrie aus dem HotRod-Monitor.
-
-> **Deutsche Kurzfassung:** 120 Läufe, feste gehash-te Prompts, n=8 (n=5 bei
-> Langkontext), Warm-up verworfen, Bootstrap-95-%-KIs und Mann-Whitney.
-> Wichtigster Befund: `--vram-reserve-mib 0` blockiert den ersten Request nach
-> dem Modell-Load (~74 s), 512 MiB nicht. Die empfohlene Config ändert genau
-> diesen einen Wert. Die aktive Config des Systems wurde nicht überschrieben.
+Reproducible benchmark series (120 runs) for **Strata-HotRod**
+(`sangharshadhyeta/Strata-HotRod`, commit `ac1ade5f`, engine 0.1.45) with
+**Qwen3.8-Flash-Next IQ3_S** (ISTA-DASLab GSQ-RCO, ~78 GB), including live
+telemetry from the HotRod monitor.
 
 ## Hardware
 
-| Komponente | Wert |
+| Component | Value |
 |---|---|
-| GPU | NVIDIA GeForce RTX 3090 24 GB, Treiber 591.74, WDDM, PCIe 4.0 x16 (unter Last Gen4) |
+| GPU | NVIDIA GeForce RTX 3090 24 GB, driver 591.74, WDDM, PCIe 4.0 x16 (Gen4 under load) |
 | CPU | AMD Ryzen 7 5800X (8C/16T) |
-| RAM | 96 GB DDR4-2933 (3×32 GB) |
+| RAM | 96 GB DDR4-2933 (3x32 GB) |
 | OS | Windows 10 Pro 19045 |
 | Storage | Patriot P300 NVMe (DRAM-less) |
 
-## Die fünf wichtigsten Ergebnisse
+## Key findings
 
-1. **VRAM-Reserve ist der einzige klare Hebel.** Mit 0 MiB brauchte der erste
-   Request nach dem Load **73,6 s** (WDDM-Overcommit / „0 MiB free"), mit
-   512 MiB nur **2,2 s**. Im Sweep hatte 512 MiB den höchsten Decode-Median
-   (**82,2 tok/s**; 700 MiB 78,7; 3072 MiB 72,0) — statistisch **nicht
-   signifikant** (p=0,22), aber konsistent mit dem Stall-Befund.
-2. **Prefill-Chunk wirkt bei langen Prompts.** 32K-Prompts: `auto:32768`
-   **2.539 tok/s** / TTFT 11,8 s gegenüber `auto:4096` 1.782 tok/s / 16,8 s.
-   Bei 128K ist das Bild gemischter (1.665–2.197 tok/s).
-3. **Kontext kostet Decode.** 4K/16K ≈ 87–93 tok/s, 64K 71 tok/s,
-   128K/200K ≈ 52–54 tok/s. Prefill bleibt bei ~1.700–2.450 tok/s.
-4. **Engpass ist GPU + CPU-Experten, nicht die SSD.** Decode-Timeline:
-   ~53 % „GPU alone/host waiting", ~45 % CPU-Experten, **0 %** Demand-Reads
-   und 0 % Wartezeit auf laufende Reads. 90-Min-Dauerlauf: 2.905 Requests,
-   0 Fehler, RAM konstant 69,6 %, Speed 86 → 80 tok/s (leichte Drift).
-5. **Telemetrie kostet nichts Messbares.** Recorder an/aus: 82,3 vs. 77,8 tok/s;
-   Record an/aus: 80,7 vs. 78,6 tok/s — beide nicht signifikant. Needle-Recall
-   bei 32K und 128K: **9/9 gefunden**.
+1. **VRAM reserve is the one clear lever.** With `--vram-reserve-mib 0` the
+   first request after model load took **73.6 s** (WDDM overcommit, "0 MiB
+   free"); with 512 MiB it took 2.2 s. The sweep's highest decode median was
+   512 MiB at **82.2 tok/s** (700 MiB: 78.7; 3072 MiB: 72.0) - a trend, but
+   **not statistically significant** (p=0.22).
+2. **Prefill chunk size matters at 32K.** `auto:32768` reached 2,539 tok/s and
+   TTFT 11.8 s, vs 1,782 tok/s and 16.8 s for `auto:4096`. At 128K the picture
+   is mixed (1,665-2,197 tok/s).
+3. **Context costs decode.** 4K/16K about 87-93 tok/s, 64K 71 tok/s,
+   128K/200K about 52-54 tok/s. Prefill stays around 1,700-2,450 tok/s.
+4. **The bottleneck is GPU + CPU experts, not the SSD.** Decode timeline:
+   ~53% "GPU alone / host waiting", ~45% CPU experts, **0%** demand reads and
+   0% time waiting on in-flight reads. A 90-minute soak produced 2,905
+   requests with zero errors, flat RAM at 69.6% and a slight drift from 86 to
+   80 tok/s.
+5. **Telemetry is free.** Recorder on/off 82.3 vs 77.8 tok/s; Record on/off
+   80.7 vs 78.6 tok/s - neither significant. Needle recall at 32K and 128K:
+   **9/9 found**.
 
-Standardprotokoll (`strata bench run`): Chat 62,4 tok/s, 4K-Prefill 1.877 tok/s,
-16K-Prefill 2.396 tok/s, Agenten-Session 71,5 tok/s, Cache-Hit-Rate 69,6 %.
+Standard protocol (`strata bench run`): chat 62.4 tok/s, 4K prefill 1,877
+tok/s, 16K prefill 2,396 tok/s, agent session 71.5 tok/s, cache hit rate 69.6%.
 
-![Reserve-Sweep](charts/b1_reserve_decode.png)
-![Kontext-Sweep](charts/d1_context_decode.png)
-![Prompt-Länge](charts/d7_prompt_prefill.png)
-![Engpass-Analyse](charts/bottleneck.png)
+## Charts
 
-Interaktive Übersicht: [`dashboard/index.html`](dashboard/index.html)
+![Reserve sweep](charts/b1_reserve_decode.png)
+![Reserve vs TTFT](charts/b1_reserve_ttft.png)
+![Reserve vs expert slots](charts/b1_reserve_experts.png)
+![Reserve vs swaps](charts/b1_reserve_swaps.png)
+![Context sweep](charts/d1_context_decode.png)
+![Context vs prefill](charts/d1_context_prefill.png)
+![Context vs TTFT](charts/d1_context_ttft.png)
+![Prompt length vs prefill](charts/d7_prompt_prefill.png)
+![Prompt length vs TTFT](charts/d7_prompt_ttft.png)
+![Decode distribution](charts/decode_distribution.png)
+![Decode vs TTFT](charts/decode_vs_ttft.png)
+![Experts vs decode](charts/b2_experts_decode.png)
+![Experts vs TTFT](charts/experts_vs_ttft.png)
+![Swaps per round vs decode](charts/swaps_vs_decode.png)
+![Swaps per token vs decode](charts/swaps_per_token_decode.png)
+![GPU power vs decode](charts/power_vs_decode.png)
+![GPU temperature vs decode](charts/temp_vs_decode.png)
+![HotRod switch effects](charts/f1_switch_effects.png)
+![MTP acceptance](charts/f2_acceptance.png)
+![KV variants](charts/d3_kv_variants.png)
+![Long outputs](charts/d4_output_decode.png)
+![Conversation cache](charts/d6_convcache.png)
+![Reasoning effort](charts/f3_reasoning.png)
+![Standard benchmark](charts/a1_standard_bench.png)
+![Needle recall](charts/i1_needle_recall.png)
+![90-minute soak](charts/j2_soak_trend.png)
+![Telemetry time series](charts/telemetry_multirun.png)
+![Multi-run telemetry](charts/telemetry_timeseries.png)
+![Heatmap difference](charts/heatmap_diff.png)
+![Bottleneck analysis](charts/bottleneck.png)
+![Timeline gaps](charts/timeline_gaps.png)
+![Noise drift](charts/a2_noise.png)
+![Learning curve](charts/e1_learning.png)
 
-## Empfohlene Alltags-Config
+Interactive overview: [`dashboard/index.html`](dashboard/index.html)
+
+## Recommended configuration
 
 [`configs/recommended-strata-iq3_s.json`](configs/recommended-strata-iq3_s.json)
-– nur `--vram-reserve-mib 512` statt 0. Diff und Einordnung:
-[`docs/RECOMMENDED_DIFF.md`](docs/RECOMMENDED_DIFF.md). Die aktive Config
-wurde **nicht** überschrieben.
+changes exactly one value: `--vram-reserve-mib 512` instead of 0. Diff and
+interpretation: [`docs/RECOMMENDED_DIFF.md`](docs/RECOMMENDED_DIFF.md). The
+active configuration on the machine was **not** overwritten.
 
-**Belegt / Tendenz / kein Effekt**
+- **Proven:** reserve 0 causes a first-request stall; needle recall; no SSD
+  usage; no measurable telemetry overhead; MTP is mandatory (native pack
+  requires `--spec >= 2`).
+- **Trend:** 512 MiB slightly faster than 700/2048/3072; chunk 32768 faster at
+  32K; slight decline over 90 minutes.
+- **No measurable effect:** all individual F1 switches, F2 variants, RAM
+  limits, resident-expert count vs decode (r=0.03, p=0.76).
 
-- *Belegt:* Reserve 0 → Stall; Needle-Recall; fehlende SSD-Nutzung; kein
-  Telemetrie-Overhead; MTP ist zwingend ( natives Pack braucht `--spec ≥ 2`).
-- *Tendenz:* 512 MiB etwas schneller als 700/2048/3072; 32K-Chunk 32768 schneller
-  als 4096; leichte Abnahme über 90 Min.
-- *Kein messbarer Effekt:* alle F1-Einzelschalter, F2-Varianten, RAM-Limits,
-  Experten-Anzahl ↔ Decode (r=0,03, p=0,76).
+## Methodology
 
-## Methodik
+- Fixed hashed prompts: [`prompts/prompts.json`](prompts/prompts.json), 15 items
+- n=8 (P1/P2), n=5 (P3+); warm-up discarded and logged after every engine start
+- Decode tok/s **only** from engine timings (`predicted_n/predicted_ms`)
+- Median, IQR, bootstrap 95% CI (seed 20261123), Mann-Whitney p<0.05
+- Variants randomized within blocks; A2 measures drift (66.6→74.7→73.7 tok/s)
+- Telemetry: `GET /metrics` at 1 Hz, Record via `POST /v1/monitor/timeline`
+  ([TELEMETRY.md](TELEMETRY.md)); speed runs without Record, timeline in extra
+  runs (n=3)
 
-- Feste, gehash-te Prompts: [`prompts/prompts.json`](prompts/prompts.json), 15 Stück
-- n=8 (P1/P2), n=5 (P3+); Warm-up nach jedem Engine-Start verworfen und geloggt
-- Decode tok/s **nur** aus `predicted_n/predicted_ms` (Engine-Timings)
-- Median, IQR, Bootstrap-95-%-KI (Seed 20261123), Mann-Whitney p<0,05
-- Varianten innerhalb der Blöcke randomisiert; A2 misst Drift (66,6→74,7→73,7 tok/s)
-- Telemetrie: `GET /metrics` 1 Hz, Record via `POST /v1/monitor/timeline`
-  ([TELEMETRY.md](TELEMETRY.md)); Speed-Läufe ohne Record, Timeline extra (n=3)
+## Limits and skipped tests
 
-## Grenzen und übersprungene Tests
+One GPU, one quantization, one model. Power-limit changes were impossible
+(no admin), so H1 (200/250/300/350 W), H2 and the Defender test are documented
+as "not automatable". `F2_mtp_off` and `I2_parity_mtp_off` are **not possible**:
+the native IQ pack requires `--spec >= 2`. `K4_vision_off` failed to start.
+Manual only: HAGS, cold boot, XMP/RAM clock, CUDA Sysmem Fallback Policy.
 
-Eine GPU, ein Quant, ein Modell. Power-Limit nicht änderbar (kein Admin) →
-H1 (200/250/300/350 W) als „nicht automatisierbar" dokumentiert; H2/Defender
-ebenfalls ohne Admin. `F2_mtp_off` und `I2_parity_mtp_off` sind **nicht möglich**:
-das native IQ-Pack verlangt `--spec ≥ 2`. `K4_vision_off` startete nicht.
-`G3_defender` scheiterte an fehlenden Rechten. Manuell: HAGS, Kaltstart, XMP,
-CUDA Sysmem Fallback Policy.
-
-## Reproduktion
+## Reproduction
 
 ```powershell
 uv venv .venv --python 3.11
@@ -96,14 +121,15 @@ python runner/make_matrix.py
 python runner/bench.py --matrix runner/matrix.yaml
 python runner/analyze.py
 python runner/charts.py
+python runner/more_charts.py
 python runner/dashboard.py
 python runner/timeline_analysis.py
 ```
 
-Pfade in `runner/bench.py` müssen an die lokale Installation angepasst werden
-(bei der Veröffentlichung geschwärzt). Siehe [FLAGS.md](FLAGS.md) für alle
-verifizierten Schalter.
+Paths in `runner/bench.py` must be adapted to the local installation (they are
+redacted in the published version). See [FLAGS.md](FLAGS.md) for all verified
+switches.
 
-## Lizenz
+## License
 
-MIT — siehe `LICENSE`.
+MIT - see `LICENSE`.

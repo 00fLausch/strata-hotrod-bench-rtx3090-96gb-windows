@@ -1,35 +1,39 @@
-﻿# DECISIONS.md — autonome Entscheidungen mit Begründung
+﻿# DECISIONS.md - autonomous decisions with rationale
 
-Regel: Unsicherheit → konservativere, reversible Option; hier festhalten; weitermachen.
+Rule: uncertainty -> choose the more conservative, reversible option; record it
+here; keep going.
 
-| # | Datum | Entscheidung | Grund / Alternative |
+| # | Date | Decision | Reason / alternative |
 |---|---|---|---|
-| D01 | 2026-11-23 | Keine Rückfragen; alle Wahlentscheidungen selbst getroffen und dokumentiert | Expliziter Auftrag: Benutzer nicht erreichbar |
-| D02 | 2026-11-23 | Benchmark gegen `127.0.0.1:8080` (lokaler HotRod), nicht gegen Tailscale-IP `[TAILSCALE-IP]` | Lokal = geringste Varianz; Tailscale-IP ist privat und muss geschwärzt werden |
-| D03 | 2026-11-23 | Original-Config vor jeder Änderung nach `configs/original-strata-iq3_s.json` kopieren und per SHA-256 verifizieren | Pflicht aus Auftrag; Wiederherstellbarkeit |
-| D04 | 2026-11-23 | Probe-Skript `strata_speed_probe.py` als Vorlage, aber eigener Runner mit YAML-Matrix, Resume, Bootstrap-KI und try/finally | Roboteranforderung; Probe war n=4 und nicht signifikant |
-| D05 | 2026-11-23 | Keine Änderung an Python-Tracker-Dateien (`config.json`, `AGENTS.md`); nur lesen und ihre Start/Stop-Komponente nutzen | Fremdes Projekt; expliziter Auftrag betrifft nur Benchmark; AGENTS.md verlangt zusätzliche Tests für Änderungen |
-| D06 | 2026-11-23 | Die lokal laufende Strata-Instanz NICHT als eigenes Sprachmodell für meine Arbeit verwenden | Explizites Verbot; ich nutze meinen konfigurierten OpenCode-Provider |
-| D07 | 2026-11-23 | Hintergrundprozesse nur gemäß expliziter Liste beenden (Browser, ComfyUI, Sunshine, Unreal/LiveCoding als „usw."); OpenCode, ChatGPT, MCP-Helfer, Tracker/Watcher laufen lassen | OpenCode bin ich selbst; Tracker steuert den Server. Liste in `docs/KILLED_PROCESSES.md` |
-| D08 | 2026-11-23 | Power-Limit/Energieplan/Defender nur ändern, wenn ohne Admin-Rechte möglich; sonst als „nicht automatisierbar" dokumentieren | Windows-User ist nicht Administrator; Vorher-Test, Original immer sichern |
-| D09 | 2026-11-23 | Keine Dateien außerhalb `D:\strata-bench\` löschen; TEMP/TMP auf `D:\strata-bench\tmp` umleiten | C: war initially ~0,2 GB frei (nach Reboot 38,8 GB), Regel bleibt bestehen |
-| D10 | 2026-11-23 | Statistik: Median + IQR + Bootstrap-95%-KI (Seed 20261123); Effekt nur bei nicht überlappenden KIs oder Mann-Whitney p<0,05 | Explizite Methodik; verhindert Scheinsignifikanz wie bei der Probe |
-| D11 | 2026-11-23 | Decode tok/s ausschließlich aus `predicted_n/predicted_ms` (Engine-Timings), nie aus Wandzeit | Explizite Vorgabe |
-| D12 | 2026-11-23 | n=8 für P1/P2, n=5 ab P3; Warm-up pro Start verwerfen, aber loggen | Zeitbudget vs. statistische Güte |
-| D13 | 2026-11-23 | Varianten innerhalb eines Blocks randomisieren (Seed 20261123), Blöcke in Prioritätsreihenfolge | Gegen Drift durch Temperatur/Lernen/Cache; A2 absichtlich geordnet (Start/Mitte/Ende) |
-| D14 | 2026-11-23 | `--max-context 262144` (D1/D2) nur testen, wenn Engine stabil startet; sonst „nicht möglich" | 24 GB VRAM + knappes Commit-Limit; Fail → Retry → dokumentieren |
-| D15 | 2026-11-23 | Keine neuen Modelle herunterladen; kleine Predictor-/Profil-Dateien nur wenn Doku es für einen Test vorsieht | Explizites Verbot; E1 nutzt vorhandene Lerndaten |
-| D16 | 2026-11-23 | Keine Posts/PRs/Issues in fremden Repos; nur fertige Texte unter `outreach/` | Explizites Verbot |
-| D17 | 2026-11-23 | Vor Publication automatisierte + manuelle Datenschutzprüfung; bei Treffer → nicht veröffentlichen | Explizite Pflicht |
-| D18 | 2026-11-23 | Nutzerhinweis „dem Modell Platz im RAM/VRAM lassen" aufgenommen: B1-Sweep um **0 / 256 / 512 / 700 / 1024 / … / 4096 MiB** erweitert; 512 = bewährte Nutzer-Einstellung, 700 = Engine-Default laut `serve/runconfig.py` | Original `--vram-reserve-mib 0` → 0 MiB frei, Log warnt vor Stalls; Probe zeigt Tendenz zugunsten 2048, aber n=4 nicht signifikant |
-| D19 | 2026-11-23 | Power-Limit-Änderung nicht automatisierbar: `nvidia-smi -pl` → „Insufficient Permissions" (kein Admin) | H1/H2 werden als „nicht automatisierbar, manuell möglich" dokumentiert; Original 350 W bleibt unverändert |
-| D20 | 2026-11-23 | Nach Reboot: Engine und Runner als **detachte** Prozesse starten (Start-Process), damit Interaktionen den Lauf nicht abbrechen | Zwei Mini-Läufe wurden durch Nachrichten unterbrochen; Config war beide Male sauber |
-| D21 | 2026-11-23 | H1/H2/H3-Telemetrie aus Engine-`/v1/status` und `/metrics`, nicht aus NVML, falls NVML erneut hängt | NVML war nach GPU-Prozess-Beendigung blockiert; Engine-Timings sind ohnehin die Messgröße |
-| D22 | 2026-11-23 | Erster Mini-Befund: Warm-up bei Reserve 0 = **73,6 s**, bei 512 = 2,2 s, bei 700 = 2,5 s | Stützt Nutzerhinweis; wird durch B1 mit n=8 und Signifikanzprüfung abgesichert, nicht als Einzelmessung überinterpretiert |
-| D23 | 2026-11-23 | Auf Nutzerwunsch: **keine weiteren Nullreserve-Tests**. Globaler Default `--vram-reserve-mib 512` für alle Tests; B1-Sweep ohne 0; bereits gemessene 0er-Werte bleiben als historischer Befund dokumentiert | 73,6 s Stall + Log-Warnung + Nutzer-Erfahrung; 512 ist die bewährte Einstellung |
-| D24 | 2026-11-23 | `spec` wird in `main()` tief zusammengeführt, damit der globale 512er-Default nicht durch Test-spezifische `args` verloren geht | Sonst hätten alle Varianten stillschweigend wieder Reserve 0 benutzt |
-| D25 | 2026-11-23 | Erweiterte Vorgabe umgesetzt: Telemetrie aus `GET /metrics` (1 Hz) und Record via `POST /v1/monitor/timeline` für **alle** Messläufe; vorherige 9 Ergebnisse ohne Telemetrie verworfen und neu gestartet | Neue Pflichtvorgabe; Runner ist resume-fähig, aber alte Läufe waren nicht konform |
-| D26 | 2026-11-23 | Kein Playwright nötig: Record-Button im Frontend ruft direkt `POST /v1/monitor/timeline {"on":bool}`; im Code verifiziert | Fallback 3 der Vorgabe entfällt; Fallback 1 erfolgreich |
-| D27 | 2026-11-23 | Speed-Läufe ohne Timeline-Record; eigene `TL_*`-Läufe mit `record_timeline=true` (n=3); Overhead separat in T1 (n=8 je Arm) | Verhindert Verfälschung der tok/s durch Recording |
-| D28 | 2026-11-23 | Neue Blöcke T1, D6, D7, TL und B2 (Regressionsauswertung) in Matrix ergänzt; insgesamt 120 Tests | Neue Prioritätenliste der Vorgabe |
-| D29 | 2026-11-23 | Power-Limit weiterhin nicht änderbar (kein Admin) → H1/Tokens-pro-Joule nur mit Telemetrie-Leistungswerten bei 350 W, keine Kurve | Wie D19; diesmal aber Watt-Zeitreihen aus `/metrics` vorhanden |
+| D01 | 2026-11-23 | No follow-up questions; all choices made autonomously and documented | Explicit instruction: user unreachable |
+| D02 | 2026-11-23 | Benchmark against `127.0.0.1:8080`, not the Tailscale IP `[TAILSCALE-IP]` | Local = lowest variance; private IP must be redacted |
+| D03 | 2026-11-23 | Copy the original config to `configs/original-strata-iq3_s.json` and verify SHA-256 before every change | Required by the task; restoreability |
+| D04 | 2026-11-23 | Use `strata_speed_probe.py` as a template, but build a custom runner with YAML matrix, resume, bootstrap CIs and try/finally | The probe was n=4 and not significant |
+| D05 | 2026-11-23 | No changes to Python Tracker files (`config.json`, `AGENTS.md`); only read them and use its start/stop component | Separate project; task concerns only the benchmark |
+| D06 | 2026-11-23 | Do not use the local Strata instance as this agent's own language model | Explicit prohibition; the configured OpenCode provider is used instead |
+| D07 | 2026-11-23 | Stop background processes only from the explicit list (browser, ComfyUI, Sunshine, Unreal/LiveCoding as "etc."); keep OpenCode, ChatGPT, MCP helpers, tracker/watcher | OpenCode is this agent; tracker controls the server. See `docs/KILLED_PROCESSES.md` |
+| D08 | 2026-11-23 | Change power limit / energy plan / Defender only if possible without admin; otherwise document as "not automatable" | Windows user is not an administrator; original always saved |
+| D09 | 2026-11-23 | No file deletions outside `D:\strata-bench\`; redirect TEMP/TMP to `D:\strata-bench\tmp` | C: initially had ~0.2 GB free |
+| D10 | 2026-11-23 | Statistics: median + IQR + bootstrap 95% CI (seed 20261123); effect only with non-overlapping CIs or Mann-Whitney p<0.05 | Prevents false significance like the probe |
+| D11 | 2026-11-23 | Decode tok/s solely from `predicted_n/predicted_ms`, never from wall time | Explicit requirement |
+| D12 | 2026-11-23 | n=8 for P1/P2, n=5 from P3; discard but log warm-up per engine start | Time budget vs statistical power |
+| D13 | 2026-11-23 | Randomize variants within blocks (seed 20261123); blocks in priority order | Guards against drift; A2 deliberately ordered (start/middle/end) |
+| D14 | 2026-11-23 | Test `--max-context 262144` only if the engine starts reliably; otherwise mark "not possible" | 24 GB VRAM and tight commit limit |
+| D15 | 2026-11-23 | No new model downloads; small predictor/profile files only if the docs require them for a test | Explicit prohibition; E1 uses existing learning data |
+| D16 | 2026-11-23 | No posts/PRs/issues in external repos; only ready-to-send text files under `outreach/` | Explicit prohibition |
+| D17 | 2026-11-23 | Automated and manual privacy check before publication; abort if any match remains | Explicit requirement |
+| D18 | 2026-11-23 | User hint "leave the model room in RAM/VRAM" incorporated: B1 sweep covers 0/256/512/700/1024/.../4096 MiB; 512 = user's setting, 700 = engine default per `serve/runconfig.py` | Original `--vram-reserve-mib 0` left 0 MiB free; probe hinted at 2048 but n=4 was not significant |
+| D19 | 2026-11-23 | Power-limit changes not automatable: `nvidia-smi -pl` returned "Insufficient Permissions" | H1/H2 documented as "not automatable"; 350 W unchanged |
+| D20 | 2026-11-23 | After reboot: start engine and runner as detached processes | Two mini-runs were interrupted by messages; config stayed clean |
+| D21 | 2026-11-23 | Telemetry from engine `/v1/status` and `/metrics`, not standalone NVML, if NVML hangs | NVML was blocked after GPU process termination |
+| D22 | 2026-11-23 | First mini finding: warm-up 73.6 s at reserve 0 vs 2.2 s at 512 and 2.5 s at 700 | Supports the user's hint; confirmed with n=8 significance testing in B1 |
+| D23 | 2026-11-23 | Per user request: no further zero-reserve tests. Global default `--vram-reserve-mib 512`; B1 sweep without 0 | 73.6 s stall plus log warning plus user experience |
+| D24 | 2026-11-23 | Deep-merge `spec` in `main()` so the global 512 default is not lost when a test defines its own `args` | Otherwise all variants would silently revert to reserve 0 |
+| D25 | 2026-11-23 | Extended instruction implemented: telemetry from `GET /metrics` (1 Hz) and Record via `POST /v1/monitor/timeline` for **all** runs; nine earlier results without telemetry discarded and re-run | New mandatory requirement; runner is resume-capable but old runs were not compliant |
+| D26 | 2026-11-23 | No Playwright needed: the front-end Record button calls `POST /v1/monitor/timeline {"on":bool}` directly (verified in code) | Fallback 3 not required; fallback 1 succeeded |
+| D27 | 2026-11-23 | Speed runs without timeline Record; separate `TL_*` runs with `record_timeline=true` (n=3); overhead measured in T1 (n=8 per arm) | Prevents recording overhead from biasing tok/s |
+| D28 | 2026-11-23 | Added blocks T1, D6, D7, TL and B2 (regression analysis); 120 tests total | New priority list from the extended instruction |
+| D29 | 2026-11-23 | Power limit still not changeable (no admin); tokens/joule only at the fixed 350 W using telemetry power values | Same as D19, but with power time series available |
+| D30 | 2026-11-24 | `F2_mtp_off` and `I2_parity_mtp_off` marked "not possible": the native IQ pack requires `--spec >= 2`; engine exits immediately otherwise | Verified in engine log; fail-fast added to `wait_loaded` |
+| D31 | 2026-11-24 | Commit author corrected to the `00fLausch` account after GitHub attributed the no-reply address to the older `[USER]` account | Repo owner and publishing account must match |
+| D32 | 2026-11-24 | Full report translated to English and expanded to 35 charts on user request | Publication target is the international Strata community and RepoChad |

@@ -1,8 +1,8 @@
-"""Datenschutzprüfung + Schwärzung für die Veröffentlichung.
+"""Privacy check and redaction before publication.
 
 Aufruf: python runner/privacy.py [--stage DIR]
 Ohne --stage wird D:\strata-bench\publish geprüft/bereinigt.
-Bei einem Treffer NACH der Schwärzung wird Exit 1 zurückgegeben -> nicht veröffentlichen.
+Returns exit 1 if any match remains AFTER redaction -> do not publish.
 """
 from __future__ import annotations
 
@@ -55,7 +55,7 @@ def main(argv=None) -> int:
     opts = ap.parse_args(argv)
     stage = opts.stage
     if not stage.exists():
-        print(f"Stage fehlt: {stage}")
+        print(f"Stage missing: {stage}")
         return 1
     results = []
     for p in sorted(stage.rglob("*")):
@@ -74,26 +74,26 @@ def main(argv=None) -> int:
                 remaining.append(r)
 
     lines = ["# PRIVACY_CHECK", "",
-             "Automatisierte Prüfung + Schwärzung vor der Veröffentlichung.", "",
-             "## Schwärzungen (erster Durchlauf)", "",
-             "| Datei | Treffer |", "|---|---|"]
+             "Automated check and redaction before publication.", "",
+             "## Redactions (first pass)", "",
+             "| File | Matches |", "|---|---|"]
     for r in results:
         if r.get("hits"):
             lines.append(f"| `{r['file']}` | {json_hits(r['hits'])} |")
-    lines.extend(["", "## Verbleibende Treffer nach Schwärzung", ""])
+    lines.extend(["", "## Remaining matches after redaction", ""])
     if remaining:
         for r in remaining:
             lines.append(f"- **{r['file']}**: {json_hits(r['hits'])}")
         lines.append("")
-        lines.append("**NICHT VERÖFFENTLICHEN** – erst bereinigen.")
+        lines.append("**DO NOT PUBLISH** - clean up first.")
     else:
-        lines.append("Keine. Veröffentlichung freigegeben (automatisierter Teil).")
-    lines.extend(["", "## Manuelle Prüfung", "",
-                  "- [ ] Keine Seriennummern in Logs/Screenshots",
-                  "- [ ] Keine privaten Pfade in Prompts/Antworten",
-                  "- [ ] Keine API-Keys in `.env`-Dateien oder Configs",
-                  "- [ ] Keine IP-Adressen in Diagrammen (Achsenbeschriftungen)",
-                  "- [ ] Keine personenbezogenen Antworttexte im Prompt-Satz"])
+        lines.append("None. Publication cleared (automated part).")
+    lines.extend(["", "## Manual checks", "",
+                  "- [ ] No serial numbers in logs/screenshots",
+                  "- [ ] No private paths in prompts/answers",
+                  "- [ ] No API keys in .env files or configs",
+                  "- [ ] No IP addresses in charts (axis labels)",
+                  "- [ ] No personal answer text in the prompt set"])
     (ROOT / "PRIVACY_CHECK.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
     (stage / "PRIVACY_CHECK.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
     import json

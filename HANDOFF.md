@@ -1,41 +1,35 @@
-# HANDOFF — nach Neustart / Sitzungsende
+# HANDOFF - for a new agent
 
-## Warum ein Neustart sinnvoll ist
-`nvidia-smi` und `pynvml` hängen seit dem Beenden der GPU-Hintergrundprozesse
-(UnrealEditor, ComfyUI, Opera) unter WDDM. Der Engine selbst und seine `/metrics`/
-`/v1/status`-Telemetrie funktionieren, aber Power-Limit-Änderungen (Block H1) und
-NVML-basierte Messungen sind blockiert. Ein sauberer Reboot stellt NVML wieder her.
+The run is complete. This file documents the state in case the session is
+interrupted before further work.
 
-## Zustand beim Abbruch (verifiziert 2026-11-23 ~14:52)
-- `strata-iq3_s.json`: SHA-256 `47FD4B8DAB44B26B6535948C94EC88205DFDE90A26E4A9451A3F60F82B55F3E4` — **identisch mit Original**
-- Engine: `http://127.0.0.1:8080/health` → `loaded: true`
-- Kein `bench.py`-Prozess aktiv, keine Ergebnisse in `results/`
-- Runner-Log: nur „=== Runner gestartet ===" (Abbruch in `probe_capabilities`)
-- Nichts gelöscht außerhalb `D:\strata-bench\`; Hintergrundprozesse waren bereits tot (veraltete PID-Einträge)
+## What exists
 
-## Vorhandene Arbeitsgrundlage
-- `STATE.md` — Phasen, Eckdaten, offene Blöcke, Restore-Checkliste
-- `DECISIONS.md` — 17 dokumentierte Entscheidungen
-- `runner/bench.py` — vollstaendiger Runner (YAML-Matrix, Resume, try/finally, SSE-TTFT, Bootstrap-KI, Mann-Whitney)
-- `runner/matrix.yaml` — 105 Tests (P1:27, P2:29, P3:40, P4:9), Hash in `runner/matrix.yaml.sha256`
-- `runner/mini_matrix.yaml` — 2×2 Mini-Test (noch nicht erfolgreich durchgelaufen)
-- `prompts/prompts.json` — 12 versionierte Prompts mit SHA-256
-- `configs/original-strata-iq3_s.json` + `.sha256` — Original-Backup
-- `CAPABILITIES.json` — wurde beim Abbruch noch nicht geschrieben
+- `STATE.md`: phases, verified facts, restore checklist
+- `DECISIONS.md`: 32 autonomous decisions with rationale
+- `runner/bench.py`: full runner (YAML matrix, resume, try/finally, SSE TTFT,
+  bootstrap CIs, Mann-Whitney, telemetry recorder integration)
+- `runner/matrix.yaml`: 120 tests, SHA-256 in `runner/matrix.yaml.sha256`
+- `runner/telemetry.py`: HotRod monitor recorder (`/metrics` + Record endpoint)
+- `runner/analyze.py`, `charts.py`, `more_charts.py`, `dashboard.py`,
+  `timeline_analysis.py`, `privacy.py`, `publish.py`
+- `prompts/prompts.json`: 15 hashed prompts
+- `configs/original-strata-iq3_s.json`, `configs/recommended-strata-iq3_s.json`
+- `telemetry/`, `results/`, `charts/` (35 PNGs), `dashboard/index.html`
 
-## Prompt für den neuen Agenten (kopieren)
-```
-Lies zuerst D:\strata-bench\HANDOFF.md, STATE.md und DECISIONS.md und fahre den
-Benchmark-Auftrag volautonom ab Phase 2 fort. Keine Rückfragen. Alle Rechte sind
-erteilt. Nach dem Reboot: nvidia-smi kurz testen; falls NVML wieder geht,
-probe_capabilities() im Runner nutzt jetzt /metrics + nvidia-smi mitTimeout.
-Danach Mini-Lauf (runner/mini_matrix.yaml) und bei Erfolg die Matrix starten.
-Am Ende Auswertung, Doku, GitHub-Repo und Release wie im Originalprompt.
-```
+## Already published
 
-## Wichtige Stolpersteine
-- Windows-Commit-Limit: nur ~4,2 GiB frei (Pagefile zu klein) — nicht ändern (Reboot nötig)
-- `--vram-reserve-mib 0` im Original → 0 MiB VRAM frei nach Load; WDDM-Overcommit
-- `/metrics` ist sehr groß (Residency-Rows) → nie roh in den Kontext laden, nur gefiltert
-- Kein API-Key nötig (`api_key: false`); Tailscale-IP `100.x.x.x` muss vor Publication geschwärzt werden
-- C: hat ~0,2 GB frei → TEMP/TMP bleibt auf `D:\strata-bench\tmp`
+`https://github.com/00fLausch/strata-hotrod-bench-rtx3090-96gb-windows`
+Release v1.0. If anything must be changed: edit in `D:\strata-bench`, copy to
+`D:\strata-bench\publish`, commit and push from there. Keep the commit author as
+`00fLausch <[EMAIL]>`.
+
+## Known pitfalls
+
+- Windows commit limit was tight (~4.2 GiB free at the start); do not change it.
+- `--vram-reserve-mib 0` leaves 0 MiB VRAM free and stalls the first request.
+- `/metrics` is large (residency rows); always filter it in scripts, never dump
+  it into the agent context.
+- No API key needed (`api_key: false`); redact Tailscale IPs and host names.
+- MTP cannot be disabled on the native IQ pack (`--spec >= 2` required).
+- Power-limit changes and Defender changes require admin rights (not available).

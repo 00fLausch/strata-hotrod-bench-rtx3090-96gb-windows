@@ -1,13 +1,17 @@
-# Beendete Hintergrundprozesse
+# Stopped background processes
 
-Ziel: saubere Messbedingungen. Diese Liste wird im Bericht und in der Abschlussmeldung wiederholt.
-OpenCode selbst, der Python-Tracker/Watcher, MCP-Helfer und ChatGPT wurden **nicht** beendet.
+Goal: clean measurement conditions. This list is included in the report and
+the final summary. OpenCode itself, the Python Tracker/watcher, MCP helpers and
+ChatGPT were **not** stopped.
 
-| Prozess | PID (bei Start) | Grund | Wieder starten? |
+| Process | PID (at start) | Reason | Restart manually? |
 |---|---|---|---|
-| Opera GX (Browser) | 76340, 73432 | Browser erzeugt GPU-/CPU-Last (explizit erlaubt) | Ja, manuell |
-| ComfyUI (python_embeded) | 30756 | GPU-lastender Hintergrunddienst (explizit genannt) | Ja, manuell |
-| UnrealEditor | 65704 | erhebliche GPU-/CPU-Last ("störend … usw."); **ungerettete Änderungen können verloren sein** | Ja, manuell |
-| LiveCodingConsole | 67844 | zu UnrealEditor gehörig | Ja, mit Unreal |
+| Opera GX (browser) | 76340, 73432, plus children | Browser creates GPU/CPU load (explicitly allowed) | Yes |
+| ComfyUI (python_embeded) | 30756 | GPU-heavy background service (explicitly listed) | Yes |
+| UnrealEditor | 65704 | Significant GPU/CPU load ("etc."); **unsaved changes may have been lost** | Yes, with LiveCoding |
+| LiveCodingConsole | 67844 | Belongs to UnrealEditor | Yes, with Unreal |
+| Sunshine / sunshinesvc | 8400, 5060 | Attempted; access denied (service), still running | Still running - no action needed |
 
-Zeitpunkt: 2026-11-23, Phase 2. AllePIDs wurden vor dem Beenden verifiziert.
+Time: 2026-11-23, phase 2 and after reboot. All PIDs were verified before the
+stop. After the reboot, Opera, ComfyUI and Unreal returned via autostart and
+were stopped again; Sunshine could not be stopped.

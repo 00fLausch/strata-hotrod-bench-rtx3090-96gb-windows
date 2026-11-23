@@ -41,7 +41,7 @@ def main() -> int:
     OUT.mkdir(parents=True, exist_ok=True)
     df = pd.read_csv(CSV) if CSV.exists() else pd.DataFrame()
     if df.empty:
-        print("keine Daten")
+        print("no data")
         return 0
     num = ["reserve_mib", "decode_median", "prefill_median", "ttft_median",
            "slots_final", "shrinks", "gpu_power_mean", "gpu_temp_max"]
@@ -90,7 +90,7 @@ def main() -> int:
         errbar(ax, d1["k"], d1["decode_median"], d1["decode_ci_lo"], d1["decode_ci_hi"],
                fmt="o-", color="#1f77b4", label="Decode")
         ax.set_xlabel("Prompt-Kontext (K-Tokens)"); ax.set_ylabel("Decode tok/s")
-        ax.set_title("D1: Kontextlaenge vs. Decode"); ax.legend()
+        ax.set_title("D1: Context length vs decode")
         fig.tight_layout(); fig.savefig(OUT / "d1_context_decode.png", dpi=160); plt.close(fig)
         made.append("d1_context_decode.png")
 
@@ -154,13 +154,13 @@ def main() -> int:
         fig.tight_layout(); fig.savefig(OUT / "a2_noise.png", dpi=160); plt.close(fig)
         made.append("a2_noise.png")
 
-    # 7) Experten im VRAM vs Decode (B2)
+    # 7) Resident experts vs Decode (B2)
     tv = df[df["experts_vram_end"].notna() & df["decode_median"].notna()] if "experts_vram_end" in df else df
     if not tv.empty:
         fig, ax = plt.subplots(figsize=(7, 4))
         ax.scatter(tv["experts_vram_end"], tv["decode_median"], s=22, alpha=0.7, color="#9467bd")
-        ax.set_xlabel("Experten im VRAM"); ax.set_ylabel("Decode tok/s")
-        ax.set_title("B2: Experten im VRAM vs. Decode")
+        ax.set_xlabel("Resident experts"); ax.set_ylabel("Decode tok/s")
+        ax.set_title("B2: Resident experts vs decode")
         fig.tight_layout(); fig.savefig(OUT / "b2_experts_decode.png", dpi=160); plt.close(fig)
         made.append("b2_experts_decode.png")
 
@@ -172,12 +172,12 @@ def main() -> int:
         d7 = d7.dropna(subset=["k"]).sort_values("k")
         fig, ax = plt.subplots(figsize=(7, 4))
         ax.plot(d7["k"], d7["prefill_median"], "o-", color="#17becf")
-        ax.set_xscale("log"); ax.set_xlabel("Prompt-Tokens (log)"); ax.set_ylabel("Prefill tok/s")
-        ax.set_title("D7: Prompt-Länge vs. Prefill (Fixkosten)")
+        ax.set_xscale("log"); ax.set_xlabel("Prompt tokens (log)"); ax.set_ylabel("Prefill tok/s")
+        ax.set_title("D7: Prompt length vs prefill (fixed cost)")
         fig.tight_layout(); fig.savefig(OUT / "d7_prompt_prefill.png", dpi=160); plt.close(fig)
         made.append("d7_prompt_prefill.png")
 
-    # 9) Telemetrie-Zeitreihen eines repraesentativen Laufs
+    # 9) Telemetry time seriesn eines repraesentativen Laufs
     tl_dir = ROOT / "telemetry"
     candidates = sorted(tl_dir.glob("*.jsonl")) if tl_dir.exists() else []
     if candidates:
@@ -187,14 +187,14 @@ def main() -> int:
             fig, axes = plt.subplots(3, 1, figsize=(9, 7), sharex=True)
             for ax, key, label, color in zip(
                     axes, ("decode_tok_s", "gpu_power_w", "resident_experts"),
-                    ("Decode tok/s", "Leistung (W)", "Experten im VRAM"),
+                    ("Decode tok/s", "Power (W)", "Resident experts"),
                     ("#1f77b4", "#d62728", "#2ca02c")):
                 xs = [r["ts"] - t0 for r in rows]
                 ys = [r.get(key) for r in rows]
                 ax.plot(xs, ys, color=color, lw=1)
                 ax.set_ylabel(label)
-            axes[-1].set_xlabel("Zeit seit Start (s)")
-            axes[0].set_title(f"Telemetrie-Zeitreihe: {candidates[0].stem}")
+            axes[-1].set_xlabel("Time since start (s)")
+            axes[0].set_title(f"Telemetry time series: {candidates[0].stem}")
             fig.tight_layout(); fig.savefig(OUT / "telemetry_timeseries.png", dpi=160); plt.close(fig)
             made.append("telemetry_timeseries.png")
 
@@ -214,8 +214,8 @@ def main() -> int:
         labels = [x[0][:18] for x in tl_sums[:10]]
         gaps = [x[1].get("gap_windows_lost", 0) for x in tl_sums[:10]]
         ax.bar(labels, gaps, color="#d62728", alpha=0.8)
-        ax.set_ylabel("Verlorene Timeline-Fenster")
-        ax.set_title("Timeline-Datenverlust (gap marker)")
+        ax.set_ylabel("Lost timeline windows")
+        ax.set_title("Timeline data loss (gap marker)")
         plt.xticks(rotation=45, ha="right")
         fig.tight_layout(); fig.savefig(OUT / "timeline_gaps.png", dpi=160); plt.close(fig)
         made.append("timeline_gaps.png")

@@ -28,7 +28,11 @@ def run(cmd, cwd=None, check=True):
 
 def build_stage() -> None:
     if STAGE.exists():
-        shutil.rmtree(STAGE)
+        def force_remove(func, path, _exc):
+            import os
+            os.chmod(path, 0o666)
+            func(path)
+        shutil.rmtree(STAGE, onerror=force_remove)
     for d in ("results", "charts", "runner", "prompts", "logs", "outreach", "configs",
               "telemetry", "dashboard"):
         (STAGE / d).mkdir(parents=True, exist_ok=True)

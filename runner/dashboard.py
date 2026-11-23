@@ -1,4 +1,4 @@
-"""Interaktive HTML-Übersicht (plotly) aller Ergebnisse + Telemetrie-Zeitreihen."""
+"""Interaktive HTML-Übersicht (plotly) aller Ergebnisse + Telemetry time seriesn."""
 from __future__ import annotations
 
 import json
@@ -17,7 +17,7 @@ CSV = ROOT / "results" / "summary.csv"
 def main() -> int:
     OUT.mkdir(parents=True, exist_ok=True)
     if not CSV.exists():
-        print("keine summary.csv")
+        print("no summary.csv")
         return 0
     df = pd.read_csv(CSV)
     for c in ("decode_median", "prefill_median", "ttft_median", "reserve_mib",
@@ -33,18 +33,18 @@ def main() -> int:
                        title="Decode tok/s vs. VRAM-Reserve", template="plotly_white")
         figs.append(("reserve", f))
         f = px.scatter(df, x="experts_vram_end", y="decode_median", color="block",
-                       title="Experten im VRAM vs. Decode", template="plotly_white")
+                       title="Resident experts vs decode", template="plotly_white")
         figs.append(("experts", f))
         f = px.bar(df.sort_values("decode_median", ascending=False).head(30),
                    x="id", y="decode_median", color="priority",
-                   title="Top 30 Läufe nach Decode", template="plotly_white")
+                   title="Top 30 runs by decode", template="plotly_white")
         figs.append(("top", f))
         if "ttft_median" in df:
             f = px.scatter(df, x="prefill_median", y="ttft_median", color="block",
                            title="Prefill vs. TTFT", template="plotly_white")
             figs.append(("ttft", f))
 
-    # Telemetrie-Zeitreihen (erster Lauf mit Daten)
+    # Telemetry time seriesn (erster Lauf mit Daten)
     tl_dir = ROOT / "telemetry"
     tls = sorted(tl_dir.glob("*.jsonl")) if tl_dir.exists() else []
     if tls:
@@ -63,7 +63,7 @@ def main() -> int:
             figs.append(("telemetry", fig))
 
     pieces = ["<html><head><meta charset='utf-8'><title>Strata-HotRod Benchmark</title></head><body>",
-              "<h1>Strata-HotRod Benchmark — interaktive Übersicht</h1>",
+              "<h1>Strata-HotRod Benchmark - interactive overview</h1>",
               "<p>Alle Werte aus <code>results/summary.csv</code> und <code>telemetry/*.jsonl</code>.</p>"]
     for name, fig in figs:
         pieces.append(f"<h2>{name}</h2>")

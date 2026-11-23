@@ -1,4 +1,4 @@
-"""Engpass-Analyse aus den rohen Decode-Timeline-Fenstern.
+"""Bottleneck analysis aus den rohen Decode-Timeline-Fenstern.
 
 Rechnet die gleiche Zusammenfassung wie app.js tlSummary():
 GPU alone / demand reads / waits on reads in flight / CPU experts in ms und %.
@@ -87,7 +87,7 @@ def main() -> int:
                label="waits on reads in flight", color="#ff7f0e")
         ax.bar(labels, cpu, bottom=[g + r + w for g, r, w in zip(gpu, reads, waits)],
                label="CPU experts", color="#2ca02c")
-        ax.set_ylabel("Anteil (%)"); ax.set_title("Engpass-Analyse (Decode-Timeline)")
+        ax.set_ylabel("Share (%)"); ax.set_title("Bottleneck analysis (Decode-Timeline)")
         ax.legend(fontsize=7); plt.xticks(rotation=45, ha="right")
         fig.tight_layout()
         fig.savefig(ROOT / "charts" / "bottleneck.png", dpi=160)

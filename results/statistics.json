@@ -52,7 +52,7 @@
       "tele_timeline_windows": null,
       "tele_timeline_gaps": null,
       "errors": 0,
-      "cause": "keine Telemetrie",
+      "cause": "no telemetry",
       "swaps_per_token": null
     },
     {
@@ -107,7 +107,7 @@
       "tele_timeline_windows": null,
       "tele_timeline_gaps": null,
       "errors": 0,
-      "cause": "keine Telemetrie",
+      "cause": "no telemetry",
       "swaps_per_token": null
     },
     {
@@ -162,7 +162,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 2.2 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 2.2 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -217,7 +217,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 2.1 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 2.1 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -272,7 +272,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 2.1 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 2.1 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -327,7 +327,7 @@
       "tele_timeline_windows": null,
       "tele_timeline_gaps": null,
       "errors": 0,
-      "cause": "keine Telemetrie",
+      "cause": "no telemetry",
       "swaps_per_token": null
     },
     {
@@ -382,7 +382,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 4.1 Swaps/Runde; 8530 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 4.1 Swaps/round; 8530 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -437,7 +437,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 3.8 Swaps/Runde; 8264 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 3.8 Swaps/round; 8264 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -492,7 +492,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 4.6 Swaps/Runde; 7998 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 4.6 Swaps/round; 7998 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -547,7 +547,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 2.8 Swaps/Runde; 8920 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 2.8 Swaps/round; 8920 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -602,7 +602,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 4.6 Swaps/Runde; 7733 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 4.6 Swaps/round; 7733 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -657,7 +657,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 4.6 Swaps/Runde; 7465 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 4.6 Swaps/round; 7465 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -712,7 +712,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 4.8 Swaps/Runde; 6940 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 4.8 Swaps/round; 6940 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -767,7 +767,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 2.6 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 2.6 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -822,7 +822,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 3.5 Swaps/Runde; 8696 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 3.5 Swaps/round; 8696 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -877,7 +877,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 3.0 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 3.0 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -932,7 +932,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt",
+      "cause": "GPU-bound: SSD path essentially unused",
       "swaps_per_token": null
     },
     {
@@ -987,7 +987,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 4.9 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 4.9 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -1042,7 +1042,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 7.5 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 7.5 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -1097,7 +1097,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 4.0 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 4.0 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -1152,7 +1152,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt",
+      "cause": "GPU-bound: SSD path essentially unused",
       "swaps_per_token": null
     },
     {
@@ -1207,7 +1207,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 4.8 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 4.8 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -1262,7 +1262,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 5.8 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 5.8 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -1317,7 +1317,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 5.5 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 5.5 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -1372,7 +1372,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 8.2 Swaps/Runde; 7998 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 8.2 Swaps/round; 7998 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -1427,7 +1427,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 8.0 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 8.0 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -1482,7 +1482,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 10.5 Swaps/Runde; 7998 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 10.5 Swaps/round; 7998 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -1537,7 +1537,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 7.1 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 7.1 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -1592,7 +1592,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 3.2 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 3.2 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -1647,7 +1647,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 1.7 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 1.7 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -1702,7 +1702,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 4.5 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 4.5 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -1757,7 +1757,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 8.0 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 8.0 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -1812,7 +1812,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt",
+      "cause": "GPU-bound: SSD path essentially unused",
       "swaps_per_token": null
     },
     {
@@ -1867,7 +1867,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 4.1 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 4.1 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -1922,7 +1922,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 6.1 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 6.1 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -1977,7 +1977,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt",
+      "cause": "GPU-bound: SSD path essentially unused",
       "swaps_per_token": null
     },
     {
@@ -2032,7 +2032,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 4.0 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 4.0 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -2087,7 +2087,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 3.8 Swaps/Runde; 8674 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 3.8 Swaps/round; 8674 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -2142,7 +2142,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 4.9 Swaps/Runde; 8585 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 4.9 Swaps/round; 8585 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -2197,7 +2197,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 4.2 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 4.2 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -2252,7 +2252,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 4.2 Swaps/Runde; 8836 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 4.2 Swaps/round; 8836 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -2307,7 +2307,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 4.3 Swaps/Runde; 8889 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 4.3 Swaps/round; 8889 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -2362,7 +2362,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 0.8 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 0.8 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -2417,7 +2417,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 0.8 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 0.8 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -2472,7 +2472,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 1.0 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 1.0 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -2527,7 +2527,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 3.8 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 3.8 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -2582,7 +2582,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 3.3 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 3.3 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -2637,7 +2637,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 3.3 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 3.3 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -2692,7 +2692,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 2.5 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 2.5 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -2747,7 +2747,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 3.0 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 3.0 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -2802,7 +2802,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 2.2 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 2.2 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -2857,7 +2857,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 5.9 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 5.9 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -2912,7 +2912,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 3.2 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 3.2 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -2967,7 +2967,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 2.1 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 2.1 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -3022,7 +3022,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 3.9 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 3.9 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -3077,7 +3077,7 @@
       "tele_timeline_windows": null,
       "tele_timeline_gaps": null,
       "errors": 0,
-      "cause": "keine Telemetrie",
+      "cause": "no telemetry",
       "swaps_per_token": null
     },
     {
@@ -3132,7 +3132,7 @@
       "tele_timeline_windows": null,
       "tele_timeline_gaps": null,
       "errors": 0,
-      "cause": "keine Telemetrie",
+      "cause": "no telemetry",
       "swaps_per_token": null
     },
     {
@@ -3187,7 +3187,7 @@
       "tele_timeline_windows": null,
       "tele_timeline_gaps": null,
       "errors": 0,
-      "cause": "keine Telemetrie",
+      "cause": "no telemetry",
       "swaps_per_token": null
     },
     {
@@ -3242,7 +3242,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 1.2 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 1.2 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -3297,7 +3297,7 @@
       "tele_timeline_windows": null,
       "tele_timeline_gaps": null,
       "errors": 0,
-      "cause": "keine Telemetrie",
+      "cause": "no telemetry",
       "swaps_per_token": null
     },
     {
@@ -3352,7 +3352,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 3.2 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 3.2 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -3407,7 +3407,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 3.7 Swaps/Runde; 8587 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 3.7 Swaps/round; 8587 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -3462,7 +3462,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 3.3 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 3.3 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -3517,7 +3517,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 3.0 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 3.0 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -3572,7 +3572,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 3.3 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 3.3 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -3627,7 +3627,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 3.6 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 3.6 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -3682,7 +3682,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 3.2 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 3.2 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -3737,7 +3737,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 3.4 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 3.4 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -3792,7 +3792,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 3.5 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 3.5 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -3847,7 +3847,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 3.5 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 3.5 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -3902,7 +3902,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 2.7 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 2.7 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -3957,7 +3957,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 3.5 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 3.5 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -4012,7 +4012,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 22.8 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 22.8 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -4067,7 +4067,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 3.3 Swaps/Runde; 8793 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 3.3 Swaps/round; 8793 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -4122,7 +4122,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 3.2 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 3.2 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -4177,7 +4177,7 @@
       "tele_timeline_windows": null,
       "tele_timeline_gaps": null,
       "errors": 0,
-      "cause": "keine Telemetrie",
+      "cause": "no telemetry",
       "swaps_per_token": null
     },
     {
@@ -4232,7 +4232,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 1.7 Swaps/Runde; 8793 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 1.7 Swaps/round; 8793 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -4287,7 +4287,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 3.4 Swaps/Runde; 8790 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 3.4 Swaps/round; 8790 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -4342,7 +4342,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 2.3 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 2.3 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -4397,7 +4397,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 2.8 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 2.8 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -4452,7 +4452,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 1.7 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 1.7 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -4507,7 +4507,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 2.9 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 2.9 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -4562,7 +4562,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 3.1 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 3.1 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -4617,7 +4617,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 2.6 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 2.6 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -4672,7 +4672,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 3.7 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 3.7 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -4727,7 +4727,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 4.5 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 4.5 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -4782,7 +4782,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 3.9 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 3.9 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -4837,7 +4837,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 3.9 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 3.9 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -4892,7 +4892,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 3.7 Swaps/Runde; 7998 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 3.7 Swaps/round; 7998 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -4947,7 +4947,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 3.7 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 3.7 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -5002,7 +5002,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 3.7 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 3.7 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -5057,7 +5057,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 4.2 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 4.2 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -5112,7 +5112,7 @@
       "tele_timeline_windows": null,
       "tele_timeline_gaps": null,
       "errors": 0,
-      "cause": "keine Telemetrie",
+      "cause": "no telemetry",
       "swaps_per_token": null
     },
     {
@@ -5167,7 +5167,7 @@
       "tele_timeline_windows": null,
       "tele_timeline_gaps": null,
       "errors": 0,
-      "cause": "keine Telemetrie",
+      "cause": "no telemetry",
       "swaps_per_token": null
     },
     {
@@ -5222,7 +5222,7 @@
       "tele_timeline_windows": null,
       "tele_timeline_gaps": null,
       "errors": 0,
-      "cause": "keine Telemetrie",
+      "cause": "no telemetry",
       "swaps_per_token": null
     },
     {
@@ -5277,7 +5277,7 @@
       "tele_timeline_windows": null,
       "tele_timeline_gaps": null,
       "errors": 0,
-      "cause": "keine Telemetrie",
+      "cause": "no telemetry",
       "swaps_per_token": null
     },
     {
@@ -5332,7 +5332,7 @@
       "tele_timeline_windows": null,
       "tele_timeline_gaps": null,
       "errors": 0,
-      "cause": "keine Telemetrie",
+      "cause": "no telemetry",
       "swaps_per_token": null
     },
     {
@@ -5387,7 +5387,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 4.0 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 4.0 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -5442,7 +5442,7 @@
       "tele_timeline_windows": null,
       "tele_timeline_gaps": null,
       "errors": 0,
-      "cause": "keine Telemetrie",
+      "cause": "no telemetry",
       "swaps_per_token": null
     },
     {
@@ -5497,7 +5497,7 @@
       "tele_timeline_windows": null,
       "tele_timeline_gaps": null,
       "errors": 0,
-      "cause": "keine Telemetrie",
+      "cause": "no telemetry",
       "swaps_per_token": null
     },
     {
@@ -5552,7 +5552,7 @@
       "tele_timeline_windows": null,
       "tele_timeline_gaps": null,
       "errors": 0,
-      "cause": "keine Telemetrie",
+      "cause": "no telemetry",
       "swaps_per_token": null
     },
     {
@@ -5607,7 +5607,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 1.7 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 1.7 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -5662,7 +5662,7 @@
       "tele_timeline_windows": null,
       "tele_timeline_gaps": null,
       "errors": 0,
-      "cause": "keine Telemetrie",
+      "cause": "no telemetry",
       "swaps_per_token": null
     },
     {
@@ -5717,7 +5717,7 @@
       "tele_timeline_windows": null,
       "tele_timeline_gaps": null,
       "errors": 0,
-      "cause": "keine Telemetrie",
+      "cause": "no telemetry",
       "swaps_per_token": null
     },
     {
@@ -5772,7 +5772,7 @@
       "tele_timeline_windows": null,
       "tele_timeline_gaps": null,
       "errors": 0,
-      "cause": "keine Telemetrie",
+      "cause": "no telemetry",
       "swaps_per_token": null
     },
     {
@@ -5827,7 +5827,7 @@
       "tele_timeline_windows": null,
       "tele_timeline_gaps": null,
       "errors": 0,
-      "cause": "keine Telemetrie",
+      "cause": "no telemetry",
       "swaps_per_token": null
     },
     {
@@ -5882,7 +5882,7 @@
       "tele_timeline_windows": null,
       "tele_timeline_gaps": null,
       "errors": 0,
-      "cause": "keine Telemetrie",
+      "cause": "no telemetry",
       "swaps_per_token": null
     },
     {
@@ -5937,7 +5937,7 @@
       "tele_timeline_windows": null,
       "tele_timeline_gaps": null,
       "errors": 0,
-      "cause": "keine Telemetrie",
+      "cause": "no telemetry",
       "swaps_per_token": null
     },
     {
@@ -5992,7 +5992,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 4.2 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 4.2 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -6047,7 +6047,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 3.5 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 3.5 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -6102,7 +6102,7 @@
       "tele_timeline_windows": null,
       "tele_timeline_gaps": null,
       "errors": 0,
-      "cause": "keine Telemetrie",
+      "cause": "no telemetry",
       "swaps_per_token": null
     },
     {
@@ -6157,7 +6157,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 3.9 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 3.9 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -6212,7 +6212,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 6.4 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 6.4 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -6267,7 +6267,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 3.1 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 3.1 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -6322,7 +6322,7 @@
       "tele_timeline_windows": 1821,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 3.6 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 3.6 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -6377,7 +6377,7 @@
       "tele_timeline_windows": null,
       "tele_timeline_gaps": null,
       "errors": 0,
-      "cause": "keine Telemetrie",
+      "cause": "no telemetry",
       "swaps_per_token": null
     },
     {
@@ -6432,7 +6432,7 @@
       "tele_timeline_windows": 0,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 3.6 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 3.6 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -6487,7 +6487,7 @@
       "tele_timeline_windows": 401,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 1.8 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 1.8 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -6542,7 +6542,7 @@
       "tele_timeline_windows": 244,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 2.4 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 2.4 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     },
     {
@@ -6597,7 +6597,7 @@
       "tele_timeline_windows": 210,
       "tele_timeline_gaps": 0,
       "errors": 0,
-      "cause": "GPU-bound: SSD-Pfad praktisch ungenutzt; 2.2 Swaps/Runde; 8791 Experten im VRAM",
+      "cause": "GPU-bound: SSD path essentially unused; 2.2 Swaps/round; 8791 Experts in VRAM",
       "swaps_per_token": null
     }
   ],
@@ -6611,7 +6611,7 @@
         78.322
       ],
       "p": 0.222222,
-      "verdict": "kein messbarer Unterschied"
+      "verdict": "no measurable difference"
     },
     "C1": {
       "n": 8,
@@ -6622,7 +6622,7 @@
         93.501
       ],
       "p": 1.0,
-      "verdict": "kein messbarer Unterschied"
+      "verdict": "no measurable difference"
     },
     "D1": {
       "n": 6,
@@ -6633,7 +6633,7 @@
         89.665
       ],
       "p": 1.0,
-      "verdict": "kein messbarer Unterschied"
+      "verdict": "no measurable difference"
     },
     "F1": {
       "n": 15,
@@ -6644,7 +6644,7 @@
         84.391
       ],
       "p": 1.0,
-      "verdict": "kein messbarer Unterschied"
+      "verdict": "no measurable difference"
     },
     "F2": {
       "n": 4,
@@ -6655,7 +6655,7 @@
         84.756
       ],
       "p": 1.0,
-      "verdict": "kein messbarer Unterschied"
+      "verdict": "no measurable difference"
     },
     "F3": {
       "n": 4,
@@ -6666,7 +6666,7 @@
         90.588
       ],
       "p": 0.8,
-      "verdict": "kein messbarer Unterschied"
+      "verdict": "no measurable difference"
     },
     "G2": {
       "n": 3,
@@ -6677,7 +6677,7 @@
         79.482
       ],
       "p": 0.5,
-      "verdict": "kein messbarer Unterschied"
+      "verdict": "no measurable difference"
     }
   },
   "b2_regression": {

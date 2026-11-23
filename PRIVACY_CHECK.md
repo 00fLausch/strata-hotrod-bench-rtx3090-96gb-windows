@@ -1,14 +1,15 @@
 # PRIVACY_CHECK
 
-Automatisierte Prüfung + Schwärzung vor der Veröffentlichung.
+Automated check and redaction before publication.
 
-## Schwärzungen (erster Durchlauf)
+## Redactions (first pass)
 
-| Datei | Treffer |
+| File | Matches |
 |---|---|
 | `publish\configs\original-strata-iq3_s.json` | tailscale_host=1, username=5 |
 | `publish\configs\recommended-strata-iq3_s.json` | tailscale_host=1, username=5 |
-| `publish\DECISIONS.md` | tailscale_ip=1 |
+| `publish\DECISIONS.md` | tailscale_ip=1, username=1 |
+| `publish\HANDOFF.md` | email=1 |
 | `publish\results\A1_current.json` | tailscale_host=1, username=7 |
 | `publish\results\A1_default.json` | tailscale_host=1, username=7 |
 | `publish\results\A2_noise_end.json` | tailscale_host=1, username=5 |
@@ -118,16 +119,16 @@ Automatisierte Prüfung + Schwärzung vor der Veröffentlichung.
 | `publish\runner\matrix.yaml` | username=9, personal_path=9 |
 | `publish\runner\privacy.py` | api_key=3 |
 | `publish\runner\publish.py` | username=3 |
-| `publish\STATE.md` | username=2, personal_path=2 |
+| `publish\STATE.md` | username=1, personal_path=1 |
 
-## Verbleibende Treffer nach Schwärzung
+## Remaining matches after redaction
 
-Keine. Veröffentlichung freigegeben (automatisierter Teil).
+None. Publication cleared (automated part).
 
-## Manuelle Prüfung
+## Manual checks
 
-- [ ] Keine Seriennummern in Logs/Screenshots
-- [ ] Keine privaten Pfade in Prompts/Antworten
-- [ ] Keine API-Keys in `.env`-Dateien oder Configs
-- [ ] Keine IP-Adressen in Diagrammen (Achsenbeschriftungen)
-- [ ] Keine personenbezogenen Antworttexte im Prompt-Satz
+- [ ] No serial numbers in logs/screenshots
+- [ ] No private paths in prompts/answers
+- [ ] No API keys in .env files or configs
+- [ ] No IP addresses in charts (axis labels)
+- [ ] No personal answer text in the prompt set

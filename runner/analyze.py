@@ -1,6 +1,6 @@
-"""Auswertung aller results/*.json -> summary.csv, statistics.json, RESULTS_TABLES.md.
+"""Analysis of all results/*.json -> summary.csv, statistics.json, RESULTS_TABLES.md.
 
-Robust gegen unterschiedliche Test-Arten (http, command, learning, concurrent, soak, error).
+Robust against unterschiedliche Test-Arten (http, command, learning, concurrent, soak, error).
 """
 from __future__ import annotations
 
@@ -139,7 +139,7 @@ def compare_groups(rows, block_a, block_b, key="decode_median"):
     b = [r[key] for r in rows if r["block"] == block_b and r[key] is not None
          and r["decode_ci_lo"] is not None and r["decode_ci_hi"] is not None]
     if len(a) < 2 or len(b) < 2:
-        return {"n_a": len(a), "n_b": len(b), "verdict": "zu wenig Daten"}
+        return {"n_a": len(a), "n_b": len(b), "verdict": "insufficient data"}
     try:
         _, p = scipy_stats.mannwhitneyu(a, b, alternative="two-sided")
     except ValueError:
@@ -153,11 +153,11 @@ def compare_groups(rows, block_a, block_b, key="decode_median"):
     bhi = max((r["decode_ci_hi"] for r in bis if r["decode_ci_hi"] is not None), default=None)
     overlap = not (alo is not None and blo is not None and (ahi < blo or bhi < alo))
     if not overlap:
-        verdict = "signifikant (KIs ueberlappen nicht)"
+        verdict = "significant (CIs do not overlap)"
     elif p is not None and p < 0.05:
-        verdict = "signifikant (Mann-Whitney p<0.05)"
+        verdict = "significant (Mann-Whitney p<0.05)"
     else:
-        verdict = "kein messbarer Unterschied"
+        verdict = "no measurable difference"
     return {"n_a": len(a), "n_b": len(b), "median_a": round(float(np.median(a)), 3),
             "median_b": round(float(np.median(b)), 3),
             "p": round(float(p), 6) if p is not None else None, "verdict": verdict}
@@ -179,15 +179,15 @@ def main() -> int:
         spr = r.get("swaps_per_round")
         ev = r.get("experts_vram_end")
         if disk is not None and disk < 50:
-            cause = "GPU-bound: SSD-Pfad praktisch ungenutzt"
+            cause = "GPU-bound: SSD path essentially unused"
         elif disk is not None:
-            cause = f"SSD-Pfad aktiv ({disk:.0f} MB/s Disk read)"
+            cause = f"SSD path active ({disk:.0f} MB/s Disk read)"
         else:
-            cause = "keine Telemetrie"
+            cause = "no telemetry"
         if spr is not None:
-            cause += f"; {spr:.1f} Swaps/Runde"
+            cause += f"; {spr:.1f} Swaps/round"
         if ev is not None:
-            cause += f"; {ev:.0f} Experten im VRAM"
+            cause += f"; {ev:.0f} Experts in VRAM"
         r["cause"] = cause
         try:
             if all(r.get(k) is not None for k in ("swaps_end", "swaps_start", "n", "output_tokens")):
@@ -201,7 +201,7 @@ def main() -> int:
         except (TypeError, ValueError):
             r["swaps_per_token"] = None
 
-    # B2: Regression Experten im VRAM / Swaps-pro-Token gegen Decode.
+    # B2: Regression Experts in VRAM / Swaps-pro-Token gegen Decode.
     b2 = {}
     x = [r["experts_vram_end"] for r in rows if r.get("experts_vram_end") is not None and r.get("decode_median") is not None]
     y = [r["decode_median"] for r in rows if r.get("experts_vram_end") is not None and r.get("decode_median") is not None]
@@ -217,7 +217,7 @@ def main() -> int:
         b2["swaps_per_token_vs_decode"] = {"n": len(x2), "r": round(float(rv), 3),
                                            "r2": round(float(rv ** 2), 3), "p": round(float(pv), 6),
                                            "slope": round(float(slope), 3)}
-    # Statistik: Gruppe B1 (Reserve-Sweep) gegen 512 als Referenz.
+    # Statistik: Gruppe B1 (Reserve-Sweep) gegen 512 als Reference.
     comparisons = {}
     by_block = defaultdict(list)
     for r in rows:
@@ -239,7 +239,7 @@ def main() -> int:
                 "n": len(vals), "median": round(float(np.median(vals)), 3),
                 "reference_median": base["decode_median"],
                 "ci95": [lo, hi], "p": round(float(p), 6) if p is not None else None,
-                "verdict": "signifikant" if (p is not None and p < 0.05) else "kein messbarer Unterschied",
+                "verdict": "significant" if (p is not None and p < 0.05) else "no measurable difference",
             }
 
     # CSV
@@ -252,15 +252,15 @@ def main() -> int:
     jdump({"rows": rows, "comparisons": comparisons, "b2_regression": b2, "seed": SEED},
           RESULTS / "statistics.json")
 
-    # Markdown-Tabellen
+    # Markdown tables
     lines = [
-        "# Ergebnis-Tabellen",
+        "# Result tables",
         "",
-        "Alle Werte: Median [IQR], 95-%-Bootstrap-KI. Decode tok/s aus Engine-Timings.",
+        "All values: median [IQR], bootstrap 95% CI. Decode tok/s from engine timings.",
     ]
     lines.extend([
         "",
-        "| Test | Block | Reserve | Decode Median [IQR] | 95%-KI | Prefill Median | TTFT | Slots auto→final | Shrinks | Experten im VRAM | Swaps/Runde | Ursache (Telemetrie) | n | Status |",
+        "| Test | Block | Reserve | Decode Median [IQR] | 95% CI | Prefill Median | TTFT | Slots auto→final | Shrinks | Experts in VRAM | Swaps/round | Cause (telemetry) | n | Status |",
         "|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|---:|---|",
     ])
     for r in rows:
@@ -276,46 +276,46 @@ def main() -> int:
             f"{fmt(r['experts_vram_end'],0)} | {fmt(r['swaps_per_round'],1)} | {r.get('cause','')} | "
             f"{fmt(r['n'],0)} | {r['status']} |"
         )
-    lines.extend(["", "## Signifikanz (gegen B1_reserve_512)", "",
-                  "| Block | n | Median | Referenz | 95%-KI | p | Urteil |", "|---|---:|---:|---:|---:|---:|---|"])
+    lines.extend(["", "## Significance (vs B1_reserve_512)", "",
+                  "| Block | n | Median | Reference | 95% CI | p | Verdict |", "|---|---:|---:|---:|---:|---:|---|"])
     for block, c in comparisons.items():
         lines.append(f"| {block} | {c['n']} | {c['median']} | {c['reference_median']} | "
                      f"{c['ci95']} | {fmt(c['p'],4)} | {c['verdict']} |")
-    lines.extend(["", "## B2: Regression (Telemetrie)", "",
-                  "| Beziehung | n | r | r² | p | Steigung |", "|---|---:|---:|---:|---:|---:|"])
+    lines.extend(["", "## B2: Regression (telemetry)", "",
+                  "| Relationship | n | r | r² | p | Slope |", "|---|---:|---:|---:|---:|---:|"])
     for k, v in b2.items():
         lines.append(f"| {k} | {v['n']} | {v['r']} | {v['r2']} | {fmt(v['p'],4)} | {v['slope']} |")
-    lines.extend(["", "## Arbeitshypothesen", ""])
+    lines.extend(["", "## Working hypotheses", ""])
     # (a) SSD-Pfad praktisch ungenutzt?
     disk = [r["tele_disk_read_mean"] for r in rows if r.get("tele_disk_read_mean") is not None]
-    a = ("bestätigt" if disk and np.median(disk) < 50 else "nicht bestätigt") if disk else "keine Daten"
-    lines.append(f"- **(a) SSD-Pfad ungenutzt (96 GB RAM):** {a} "
+    a = ("confirmed" if disk and np.median(disk) < 50 else "nicht confirmed") if disk else "no data"
+    lines.append(f"- **(a) SSD path unused (96 GB RAM):** {a} "
                  f"(Median Disk read {fmt(float(np.median(disk)) if disk else None,1)} MB/s)")
-    # (b) Experten im VRAM schwanken und beeinflussen Decode?
+    # (b) Experts in VRAM schwanken und beeinflussen Decode?
     ev = [r["experts_vram_end"] for r in rows if r.get("experts_vram_end") is not None]
-    b = ("bestätigt (Streuung > 500)" if ev and (max(ev) - min(ev)) > 500 else "nicht bestätigt") if ev else "keine Daten"
-    lines.append(f"- **(b) Experten im VRAM schwanken:** {b} "
+    b = ("confirmed (spread > 500)" if ev and (max(ev) - min(ev)) > 500 else "nicht confirmed") if ev else "no data"
+    lines.append(f"- **(b) Experts in VRAM schwanken:** {b} "
                  f"(min {fmt(min(ev) if ev else None,0)}, max {fmt(max(ev) if ev else None,0)})")
     corr = b2.get("experts_vs_decode", {}).get("r")
     if corr is not None:
-        lines.append(f"  - Korrelation mit Decode: r={corr} → " +
-                     ("Zusammenhang messbar" if b2["experts_vs_decode"]["p"] < 0.05 else "kein messbarer Zusammenhang"))
+        lines.append(f"  - Correlation with decode: r={corr} → " +
+                     ("measurable relationship" if b2["experts_vs_decode"]["p"] < 0.05 else "no measurable relationship"))
     # (c) kurze Prompts hohe Prefill-Fixkosten?
     short = [r["prefill_median"] for r in rows if r["block"] == "D7" and r.get("prefill_median")]
     longp = [r["prefill_median"] for r in rows if r["block"] in ("C1", "D1") and r.get("prefill_median")]
-    c = ("bestätigt" if short and longp and np.median(short) < 0.5 * np.median(longp)
-         else "nicht bestätigt") if short and longp else "keine Daten"
-    lines.append(f"- **(c) Prefill-Fixkosten bei kurzen Prompts:** {c} "
-                 f"(D7 Median {fmt(float(np.median(short)) if short else None,0)} vs. Lang {fmt(float(np.median(longp)) if longp else None,0)} tok/s)")
-    lines.extend(["", "## Auffälligkeiten", ""])
+    c = ("confirmed" if short and longp and np.median(short) < 0.5 * np.median(longp)
+         else "nicht confirmed") if short and longp else "no data"
+    lines.append(f"- **(c) Prefill fixed cost for short prompts:** {c} "
+                 f"(D7 Median {fmt(float(np.median(short)) if short else None,0)} vs. long {fmt(float(np.median(longp)) if longp else None,0)} tok/s)")
+    lines.extend(["", "## Notable observations", ""])
     # Automatische Hinweise
     stalls = [r for r in rows if r["warmup_wall"] and r["warmup_wall"] > 20]
     if stalls:
-        lines.append(f"- {len(stalls)} Test(s) mit Warm-up > 20 s (Stall nach Engine-Start): " +
+        lines.append(f"- {len(stalls)} test(s) with warm-up > 20 s (stall after engine start): " +
                      ", ".join(f"{r['id']} ({fmt(r['warmup_wall'],1)} s)" for r in stalls[:12]))
     failed = [r for r in rows if r["status"] != "complete"]
     if failed:
-        lines.append(f"- {len(failed)} nicht erfolgreiche Läufe: " +
+        lines.append(f"- {len(failed)} unsuccessful runs: " +
                      ", ".join(r["id"] for r in failed[:20]))
     (DOCS / "RESULTS_TABLES.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
     print(json.dumps({"rows": len(rows), "blocks": len(by_block),
