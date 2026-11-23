@@ -1,0 +1,116 @@
+{
+  "status": "complete",
+  "test_id": "A1_current",
+  "block": "A1",
+  "priority": 1,
+  "label": "strata bench run, aktuelle Config",
+  "spec": {
+    "args": {
+      "--vram-reserve-mib": 512
+    }
+  },
+  "config": {
+    "exe": "C:\\Users\\[USER]\\Desktop\\python.toolz\\apps\\strata\\engine\\strata.exe",
+    "args": [
+      "--pack",
+      "D:\\Strata-HotRod-data\\packs\\iq3_s",
+      "--native",
+      "D:\\Strata-HotRod-data\\models\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf",
+      "--ple-gguf",
+      "D:\\Strata-HotRod-data\\models\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf",
+      "--expert-profile",
+      "C:\\Users\\[USER]\\Desktop\\python.toolz\\apps\\strata\\data\\expert-profile.bin",
+      "--expert-cache",
+      "auto",
+      "--prefill",
+      "auto:16384",
+      "--spec",
+      "4",
+      "--spec-min-p",
+      "0.5",
+      "--mtp",
+      "D:\\Strata-HotRod-data\\mtp\\rt",
+      "--max-context",
+      "131072",
+      "--kv",
+      "int8",
+      "--kv-resident",
+      "32768",
+      "--vision",
+      "--vram-reserve-mib",
+      "512"
+    ],
+    "cwd": "C:\\Users\\[USER]\\Desktop\\python.toolz\\apps\\strata",
+    "tokenizer": "D:\\Strata-HotRod-data\\packs\\iq3_s\\tokenizer",
+    "model_name": "qwen3.8-flash-next-iq3_s",
+    "log": "C:\\Users\\[USER]\\Desktop\\python.toolz\\apps\\strata\\strata-iq3_s.log",
+    "lib_dirs": [
+      "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v13.3\\bin",
+      "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v13.3\\bin\\x64"
+    ],
+    "port": 8080,
+    "env": {
+      "STRATA_HC_Q8": "1",
+      "STRATA_ROUTE_TAIL_SKIP": "0",
+      "STRATA_RESIDENT_HEADROOM_GIB": "6",
+      "STRATA_ARENA_PIN_GIB": "40",
+      "STRATA_KVA": "1",
+      "STRATA_ROUTE_RESIDENT": "1e30",
+      "STRATA_ROUTE_RESIDENT_RANKS": "3-9",
+      "STRATA_ROUTE_RESIDENT_EDGE": "1",
+      "STRATA_SWAP2_MAX": "2",
+      "STRATA_SWAP2_GAP": "1",
+      "STRATA_KV_GROW_INIT": "4096",
+      "STRATA_LA_LEARN": "1"
+    },
+    "gpu": 0,
+    "gpus_asked": true,
+    "vision": {
+      "exe": "C:\\Users\\[USER]\\Desktop\\python.toolz\\apps\\strata\\engine\\strata-vision.exe",
+      "mmproj": "D:\\Strata-HotRod-data\\models\\IQ3_S\\mmproj-Qwen3.8-Flash-Next-BF16.gguf",
+      "model": "D:\\Strata-HotRod-data\\models\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf",
+      "gpu": true,
+      "max_tokens": 1024,
+      "elastic": true,
+      "vram_elastic": true
+    },
+    "vram_reserve_mib": 1792,
+    "ui_resource_baseline": {
+      "workers": 7,
+      "reserve": 2048,
+      "ramBudget": false,
+      "ramHeadroom": false
+    },
+    "ui_resource_profile": "performance",
+    "ui_vision_enabled": true,
+    "ui_vision_device": "cpu",
+    "sampling": {
+      "experimental_speed_projection": false
+    },
+    "mcp_servers": {},
+    "fit_max_tokens": true,
+    "aliases": [
+      "qwen3.8-flash-next-iq3_s",
+      "qwen3.8-flash-next-unsloth-ud-q4_k_xl"
+    ],
+    "allowed_hosts": [
+      "desktop-73clp7c.[TAILSCALE-HOST]"
+    ],
+    "vram_elastic": true
+  },
+  "command": [
+    "C:\\Users\\[USER]\\Desktop\\python.toolz\\apps\\strata\\.venv\\Scripts\\python.exe",
+    "C:\\Users\\[USER]\\Desktop\\python.toolz\\apps\\strata\\tools\\strata_bench.py",
+    "--url",
+    "http://127.0.0.1:8080",
+    "--out",
+    "D:\\strata-bench\\artifacts\\a1-current"
+  ],
+  "returncode": 0,
+  "error": null,
+  "duration_s": 85.61,
+  "output_file": "D:\\strata-bench\\logs\\A1_current.out.txt",
+  "output_tail": "Using the Strata server already running at http://127.0.0.1:8080.\nRunning the suite (about 3-10 minutes) ...\nwarming up (not measured) ...\n  calibrated: about 1.08 tokens per word\nchat: 3 short questions x 3 runs, up to 100 new tokens\n  run 1 q1: decode 88.5 tok/s, first token 0.435 s, 100 tokens\n  run 1 q2: decode 59.0 tok/s, first token 0.454 s, 100 tokens\n  run 1 q3: decode 64.7 tok/s, first token 0.394 s, 100 tokens\n  run 2 q1: decode 98.4 tok/s, first token 0.392 s, 100 tokens\n  run 2 q2: decode 72.4 tok/s, first token 0.343 s, 100 tokens\n  run 2 q3: decode 65.7 tok/s, first token 0.368 s, 100 tokens\n  run 3 q1: decode 106.2 tok/s, first token 0.381 s, 100 tokens\n  run 3 q2: decode 75.3 tok/s, first token 0.323 s, 100 tokens\n  run 3 q3: decode 70.4 tok/s, first token 0.369 s, 100 tokens\n4K prompt: 3 fresh prompts of about 4096 tokens, 24 new tokens\n  run 1: 4019 tokens, prompt 1973.5 tok/s (0 reused), first token 2.081 s\n  run 2: 4019 tokens, prompt 2100.3 tok/s (0 reused), first token 1.937 s\n  run 3: 4019 tokens, prompt 2112.0 tok/s (0 reused), first token 1.93 s\n16K prompt: 3 fresh prompts of about 16384 tokens, 24 new tokens\n  run 1: 16058 tokens, prompt 2236.6 tok/s (0 reused), first token 7.214 s\n  run 2: 16058 tokens, prompt 2550.3 tok/s (0 reused), first token 6.333 s\n  run 3: 16058 tokens, prompt 2549.9 tok/s (0 reused), first token 6.339 s\nagent: a session of 6 turns with four tools, x 3 runs\n  run 1 turn 0: prompt 609, reused 0, read 609, first token 0.992 s\n  run 1 turn 1: prompt 4476, reused 636, read 3840, first token 2.519 s\n  run 1 turn 2: prompt 6009, reused 4539, read 1470, first token 1.38 s\n  run 1 turn 3: prompt 9442, reused 6072, read 3370, first token 2.319 s\n  run 1 turn 4: prompt 12333, reused 9471, read 2862, first token 2.086 s\n  run 1 turn 5: prompt 15237, reused 12338, read 2899, first token 2.011 s\n  run 2 turn 0: prompt 609, reused 0, read 609, first token 0.883 s\n  run 2 turn 1: prompt 4479, reused 639, read 3840, first token 2.203 s\n  run 2 turn 2: prompt 6012, reused 4542, read 1470, first token 1.248 s\n  run 2 turn 3: prompt 9445, reused 6075, read 3370, first token 2.015 s\n  run 2 turn 4: prompt 12364, reused 9502, read 2862, first token 1.729 s\n  run 2 turn 5: prompt 15291, reused 12392, read 2899, first token 1.821 s\n  run 3 turn 0: prompt 609, reused 0, read 609, first token 0.879 s\n  run 3 turn 1: prompt 4472, reused 632, read 3840, first token 2.063 s\n  run 3 turn 2: prompt 6005, reused 4535, read 1470, first token 1.117 s\n  run 3 turn 3: prompt 9410, reused 6041, read 3369, first token 1.884 s\n  run 3 turn 4: prompt 12273, reused 9411, read 2862, first token 1.905 s\n  run 3 turn 5: prompt 15189, reused 12290, read 2899, first token 1.752 s\n\nResults (median, range over the runs):\n  chat decode tok/s                     72.40   (59.00 - 106.20, n=9)\n  chat first token (s)                   0.38   (0.32 - 0.45, n=9)\n  4K prompt tok/s                     2100.30   (1973.50 - 2112.00, n=3)\n  4K first token (s)                     1.94   (1.93 - 2.08, n=3)\n  16K prompt tok/s                    2549.90   (2236.60 - 2550.30, n=3)\n  16K first token (s)                    6.34   (6.33 - 7.21, n=3)\n  agent cache hit %                     69.60   (69.50 - 69.66, n=3)\n  agent re-read tokens/session           5.00   (5.00 - 5.00, n=3)\n  agent turn first token (s)             1.91   (1.12 - 2.52, n=15)\n  agent decode tok/s                    76.80   (39.80 - 107.50, n=15)\n\nReport: D:\\strata-bench\\artifacts\\a1-current\\2026-11-23-community-rtx-3090-qwen3-8-flash-next-iq3-s-2\\README.md\nShare it: open a pull request that adds the folder D:\\strata-bench\\artifacts\\a1-current\\2026-11-23-community-rtx-3090-qwen3-8-flash-next-iq3-s-2 (see docs/COMMUNITY_BENCHMARKS.md), or paste README.md into a GitHub issue. Home folders, user and host names and IP addresses are already replaced; read it once before you share it.\n",
+  "finished_at": "2026-11-23T16:16:51",
+  "attempts": 2
+}

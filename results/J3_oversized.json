@@ -1,0 +1,18 @@
+{
+  "status": "complete",
+  "test_id": "J3_oversized",
+  "block": "J3",
+  "priority": 4,
+  "label": "Zu grosser Prompt",
+  "mode": "oversized",
+  "observations": [
+    {
+      "case": "oversized_prompt",
+      "error": "HTTP 400: {\"error\": {\"type\": \"invalid_request_error\", \"message\": \"request exceeds the context window: prompt (184373 tokens) leaves no room to answer in the context (131072); requests are never truncated\"}}",
+      "wall_s": 0.078,
+      "finish": null
+    }
+  ],
+  "finished_at": "2026-11-23T23:55:27",
+  "attempts": 2
+}

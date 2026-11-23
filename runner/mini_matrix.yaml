@@ -1,0 +1,37 @@
+version: "0.3-mini"
+seed: 20261123
+defaults:
+  n: 2
+  prompts: [chat_de]
+  spec: {}
+  request:
+    temperature: 0.6
+    top_p: 0.95
+    top_k: 20
+    max_tokens: 96
+    seed: 20261123
+    reasoning_effort: none
+  ready_timeout: 2400
+  request_timeout: 600
+tests:
+  - id: MINI_reserve_512
+    block: MINI_1
+    priority: 1
+    label: Mini Nutzer-Einstellung (Reserve 512) — ZUERST
+    spec:
+      args:
+        --vram-reserve-mib: 512
+  - id: MINI_reserve_700
+    block: MINI_2
+    priority: 1
+    label: Mini Engine-Default (Reserve 700)
+    spec:
+      args:
+        --vram-reserve-mib: 700
+  - id: MINI_reserve_0
+    block: MINI_3
+    priority: 1
+    label: Mini Original (Reserve 0)
+    spec:
+      args:
+        --vram-reserve-mib: 0

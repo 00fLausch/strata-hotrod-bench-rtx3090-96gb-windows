@@ -1,0 +1,113 @@
+{
+  "status": "complete",
+  "test_id": "A3_official_vs_hotrod",
+  "block": "A3",
+  "priority": 4,
+  "label": "Offizielles Strata vs. HotRod",
+  "spec": {
+    "args": {
+      "--vram-reserve-mib": 512
+    }
+  },
+  "config": {
+    "exe": "C:\\Users\\[USER]\\Desktop\\python.toolz\\apps\\strata\\engine\\strata.exe",
+    "args": [
+      "--pack",
+      "D:\\Strata-HotRod-data\\packs\\iq3_s",
+      "--native",
+      "D:\\Strata-HotRod-data\\models\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf",
+      "--ple-gguf",
+      "D:\\Strata-HotRod-data\\models\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf",
+      "--expert-profile",
+      "C:\\Users\\[USER]\\Desktop\\python.toolz\\apps\\strata\\data\\expert-profile.bin",
+      "--expert-cache",
+      "auto",
+      "--prefill",
+      "auto:16384",
+      "--spec",
+      "4",
+      "--spec-min-p",
+      "0.5",
+      "--mtp",
+      "D:\\Strata-HotRod-data\\mtp\\rt",
+      "--max-context",
+      "131072",
+      "--kv",
+      "int8",
+      "--kv-resident",
+      "32768",
+      "--vision",
+      "--vram-reserve-mib",
+      "512"
+    ],
+    "cwd": "C:\\Users\\[USER]\\Desktop\\python.toolz\\apps\\strata",
+    "tokenizer": "D:\\Strata-HotRod-data\\packs\\iq3_s\\tokenizer",
+    "model_name": "qwen3.8-flash-next-iq3_s",
+    "log": "C:\\Users\\[USER]\\Desktop\\python.toolz\\apps\\strata\\strata-iq3_s.log",
+    "lib_dirs": [
+      "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v13.3\\bin",
+      "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v13.3\\bin\\x64"
+    ],
+    "port": 8080,
+    "env": {
+      "STRATA_HC_Q8": "1",
+      "STRATA_ROUTE_TAIL_SKIP": "0",
+      "STRATA_RESIDENT_HEADROOM_GIB": "6",
+      "STRATA_ARENA_PIN_GIB": "40",
+      "STRATA_KVA": "1",
+      "STRATA_ROUTE_RESIDENT": "1e30",
+      "STRATA_ROUTE_RESIDENT_RANKS": "3-9",
+      "STRATA_ROUTE_RESIDENT_EDGE": "1",
+      "STRATA_SWAP2_MAX": "2",
+      "STRATA_SWAP2_GAP": "1",
+      "STRATA_KV_GROW_INIT": "4096",
+      "STRATA_LA_LEARN": "1"
+    },
+    "gpu": 0,
+    "gpus_asked": true,
+    "vision": {
+      "exe": "C:\\Users\\[USER]\\Desktop\\python.toolz\\apps\\strata\\engine\\strata-vision.exe",
+      "mmproj": "D:\\Strata-HotRod-data\\models\\IQ3_S\\mmproj-Qwen3.8-Flash-Next-BF16.gguf",
+      "model": "D:\\Strata-HotRod-data\\models\\IQ3_S\\Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf",
+      "gpu": true,
+      "max_tokens": 1024,
+      "elastic": true,
+      "vram_elastic": true
+    },
+    "vram_reserve_mib": 1792,
+    "ui_resource_baseline": {
+      "workers": 7,
+      "reserve": 2048,
+      "ramBudget": false,
+      "ramHeadroom": false
+    },
+    "ui_resource_profile": "performance",
+    "ui_vision_enabled": true,
+    "ui_vision_device": "cpu",
+    "sampling": {
+      "experimental_speed_projection": false
+    },
+    "mcp_servers": {},
+    "fit_max_tokens": true,
+    "aliases": [
+      "qwen3.8-flash-next-iq3_s",
+      "qwen3.8-flash-next-unsloth-ud-q4_k_xl"
+    ],
+    "allowed_hosts": [
+      "desktop-73clp7c.[TAILSCALE-HOST]"
+    ],
+    "vram_elastic": true
+  },
+  "command": [
+    "C:\\Users\\[USER]\\Desktop\\python.toolz\\apps\\strata\\.venv\\Scripts\\python.exe",
+    "-c",
+    "print('SKIP: offizielle Strata-Engine nicht mit diesem Modell/Pack konfiguriert; manuell moeglich')"
+  ],
+  "returncode": 0,
+  "error": null,
+  "duration_s": 0.03,
+  "output_file": "D:\\strata-bench\\logs\\A3_official_vs_hotrod.out.txt",
+  "output_tail": "SKIP: offizielle Strata-Engine nicht mit diesem Modell/Pack konfiguriert; manuell moeglich\n",
+  "finished_at": "2026-11-23T22:12:10",
+  "attempts": 2
+}

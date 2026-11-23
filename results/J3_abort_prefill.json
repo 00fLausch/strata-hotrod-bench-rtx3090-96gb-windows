@@ -1,0 +1,21 @@
+{
+  "status": "complete",
+  "test_id": "J3_abort_prefill",
+  "block": "J3",
+  "priority": 4,
+  "label": "Abbruch mitten im Prefill",
+  "mode": "abort",
+  "observations": [
+    {
+      "case": "abort_mid_prefill",
+      "result": "client disconnected"
+    },
+    {
+      "case": "health_after_abort",
+      "loaded": true,
+      "status": "ok"
+    }
+  ],
+  "finished_at": "2026-11-23T23:57:38",
+  "attempts": 2
+}

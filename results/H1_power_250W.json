@@ -1,0 +1,11 @@
+{
+  "status": "failed",
+  "test_id": "H1_power_250W",
+  "block": "H1",
+  "reason": "Power-Limit nicht aenderbar (keine Admin-Rechte)",
+  "notes": [
+    "power_limit=250W gesetzt=False"
+  ],
+  "finished_at": "2026-11-23T21:50:28",
+  "attempts": 2
+}

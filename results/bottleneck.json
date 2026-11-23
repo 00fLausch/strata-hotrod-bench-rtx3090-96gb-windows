@@ -1,0 +1,47 @@
+[
+  {
+    "windows": 401,
+    "rows": 124512,
+    "total_ms": 9085.87,
+    "gpu_alone_ms": 12.073,
+    "gpu_alone_pct": 53.28,
+    "demand_reads_ms": 0.0,
+    "demand_reads_pct": 0.0,
+    "waits_inflight_ms": 0.0,
+    "waits_inflight_pct": 0.0,
+    "cpu_experts_ms": 10.585,
+    "cpu_experts_pct": 46.72,
+    "run_id": "TL_chat_de",
+    "gaps": 0
+  },
+  {
+    "windows": 244,
+    "rows": 61536,
+    "total_ms": 6209.21,
+    "gpu_alone_ms": 14.047,
+    "gpu_alone_pct": 55.2,
+    "demand_reads_ms": 0.0,
+    "demand_reads_pct": 0.0,
+    "waits_inflight_ms": 0.001,
+    "waits_inflight_pct": 0.0,
+    "cpu_experts_ms": 11.4,
+    "cpu_experts_pct": 44.8,
+    "run_id": "TL_coding",
+    "gaps": 0
+  },
+  {
+    "windows": 210,
+    "rows": 45552,
+    "total_ms": 5624.65,
+    "gpu_alone_ms": 14.153,
+    "gpu_alone_pct": 52.84,
+    "demand_reads_ms": 0.0,
+    "demand_reads_pct": 0.0,
+    "waits_inflight_ms": 0.0,
+    "waits_inflight_pct": 0.0,
+    "cpu_experts_ms": 12.631,
+    "cpu_experts_pct": 47.16,
+    "run_id": "TL_math_reasoning",
+    "gaps": 0
+  }
+]
