@@ -69,6 +69,7 @@ def build_stage() -> None:
                             ("dashboard/*.html", "dashboard"),
                             ("outreach/*.md", "outreach"),
                             ("outreach/community-report/*", "outreach/community-report")):
+        (STAGE / target).mkdir(parents=True, exist_ok=True)
         for f in ROOT.glob(pattern):
             if f.is_file():
                 shutil.copy2(f, STAGE / target / f.name)
