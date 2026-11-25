@@ -34,6 +34,10 @@ here; keep going.
 | D27 | 2026-11-23 | Speed runs without timeline Record; separate `TL_*` runs with `record_timeline=true` (n=3); overhead measured in T1 (n=8 per arm) | Prevents recording overhead from biasing tok/s |
 | D28 | 2026-11-23 | Added blocks T1, D6, D7, TL and B2 (regression analysis); 120 tests total | New priority list from the extended instruction |
 | D29 | 2026-11-23 | Power limit still not changeable (no admin); tokens/joule only at the fixed 350 W using telemetry power values | Same as D19, but with power time series available |
-| D30 | 2026-11-24 | `F2_mtp_off` and `I2_parity_mtp_off` marked "not possible": the native IQ pack requires `--spec >= 2`; engine exits immediately otherwise | Verified in engine log; fail-fast added to `wait_loaded` |
+| D30 | 2026-11-24 | Initially marked `F2_mtp_off`/`I2_parity_mtp_off` "not possible" when `--mtp`, `--spec` and `--spec-min-p` were removed together | Engine exited immediately with "native pack needs --spec T >= 2" |
 | D31 | 2026-11-24 | Commit author corrected to the `00fLausch` account after GitHub attributed the no-reply address to the older `[USER]` account | Repo owner and publishing account must match |
 | D32 | 2026-11-24 | Full report translated to English and expanded to 35 charts on user request | Publication target is the international Strata community and RepoChad |
+| D33 | 2026-11-25 | Re-ran the previously failed tests. D30 was too pessimistic: removing **only** `--mtp` while keeping `--spec 4` starts the engine. `F2_mtp_off` and `I2_parity_mtp_off` now complete | Verified in `logs/retry-probe*.log`; decode drops from ~82 to 50.2 tok/s without the draft layer, acceptance 0.36 vs 0.64 |
+| D34 | 2026-11-25 | `K4_vision_off` remains "not possible": removing `--vision` (with or without vision config changes) makes the engine exit immediately | Verified in two variants in `retry_probe.py` |
+| D35 | 2026-11-25 | `G3_defender` re-run with the runner bug fixed; it now fails cleanly with "no admin rights" instead of crashing | `nvidia-smi -pl` and Add-MpPreference both require elevation |
+| D36 | 2026-11-25 | Output parity at temperature 0 is **not bit-identical** between MTP draft on/off (different content hashes) | Draft acceptance changes the sampling path; documented as a measured difference |

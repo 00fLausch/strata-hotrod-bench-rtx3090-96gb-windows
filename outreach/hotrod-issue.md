@@ -33,6 +33,9 @@ The first request after load should not be blocked by WDDM overcommit.
   correlation with decode (r=0.03, p=0.76).
 - **Telemetry:** Record via `POST /v1/monitor/timeline` and `/metrics` polling
   caused no measurable overhead.
+- **MTP draft layer:** disabling only `--mtp` while keeping `--spec 4` starts
+  the engine and drops decode from about 82 to 50 tok/s (acceptance 0.64 ->
+  0.36). Removing `--spec` as well is not supported by the native IQ pack.
 
 Full data, runner and telemetry: see the repository URL in
 `outreach/repochad-message.md`.

@@ -138,7 +138,7 @@ for tid, (label, spec) in f1.items():
     add(tid, "F1", 2, label, spec=spec, prompts=SHORT, n=8)
 
 f2 = {
-    "F2_mtp_off": ("MTP/Speculative aus", {"args": {"--mtp": None, "--spec": None, "--spec-min-p": None}}),
+    "F2_mtp_off": ("MTP draft layer off (spec kept)", {"args": {"--mtp": None}}),
     "F2_spec_2": ("Spec-Verification 2", {"args": {"--spec": 2}}),
     "F2_spec_6": ("Spec-Verification 6", {"args": {"--spec": 6}}),
     "F2_temp_0": ("Temperatur 0", {}, {"temperature": 0.0}),
@@ -230,8 +230,8 @@ for watts in (350, 300, 250, 200):
 
 for tid, label, spec in (
     ("I2_parity_mtp_on", "Output-Paritaet MTP an", {}),
-    ("I2_parity_mtp_off", "Output-Paritaet MTP aus",
-     {"args": {"--mtp": None, "--spec": None, "--spec-min-p": None}}),
+    ("I2_parity_mtp_off", "Output parity MTP draft off",
+     {"args": {"--mtp": None}}),
 ):
     add(tid, "I2", 3, label, spec=spec, prompts=["chat_de", "math_reasoning"], n=5,
         request={"temperature": 0.0, "seed": 20261123})

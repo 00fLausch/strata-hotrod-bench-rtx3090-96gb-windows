@@ -600,12 +600,10 @@ tests:
 - id: F2_mtp_off
   block: F2
   priority: 2
-  label: MTP/Speculative aus
+  label: MTP draft layer off (spec kept)
   spec:
     args:
       --mtp: null
-      --spec: null
-      --spec-min-p: null
   prompts: *id001
   n: 8
   request: null
@@ -1131,12 +1129,10 @@ tests:
 - id: I2_parity_mtp_off
   block: I2
   priority: 3
-  label: Output-Paritaet MTP aus
+  label: Output parity MTP draft off
   spec:
     args:
       --mtp: null
-      --spec: null
-      --spec-min-p: null
   prompts:
   - chat_de
   - math_reasoning

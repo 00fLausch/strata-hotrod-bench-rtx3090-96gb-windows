@@ -79,7 +79,7 @@ All values: median [IQR], bootstrap 95% CI. Decode tok/s from engine timings.
 | F1_route_resident_off | F1 | 512 | 74.9 [72.1–81.2] | [73.4–79.7] | 177.3 | 0.55 | 6737→8791 | 0 | 8791 | 22.8 | GPU-bound: SSD path essentially unused; 22.8 Swaps/round; 8791 Experts in VRAM | 32 | complete |
 | F1_suffix_draft_0 | F1 | 512 | 84.4 [70.2–91.9] | [73.9–90.5] | 315.9 | 0.33 | 6738→8793 | 0 | 8793 | 3.3 | GPU-bound: SSD path essentially unused; 3.3 Swaps/round; 8793 Experts in VRAM | 32 | complete |
 | F1_swap2_off | F1 | 512 | 86.3 [73.6–98.9] | [76.6–97.2] | 335.7 | 0.31 | 6737→8791 | 0 | 8791 | 3.2 | GPU-bound: SSD path essentially unused; 3.2 Swaps/round; 8791 Experts in VRAM | 32 | complete |
-| F2_mtp_off | F2 | 512 | — — | — | — | — | —→— | — | — | — | no telemetry | 0 | failed |
+| F2_mtp_off | F2 | 512 | 50.2 [49.0–51.7] | [49.4–51.1] | 288.0 | 0.34 | 7154→9109 | 1 | 9109 | 0.6 | GPU-bound: SSD path essentially unused; 0.6 Swaps/round; 9109 Experts in VRAM | 32 | complete |
 | F2_spec_2 | F2 | 512 | 76.5 [72.5–79.3] | [73.7–78.9] | 342.5 | 0.30 | 6738→8793 | 0 | 8793 | 1.7 | GPU-bound: SSD path essentially unused; 1.7 Swaps/round; 8793 Experts in VRAM | 32 | complete |
 | F2_spec_6 | F2 | 512 | 72.6 [68.2–90.3] | [70.7–86.5] | 342.5 | 0.31 | 6736→8790 | 0 | 8790 | 3.4 | GPU-bound: SSD path essentially unused; 3.4 Swaps/round; 8790 Experts in VRAM | 32 | complete |
 | F2_temp_0 | F2 | 512 | 84.8 [77.2–96.0] | [80.1–91.1] | 338.6 | 0.31 | 6737→8791 | 0 | 8791 | 2.3 | GPU-bound: SSD path essentially unused; 2.3 Swaps/round; 8791 Experts in VRAM | 32 | complete |
@@ -96,7 +96,7 @@ All values: median [IQR], bootstrap 95% CI. Decode tok/s from engine timings.
 | G2_ram_limit_30720 | G2 | 512 | 76.6 [64.2–85.6] | [64.7–84.3] | 306.1 | 0.34 | 6737→8791 | 0 | 8791 | 3.7 | GPU-bound: SSD path essentially unused; 3.7 Swaps/round; 8791 Experts in VRAM | 20 | complete |
 | G2_ram_limit_49152 | G2 | 512 | 79.5 [65.4–89.1] | [67.0–88.4] | 298.3 | 0.34 | 6737→8791 | 0 | 8791 | 3.7 | GPU-bound: SSD path essentially unused; 3.7 Swaps/round; 8791 Experts in VRAM | 20 | complete |
 | G2_ram_limit_65536 | G2 | 512 | 79.1 [68.8–91.2] | [70.0–89.8] | 307.1 | 0.34 | 6737→8791 | 0 | 8791 | 4.2 | GPU-bound: SSD path essentially unused; 4.2 Swaps/round; 8791 Experts in VRAM | 20 | complete |
-| G3_defender |  | 512 | — — | — | — | — | —→— | — | — | — | no telemetry | 0 | failed |
+| G3_defender | G4 | 512 | — — | — | — | — | —→— | — | — | — | no telemetry | 0 | failed |
 | H1_power_200W | H1 | 512 | — — | — | — | — | —→— | — | — | — | no telemetry | 0 | failed |
 | H1_power_250W | H1 | 512 | — — | — | — | — | —→— | — | — | — | no telemetry | 0 | failed |
 | H1_power_300W | H1 | 512 | — — | — | — | — | —→— | — | — | — | no telemetry | 0 | failed |
@@ -104,7 +104,7 @@ All values: median [IQR], bootstrap 95% CI. Decode tok/s from engine timings.
 | H2_power_plan | H2 | 512 | 86.4 [71.0–93.9] | [72.9–93.1] | 328.7 | 0.33 | 6737→8791 | 0 | 8791 | 4.0 | GPU-bound: SSD path essentially unused; 4.0 Swaps/round; 8791 Experts in VRAM | 20 | complete |
 | I1_needle_128k | I1 | 512 | — — | — | — | — | —→— | — | — | — | no telemetry | 0 | complete |
 | I1_needle_32k | I1 | 512 | — — | — | — | — | —→— | — | — | — | no telemetry | 0 | complete |
-| I2_parity_mtp_off | I2 | 512 | — — | — | — | — | —→— | — | — | — | no telemetry | 0 | failed |
+| I2_parity_mtp_off | I2 | 512 | 52.6 [50.7–54.2] | [50.5–54.5] | 294.4 | 0.34 | 7154→9112 | 1 | 9112 | 0.5 | GPU-bound: SSD path essentially unused; 0.5 Swaps/round; 9112 Experts in VRAM | 10 | complete |
 | I2_parity_mtp_on | I2 | 512 | 77.3 [67.9–92.5] | [66.9–93.6] | 311.6 | 0.33 | 6737→8791 | 0 | 8791 | 1.7 | GPU-bound: SSD path essentially unused; 1.7 Swaps/round; 8791 Experts in VRAM | 10 | complete |
 | J1_parallel_1 | J1 | 512 | — — | — | — | — | —→— | — | — | — | no telemetry | 5 | complete |
 | J1_parallel_2 | J1 | 512 | — — | — | — | — | —→— | — | — | — | no telemetry | 5 | complete |
@@ -133,7 +133,7 @@ All values: median [IQR], bootstrap 95% CI. Decode tok/s from engine timings.
 | C1 | 8 | 81.454 | 82.203 | [51.965, 93.501] | 1.0000 | no measurable difference |
 | D1 | 6 | 79.065 | 82.203 | [53.026, 89.665] | 1.0000 | no measurable difference |
 | F1 | 15 | 81.26 | 82.203 | [78.658, 84.391] | 1.0000 | no measurable difference |
-| F2 | 4 | 80.251 | 82.203 | [72.621, 84.756] | 1.0000 | no measurable difference |
+| F2 | 5 | 76.461 | 82.203 | [50.198, 84.756] | 1.0000 | no measurable difference |
 | F3 | 4 | 85.934 | 82.203 | [78.069, 90.588] | 0.8000 | no measurable difference |
 | G2 | 3 | 79.102 | 82.203 | [76.621, 79.482] | 0.5000 | no measurable difference |
 
@@ -141,16 +141,16 @@ All values: median [IQR], bootstrap 95% CI. Decode tok/s from engine timings.
 
 | Relationship | n | r | r² | p | Slope |
 |---|---:|---:|---:|---:|---:|
-| experts_vs_decode | 92 | 0.032 | 0.001 | 0.7592 | 0.00121 |
+| experts_vs_decode | 94 | -0.037 | 0.001 | 0.7238 | -0.00144 |
 
 ## Working hypotheses
 
-- **(a) SSD path unused (96 GB RAM):** confirmed (Median Disk read 4.0 MB/s)
-- **(b) Experts in VRAM schwanken:** confirmed (spread > 500) (min 6940, max 8920)
-  - Correlation with decode: r=0.032 → no measurable relationship
+- **(a) SSD path unused (96 GB RAM):** confirmed (Median Disk read 3.9 MB/s)
+- **(b) Experts in VRAM schwanken:** confirmed (spread > 500) (min 6940, max 9112)
+  - Correlation with decode: r=-0.037 → no measurable relationship
 - **(c) Prefill fixed cost for short prompts:** nicht confirmed (D7 Median 1141 vs. long 2043 tok/s)
 
 ## Notable observations
 
 - 9 test(s) with warm-up > 20 s (stall after engine start): C1_auto_16384_128k (53.2 s), C1_auto_32768_128k (69.2 s), C1_auto_4096_128k (53.5 s), C1_auto_8192_128k (53.4 s), C3_decode_after_128k (54.7 s), D1_ctx_128k (53.2 s), D1_ctx_200k (87.8 s), D1_ctx_64k (31.8 s), D5_multiturn_long_128k (54.0 s)
-- 8 unsuccessful runs: F2_mtp_off, G3_defender, H1_power_200W, H1_power_250W, H1_power_300W, H1_power_350W, I2_parity_mtp_off, K4_vision_off
+- 6 unsuccessful runs: G3_defender, H1_power_200W, H1_power_250W, H1_power_300W, H1_power_350W, K4_vision_off

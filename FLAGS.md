@@ -38,9 +38,11 @@ listed. "Default" is the engine default, not necessarily the active config.
 | `--coupled-draft` / `--no-coupled-draft` | on | Coupled draft sampling. |
 | `--mtp-q4 all\|proj\|head` | off | 4-bit draft projections/head. |
 
-**Note:** the native IQ3_S pack requires `--spec >= 2`. Removing `--spec`/`--mtp`
-makes the engine exit immediately with "native pack needs --native SHARD1,
---spec T (T >= 2) and --prefill CHUNK". MTP-off tests are therefore "not possible".
+**Note:** the native IQ3_S pack requires `--spec >= 2`. Removing `--spec`
+together with `--mtp` makes the engine exit immediately. Removing **only**
+`--mtp` (keeping `--spec`) works: the draft layer is disabled, suffix drafts
+remain. Measured effect: decode drops from about 82 to 50 tok/s and acceptance
+from 0.64 to 0.36 - the draft layer is the single largest speed contributor.
 
 ## Expert routing (HotRod-specific)
 

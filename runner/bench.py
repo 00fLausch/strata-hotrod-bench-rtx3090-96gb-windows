@@ -734,7 +734,7 @@ def run_special_test(test: dict, base: dict, component: dict, caps: dict) -> dic
                             f"Add-MpPreference -ExclusionPath '{path}'; if($?){{'OK'}}"],
                            capture_output=True, text=True, timeout=120)
         ok = "OK" in r.stdout
-        notes.append(f"Defender-Ausnahme gesetzt={ok}: {redact(r.stderr.strip()[:200])}")
+        notes.append(f"Defender exclusion set={ok}: {redact((r.stderr or '').strip()[:200])}")
         if not ok:
             return {"status": "failed", "test_id": test["id"], "block": test.get("block"),
                     "reason": "Defender-Ausnahme nicht automatisierbar (keine Admin-Rechte)",

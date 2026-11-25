@@ -32,7 +32,10 @@ Agent: fully autonomous, no follow-up questions; decisions in `DECISIONS.md`.
 - Recommended config: `configs/recommended-strata-iq3_s.json` (reserve 512)
 - GPU: RTX 3090 24 GB, driver 591.74, power limit 350 W, PCIe 4.0 x16 under load
 - Standard protocol result: chat 62.4 tok/s, 4K prefill 1877 tok/s, 16K 2396 tok/s
-- Key finding: reserve 0 -> 73.6 s warm-up stall; 512 -> 2.2 s
+- Key findings: reserve 0 -> 73.6 s warm-up stall vs 512 -> 2.2 s; MTP draft
+  layer off -> 50.2 tok/s vs ~82 with draft (acceptance 0.36 vs 0.64)
+- 114/120 tests complete; 6 not automatable (4x H1 power, G3 Defender,
+  K4 vision-off) due to missing admin rights or unsupported flags
 
 ## Results
 

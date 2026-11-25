@@ -89,8 +89,13 @@ active configuration on the machine was **not** overwritten.
   requires `--spec >= 2`).
 - **Trend:** 512 MiB slightly faster than 700/2048/3072; chunk 32768 faster at
   32K; slight decline over 90 minutes.
-- **No measurable effect:** all individual F1 switches, F2 variants, RAM
-  limits, resident-expert count vs decode (r=0.03, p=0.76).
+- **No measurable effect:** all individual F1 switches, RAM limits,
+  resident-expert count vs decode (r=0.03, p=0.76).
+- **Strong effect, now measured:** disabling only the MTP draft layer (keeping
+  `--spec 4`) drops decode from about 82 to **50.2 tok/s** and acceptance from
+  0.64 to **0.36**. Outputs at temperature 0 are not bit-identical between the
+  two modes. The earlier "MTP off not possible" note was wrong and has been
+  corrected; removing `--spec` as well is what breaks the engine.
 
 ## Methodology
 
@@ -105,11 +110,11 @@ active configuration on the machine was **not** overwritten.
 
 ## Limits and skipped tests
 
-One GPU, one quantization, one model. Power-limit changes were impossible
-(no admin), so H1 (200/250/300/350 W), H2 and the Defender test are documented
-as "not automatable". `F2_mtp_off` and `I2_parity_mtp_off` are **not possible**:
-the native IQ pack requires `--spec >= 2`. `K4_vision_off` failed to start.
-Manual only: HAGS, cold boot, XMP/RAM clock, CUDA Sysmem Fallback Policy.
+One GPU, one quantization, one model. Power-limit changes (H1) and the Defender
+test (G3) were impossible without admin rights. `K4_vision_off` remains not
+possible: removing `--vision` makes the engine exit immediately. Manual only:
+HAGS, cold boot, XMP/RAM clock, CUDA Sysmem Fallback Policy. All other tests,
+including the two MTP-off variants, were completed.
 
 ## Reproduction
 

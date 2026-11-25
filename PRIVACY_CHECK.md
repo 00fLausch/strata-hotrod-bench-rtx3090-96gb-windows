@@ -81,6 +81,7 @@ Automated check and redaction before publication.
 | `publish\results\F1_route_resident_off.json` | tailscale_host=1, username=5 |
 | `publish\results\F1_suffix_draft_0.json` | tailscale_host=1, username=5 |
 | `publish\results\F1_swap2_off.json` | tailscale_host=1, username=5 |
+| `publish\results\F2_mtp_off.json` | tailscale_host=1, username=5 |
 | `publish\results\F2_spec_2.json` | tailscale_host=1, username=5 |
 | `publish\results\F2_spec_6.json` | tailscale_host=1, username=5 |
 | `publish\results\F2_temp_0.json` | tailscale_host=1, username=5 |
@@ -100,6 +101,7 @@ Automated check and redaction before publication.
 | `publish\results\H2_power_plan.json` | tailscale_host=1, username=5 |
 | `publish\results\I1_needle_128k.json` | tailscale_host=1, username=7 |
 | `publish\results\I1_needle_32k.json` | tailscale_host=1, username=7 |
+| `publish\results\I2_parity_mtp_off.json` | tailscale_host=1, username=5 |
 | `publish\results\I2_parity_mtp_on.json` | tailscale_host=1, username=5 |
 | `publish\results\K1_vram_elastic_off.json` | tailscale_host=1, username=5 |
 | `publish\results\K2_config_reserve_2048.json` | tailscale_host=1, username=5 |

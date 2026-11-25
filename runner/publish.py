@@ -32,7 +32,13 @@ def build_stage() -> None:
             import os
             os.chmod(path, 0o666)
             func(path)
-        shutil.rmtree(STAGE, onerror=force_remove)
+        for child in STAGE.iterdir():
+            if child.name == ".git":
+                continue  # keep repository history
+            if child.is_dir():
+                shutil.rmtree(child, onerror=force_remove)
+            else:
+                child.unlink()
     for d in ("results", "charts", "runner", "prompts", "logs", "outreach", "configs",
               "telemetry", "dashboard"):
         (STAGE / d).mkdir(parents=True, exist_ok=True)
@@ -60,7 +66,9 @@ def build_stage() -> None:
                             ("runner/matrix.yaml", "runner"), ("runner/mini_matrix.yaml", "runner"),
                             ("prompts/*", "prompts"), ("configs/*.json", "configs"),
                             ("telemetry/*.jsonl", "telemetry"), ("telemetry/*.json", "telemetry"),
-                            ("dashboard/*.html", "dashboard")):
+                            ("dashboard/*.html", "dashboard"),
+                            ("outreach/*.md", "outreach"),
+                            ("outreach/community-report/*", "outreach/community-report")):
         for f in ROOT.glob(pattern):
             if f.is_file():
                 shutil.copy2(f, STAGE / target / f.name)

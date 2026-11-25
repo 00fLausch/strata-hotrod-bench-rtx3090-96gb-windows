@@ -1,7 +1,11 @@
 {
   "status": "failed",
   "test_id": "G3_defender",
-  "error": "'NoneType' object has no attribute 'strip'",
-  "traceback": "Traceback (most recent call last):\n  File \"D:\\strata-bench\\runner\\bench.py\", line 1162, in main\n    if old.get(\"status\") == \"complete\":\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\strata-bench\\runner\\bench.py\", line 978, in run_test\n    \"mode\": mode, \"observations\": observations,\n       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\strata-bench\\runner\\bench.py\", line 726, in run_special_test\n    notes.append(f\"power_limit={watts}W gesetzt={ok}\")\n                                                       \nAttributeError: 'NoneType' object has no attribute 'strip'\n",
+  "block": "G4",
+  "reason": "Defender-Ausnahme nicht automatisierbar (keine Admin-Rechte)",
+  "notes": [
+    "Defender exclusion set=False: "
+  ],
+  "finished_at": "2026-11-25T22:31:18",
   "attempts": 2
 }
