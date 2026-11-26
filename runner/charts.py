@@ -82,9 +82,8 @@ def main() -> int:
     # 2) Kontext-Sweep
     d1 = df[df["block"] == "D1"]
     if not d1.empty and d1["decode_median"].notna().any():
-        order = {"long_4k": 4, "long_16k": 16, "long_32k": 32, "long_64k": 64,
-                 "long_128k": 128, "long_200k": 200}
-        d1 = d1.assign(k=d1["id"].map(lambda s: next((v for k, v in order.items() if k in str(s)), np.nan)))
+        order = {"4k": 4, "16k": 16, "32k": 32, "64k": 64, "128k": 128, "200k": 200}
+        d1 = d1.assign(k=d1["id"].map(lambda s: next((v for k, v in order.items() if str(s).endswith(k)), np.nan)))
         d1 = d1.dropna(subset=["k"]).sort_values("k")
         fig, ax = plt.subplots(figsize=(7, 4))
         errbar(ax, d1["k"], d1["decode_median"], d1["decode_ci_lo"], d1["decode_ci_hi"],
@@ -213,7 +212,11 @@ def main() -> int:
         fig, ax = plt.subplots(figsize=(8, 4))
         labels = [x[0][:18] for x in tl_sums[:10]]
         gaps = [x[1].get("gap_windows_lost", 0) for x in tl_sums[:10]]
-        ax.bar(labels, gaps, color="#d62728", alpha=0.8)
+        if any(gaps):
+            ax.bar(labels, gaps, color="#d62728", alpha=0.9)
+        else:
+            ax.bar(labels, [1] * len(labels), color="#2ca02c", alpha=0.9)
+            ax.set_ylabel("0 lost windows (all runs complete)")
         ax.set_ylabel("Lost timeline windows")
         ax.set_title("Timeline data loss (gap marker)")
         plt.xticks(rotation=45, ha="right")

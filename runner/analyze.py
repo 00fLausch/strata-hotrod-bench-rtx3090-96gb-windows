@@ -114,6 +114,7 @@ def extract(d):
         "pcie_gen": facts.get("pcie_gen"),
         "warmup_wall": g(d, "warmup", "wall_s"),
         "request_tokens": med(d, "prompt_tokens"),
+        "output_tokens": med(d, "output_tokens"),
         "experts_vram_start": g(d, "telemetry", "experts", "resident_start"),
         "experts_vram_end": g(d, "telemetry", "experts", "resident_end"),
         "experts_total": g(d, "telemetry", "experts", "total"),

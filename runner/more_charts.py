@@ -63,10 +63,8 @@ def chart(name, title, xlabel, ylabel, fn):
 # 1) Reserve vs TTFT
 b1 = df[df["block"].astype(str).str.startswith("B1")].sort_values("reserve_mib")
 chart("b1_reserve_ttft.png", "VRAM reserve vs time to first token", "Reserve (MiB)", "TTFT (s)",
-      lambda ax: (ax.errorbar(b1["reserve_mib"], b1["ttft_median"],
-                              yerr=[b1["ttft_median"] - b1["ttft_median"],
-                                    b1["ttft_median"] - b1["ttft_median"]], fmt="o-", color="#ff7f0e"),
-                  ax.plot(b1["reserve_mib"], b1["ttft_median"], "o-", color="#ff7f0e")) if not b1.empty else None)
+      lambda ax: ax.plot(b1["reserve_mib"], b1["ttft_median"], "o-", lw=2,
+                         markersize=7, color="#ff7f0e") if not b1.empty else None)
 
 # 2) Reserve vs expert slots and cache size
 chart("b1_reserve_experts.png", "VRAM reserve vs expert slots", "Reserve (MiB)", "Expert slots",
@@ -81,8 +79,16 @@ blocks = ["B1", "B1_0", "C1", "D1", "F1", "F2", "F3", "T1_2"]
 boxdata = [df[df["block"] == b]["decode_median"].dropna().values for b in blocks]
 boxdata = [b for b in boxdata if len(b) >= 2]
 if boxdata:
-    chart("decode_distribution.png", "Decode throughput distribution by block", "Block", "Decode (tok/s)",
-          lambda ax: ax.boxplot(boxdata, tick_labels=[b for b in blocks if (df[df["block"] == b]["decode_median"].notna().sum() >= 2)]))
+    def _box(ax):
+        bp = ax.boxplot(boxdata, tick_labels=[b for b in blocks if (df[df["block"] == b]["decode_median"].notna().sum() >= 2)],
+                        patch_artist=True, widths=0.6)
+        colors = ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b", "#17becf", "#e377c2"]
+        for patch, c in zip(bp["boxes"], colors * 2):
+            patch.set_facecolor(c)
+            patch.set_alpha(0.75)
+        for median in bp["medians"]:
+            median.set_color("black")
+    chart("decode_distribution.png", "Decode throughput distribution by block", "Block", "Decode (tok/s)", _box)
 
 # 5) Decode vs TTFT scatter
 sc = df[df["decode_median"].notna() & df["ttft_median"].notna()]
@@ -102,8 +108,8 @@ chart("d1_context_ttft.png", "Context length vs time to first token", "Context (
 
 # 8) Prompt length vs TTFT
 d7 = df[df["block"] == "D7"]
-o7 = {"chat_de": 84, "len_500": 500, "len_2k": 2000, "len_8k": 8000}
-d7 = d7.assign(k=d7["id"].astype(str).map(lambda s: next((v for key, v in o7.items() if key in s), np.nan))).dropna(subset=["k"]).sort_values("k")
+o7 = {"84": 84, "500": 500, "2k": 2000, "8k": 8000}
+d7 = d7.assign(k=d7["id"].astype(str).map(lambda s: o7.get(str(s).replace("D7_len_", ""), np.nan))).dropna(subset=["k"]).sort_values("k")
 chart("d7_prompt_ttft.png", "Prompt length vs time to first token", "Prompt tokens (log)", "TTFT (s)",
       lambda ax: (ax.plot(d7["k"], d7["ttft_median"], "o-", color="#ff7f0e"), ax.set_xscale("log")) if not d7.empty else None)
 
@@ -139,8 +145,11 @@ if not base.empty:
     f1 = df[df["block"] == "F1"].copy()
     f1["delta"] = f1["decode_median"] - base_v
     f1 = f1.sort_values("delta")
-    chart("f1_switch_effects.png", "HotRod switches: decode delta vs 512 MiB baseline", "Delta decode (tok/s)", "Switch",
-          lambda ax: ax.barh(f1["id"].astype(str).str.replace("F1_", "", regex=False), f1["delta"], color="#7f7f7f"))
+    def _switches(ax):
+        colors = ["#2ca02c" if v >= 0 else "#d62728" for v in f1["delta"]]
+        ax.barh(f1["id"].astype(str).str.replace("F1_", "", regex=False), f1["delta"], color=colors)
+        ax.axvline(0, color="black", lw=1)
+    chart("f1_switch_effects.png", "HotRod switches: decode delta vs 512 MiB baseline", "Delta decode (tok/s)", "Switch", _switches)
 
 # 15) F2 MTP acceptance rate by variant
 f2 = df[df["block"] == "F2"]

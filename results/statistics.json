@@ -36,6 +36,7 @@
       "pcie_gen": null,
       "warmup_wall": null,
       "request_tokens": null,
+      "output_tokens": null,
       "experts_vram_start": null,
       "experts_vram_end": null,
       "experts_total": null,
@@ -91,6 +92,7 @@
       "pcie_gen": null,
       "warmup_wall": null,
       "request_tokens": null,
+      "output_tokens": null,
       "experts_vram_start": null,
       "experts_vram_end": null,
       "experts_total": null,
@@ -146,6 +148,7 @@
       "pcie_gen": 4,
       "warmup_wall": 2.688,
       "request_tokens": 82.5,
+      "output_tokens": 128.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -163,7 +166,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 2.2 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 1.133
     },
     {
       "id": "A2_noise_middle",
@@ -201,6 +204,7 @@
       "pcie_gen": 4,
       "warmup_wall": 2.61,
       "request_tokens": 82.5,
+      "output_tokens": 128.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -218,7 +222,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 2.1 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 0.933
     },
     {
       "id": "A2_noise_start",
@@ -256,6 +260,7 @@
       "pcie_gen": 4,
       "warmup_wall": 3.906,
       "request_tokens": 82.5,
+      "output_tokens": 128.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -273,7 +278,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 2.1 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 1.032
     },
     {
       "id": "A3_official_vs_hotrod",
@@ -311,6 +316,7 @@
       "pcie_gen": null,
       "warmup_wall": null,
       "request_tokens": null,
+      "output_tokens": null,
       "experts_vram_start": null,
       "experts_vram_end": null,
       "experts_total": null,
@@ -366,6 +372,7 @@
       "pcie_gen": 4,
       "warmup_wall": 2.594,
       "request_tokens": 82.5,
+      "output_tokens": 128.0,
       "experts_vram_start": 8530,
       "experts_vram_end": 8530,
       "experts_total": 24576,
@@ -383,7 +390,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 4.1 Swaps/round; 8530 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 1.792
     },
     {
       "id": "B1_reserve_1536",
@@ -421,6 +428,7 @@
       "pcie_gen": 4,
       "warmup_wall": 3.0,
       "request_tokens": 82.5,
+      "output_tokens": 128.0,
       "experts_vram_start": 8264,
       "experts_vram_end": 8264,
       "experts_total": 24576,
@@ -438,7 +446,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 3.8 Swaps/round; 8264 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 1.706
     },
     {
       "id": "B1_reserve_2048",
@@ -476,6 +484,7 @@
       "pcie_gen": 4,
       "warmup_wall": 2.578,
       "request_tokens": 82.5,
+      "output_tokens": 128.0,
       "experts_vram_start": 7998,
       "experts_vram_end": 7998,
       "experts_total": 24576,
@@ -493,7 +502,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 4.6 Swaps/round; 7998 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 2.073
     },
     {
       "id": "B1_reserve_256",
@@ -531,6 +540,7 @@
       "pcie_gen": 4,
       "warmup_wall": 2.985,
       "request_tokens": 82.5,
+      "output_tokens": 128.0,
       "experts_vram_start": 8920,
       "experts_vram_end": 8920,
       "experts_total": 24576,
@@ -548,7 +558,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 2.8 Swaps/round; 8920 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 1.25
     },
     {
       "id": "B1_reserve_2560",
@@ -586,6 +596,7 @@
       "pcie_gen": 4,
       "warmup_wall": 3.078,
       "request_tokens": 82.5,
+      "output_tokens": 128.0,
       "experts_vram_start": 7733,
       "experts_vram_end": 7733,
       "experts_total": 24576,
@@ -603,7 +614,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 4.6 Swaps/round; 7733 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 2.051
     },
     {
       "id": "B1_reserve_3072",
@@ -641,6 +652,7 @@
       "pcie_gen": 4,
       "warmup_wall": 2.86,
       "request_tokens": 82.5,
+      "output_tokens": 128.0,
       "experts_vram_start": 7465,
       "experts_vram_end": 7465,
       "experts_total": 24576,
@@ -658,7 +670,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 4.6 Swaps/round; 7465 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 2.092
     },
     {
       "id": "B1_reserve_4096",
@@ -696,6 +708,7 @@
       "pcie_gen": 4,
       "warmup_wall": 2.578,
       "request_tokens": 82.5,
+      "output_tokens": 128.0,
       "experts_vram_start": 6940,
       "experts_vram_end": 6940,
       "experts_total": 24576,
@@ -713,7 +726,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 4.8 Swaps/round; 6940 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 2.167
     },
     {
       "id": "B1_reserve_512",
@@ -751,6 +764,7 @@
       "pcie_gen": 4,
       "warmup_wall": 2.891,
       "request_tokens": 82.5,
+      "output_tokens": 128.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -768,7 +782,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 2.6 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 1.174
     },
     {
       "id": "B1_reserve_700",
@@ -806,6 +820,7 @@
       "pcie_gen": 4,
       "warmup_wall": 2.547,
       "request_tokens": 82.5,
+      "output_tokens": 128.0,
       "experts_vram_start": 8696,
       "experts_vram_end": 8696,
       "experts_total": 24576,
@@ -823,7 +838,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 3.5 Swaps/round; 8696 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 1.546
     },
     {
       "id": "B6_stability_40",
@@ -861,6 +876,7 @@
       "pcie_gen": 4,
       "warmup_wall": 2.516,
       "request_tokens": 82.5,
+      "output_tokens": 128.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -878,7 +894,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 3.0 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 1.373
     },
     {
       "id": "C1_auto_16384_128k",
@@ -916,6 +932,7 @@
       "pcie_gen": 4,
       "warmup_wall": 53.25,
       "request_tokens": 114541.0,
+      "output_tokens": 16.0,
       "experts_vram_start": 8791,
       "experts_vram_end": null,
       "experts_total": null,
@@ -971,6 +988,7 @@
       "pcie_gen": 4,
       "warmup_wall": 18.875,
       "request_tokens": 29834.0,
+      "output_tokens": 16.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -988,7 +1006,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 4.9 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 1.43
     },
     {
       "id": "C1_auto_32768_128k",
@@ -1026,6 +1044,7 @@
       "pcie_gen": 4,
       "warmup_wall": 69.172,
       "request_tokens": 114541.0,
+      "output_tokens": 16.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -1043,7 +1062,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 7.5 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 3.087
     },
     {
       "id": "C1_auto_32768_32k",
@@ -1081,6 +1100,7 @@
       "pcie_gen": 4,
       "warmup_wall": 12.625,
       "request_tokens": 29834.0,
+      "output_tokens": 16.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -1098,7 +1118,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 4.0 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 1.312
     },
     {
       "id": "C1_auto_4096_128k",
@@ -1136,6 +1156,7 @@
       "pcie_gen": 4,
       "warmup_wall": 53.453,
       "request_tokens": 114541.0,
+      "output_tokens": 16.0,
       "experts_vram_start": 8791,
       "experts_vram_end": null,
       "experts_total": null,
@@ -1191,6 +1212,7 @@
       "pcie_gen": 4,
       "warmup_wall": 16.984,
       "request_tokens": 29834.0,
+      "output_tokens": 16.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -1208,7 +1230,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 4.8 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 1.516
     },
     {
       "id": "C1_auto_8192_128k",
@@ -1246,6 +1268,7 @@
       "pcie_gen": 4,
       "warmup_wall": 53.375,
       "request_tokens": 114541.0,
+      "output_tokens": 16.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -1263,7 +1286,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 5.8 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 2.55
     },
     {
       "id": "C1_auto_8192_32k",
@@ -1301,6 +1324,7 @@
       "pcie_gen": 4,
       "warmup_wall": 17.562,
       "request_tokens": 29834.0,
+      "output_tokens": 16.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -1318,7 +1342,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 5.5 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 1.5
     },
     {
       "id": "C2_auto_16384_r2048",
@@ -1356,6 +1380,7 @@
       "pcie_gen": 4,
       "warmup_wall": 18.078,
       "request_tokens": 29834.0,
+      "output_tokens": 16.0,
       "experts_vram_start": 7998,
       "experts_vram_end": 7998,
       "experts_total": 24576,
@@ -1373,7 +1398,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 8.2 Swaps/round; 7998 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 2.362
     },
     {
       "id": "C2_auto_16384_r512",
@@ -1411,6 +1436,7 @@
       "pcie_gen": 4,
       "warmup_wall": 18.25,
       "request_tokens": 29834.0,
+      "output_tokens": 16.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -1428,7 +1454,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 8.0 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 2.087
     },
     {
       "id": "C2_auto_4096_r2048",
@@ -1466,6 +1492,7 @@
       "pcie_gen": 4,
       "warmup_wall": 17.469,
       "request_tokens": 29834.0,
+      "output_tokens": 16.0,
       "experts_vram_start": 7998,
       "experts_vram_end": 7998,
       "experts_total": 24576,
@@ -1483,7 +1510,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 10.5 Swaps/round; 7998 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 2.237
     },
     {
       "id": "C2_auto_4096_r512",
@@ -1521,6 +1548,7 @@
       "pcie_gen": 4,
       "warmup_wall": 17.0,
       "request_tokens": 29834.0,
+      "output_tokens": 16.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -1538,7 +1566,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 7.1 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 2.225
     },
     {
       "id": "C3_decode_after_128k",
@@ -1576,6 +1604,7 @@
       "pcie_gen": 4,
       "warmup_wall": 54.703,
       "request_tokens": 81.0,
+      "output_tokens": 128.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -1593,7 +1622,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 3.2 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 2.034
     },
     {
       "id": "C3_decode_after_short",
@@ -1631,6 +1660,7 @@
       "pcie_gen": 4,
       "warmup_wall": 2.953,
       "request_tokens": 81.0,
+      "output_tokens": 128.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -1648,7 +1678,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 1.7 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 0.866
     },
     {
       "id": "D1_ctx_128k",
@@ -1686,6 +1716,7 @@
       "pcie_gen": 4,
       "warmup_wall": 53.172,
       "request_tokens": 114541.0,
+      "output_tokens": 16.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -1703,7 +1734,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 4.5 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 2.062
     },
     {
       "id": "D1_ctx_16k",
@@ -1741,6 +1772,7 @@
       "pcie_gen": 4,
       "warmup_wall": 6.797,
       "request_tokens": 14884.0,
+      "output_tokens": 16.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -1758,7 +1790,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 8.0 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 2.578
     },
     {
       "id": "D1_ctx_200k",
@@ -1796,6 +1828,7 @@
       "pcie_gen": 4,
       "warmup_wall": 87.75,
       "request_tokens": 184373.0,
+      "output_tokens": 16.0,
       "experts_vram_start": 8674,
       "experts_vram_end": null,
       "experts_total": null,
@@ -1851,6 +1884,7 @@
       "pcie_gen": 4,
       "warmup_wall": 18.735,
       "request_tokens": 29834.0,
+      "output_tokens": 16.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -1868,7 +1902,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 4.1 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 1.344
     },
     {
       "id": "D1_ctx_4k",
@@ -1906,6 +1940,7 @@
       "pcie_gen": 4,
       "warmup_wall": 2.469,
       "request_tokens": 3583.0,
+      "output_tokens": 16.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -1923,7 +1958,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 6.1 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 2.281
     },
     {
       "id": "D1_ctx_64k",
@@ -1961,6 +1996,7 @@
       "pcie_gen": 4,
       "warmup_wall": 31.765,
       "request_tokens": 59734.0,
+      "output_tokens": 16.0,
       "experts_vram_start": 8791,
       "experts_vram_end": null,
       "experts_total": null,
@@ -2016,6 +2052,7 @@
       "pcie_gen": 4,
       "warmup_wall": 2.89,
       "request_tokens": 82.5,
+      "output_tokens": 128.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -2033,7 +2070,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 4.0 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 1.815
     },
     {
       "id": "D2_maxctx_262144",
@@ -2071,6 +2108,7 @@
       "pcie_gen": 4,
       "warmup_wall": 2.812,
       "request_tokens": 82.5,
+      "output_tokens": 128.0,
       "experts_vram_start": 8674,
       "experts_vram_end": 8674,
       "experts_total": 24576,
@@ -2088,7 +2126,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 3.8 Swaps/round; 8674 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 1.725
     },
     {
       "id": "D3_kv_fp16",
@@ -2126,6 +2164,7 @@
       "pcie_gen": 4,
       "warmup_wall": 2.813,
       "request_tokens": 84.0,
+      "output_tokens": 128.0,
       "experts_vram_start": 8585,
       "experts_vram_end": 8585,
       "experts_total": 24576,
@@ -2143,7 +2182,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 4.9 Swaps/round; 8585 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 1.839
     },
     {
       "id": "D3_kv_int8",
@@ -2181,6 +2220,7 @@
       "pcie_gen": 4,
       "warmup_wall": 2.75,
       "request_tokens": 84.0,
+      "output_tokens": 128.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -2198,7 +2238,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 4.2 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 1.612
     },
     {
       "id": "D3_kv_k8v4",
@@ -2236,6 +2276,7 @@
       "pcie_gen": 4,
       "warmup_wall": 2.718,
       "request_tokens": 84.0,
+      "output_tokens": 128.0,
       "experts_vram_start": 8836,
       "experts_vram_end": 8836,
       "experts_total": 24576,
@@ -2253,7 +2294,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 4.2 Swaps/round; 8836 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 1.614
     },
     {
       "id": "D3_kv_q4_0",
@@ -2291,6 +2332,7 @@
       "pcie_gen": 4,
       "warmup_wall": 2.75,
       "request_tokens": 84.0,
+      "output_tokens": 128.0,
       "experts_vram_start": 8889,
       "experts_vram_end": 8889,
       "experts_total": 24576,
@@ -2308,7 +2350,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 4.3 Swaps/round; 8889 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 1.721
     },
     {
       "id": "D4_output_2048",
@@ -2346,6 +2388,7 @@
       "pcie_gen": 4,
       "warmup_wall": 6.781,
       "request_tokens": 81.0,
+      "output_tokens": 336.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -2363,7 +2406,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 0.8 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 0.429
     },
     {
       "id": "D4_output_512",
@@ -2401,6 +2444,7 @@
       "pcie_gen": 4,
       "warmup_wall": 5.625,
       "request_tokens": 81.0,
+      "output_tokens": 352.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -2418,7 +2462,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 0.8 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 0.465
     },
     {
       "id": "D4_output_8192",
@@ -2456,6 +2500,7 @@
       "pcie_gen": 4,
       "warmup_wall": 5.563,
       "request_tokens": 81.0,
+      "output_tokens": 327.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -2473,7 +2518,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 1.0 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 0.611
     },
     {
       "id": "D5_multiturn_long_128k",
@@ -2511,6 +2556,7 @@
       "pcie_gen": 4,
       "warmup_wall": 54.0,
       "request_tokens": 81.0,
+      "output_tokens": 128.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -2528,7 +2574,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 3.8 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 1.872
     },
     {
       "id": "D5_multiturn_long_32k",
@@ -2566,6 +2612,7 @@
       "pcie_gen": 4,
       "warmup_wall": 19.39,
       "request_tokens": 81.0,
+      "output_tokens": 128.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -2583,7 +2630,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 3.3 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 2.023
     },
     {
       "id": "D5_multiturn_long_4k",
@@ -2621,6 +2668,7 @@
       "pcie_gen": 4,
       "warmup_wall": 2.578,
       "request_tokens": 81.0,
+      "output_tokens": 128.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -2638,7 +2686,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 3.3 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 1.63
     },
     {
       "id": "D6_convcache_0",
@@ -2676,6 +2724,7 @@
       "pcie_gen": 4,
       "warmup_wall": 3.75,
       "request_tokens": 81.0,
+      "output_tokens": 128.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -2693,7 +2742,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 2.5 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 1.479
     },
     {
       "id": "D6_convcache_2048",
@@ -2731,6 +2780,7 @@
       "pcie_gen": 4,
       "warmup_wall": 3.734,
       "request_tokens": 81.0,
+      "output_tokens": 128.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -2748,7 +2798,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 3.0 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 1.612
     },
     {
       "id": "D6_convcache_512",
@@ -2786,6 +2836,7 @@
       "pcie_gen": 4,
       "warmup_wall": 2.719,
       "request_tokens": 81.0,
+      "output_tokens": 128.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -2803,7 +2854,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 2.2 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 1.299
     },
     {
       "id": "D7_len_2k",
@@ -2841,6 +2892,7 @@
       "pcie_gen": 4,
       "warmup_wall": 1.812,
       "request_tokens": 1744.0,
+      "output_tokens": 47.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -2858,7 +2910,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 5.9 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 1.729
     },
     {
       "id": "D7_len_500",
@@ -2896,6 +2948,7 @@
       "pcie_gen": 4,
       "warmup_wall": 1.61,
       "request_tokens": 391.0,
+      "output_tokens": 47.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -2913,7 +2966,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 3.2 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 1.274
     },
     {
       "id": "D7_len_84",
@@ -2951,6 +3004,7 @@
       "pcie_gen": 4,
       "warmup_wall": 2.11,
       "request_tokens": 81.0,
+      "output_tokens": 96.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -2968,7 +3022,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 2.1 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 1.227
     },
     {
       "id": "D7_len_8k",
@@ -3006,6 +3060,7 @@
       "pcie_gen": 4,
       "warmup_wall": 4.234,
       "request_tokens": 7394.0,
+      "output_tokens": 71.5,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -3023,7 +3078,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 3.9 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 0.925
     },
     {
       "id": "E1_learn_from_empty",
@@ -3061,6 +3116,7 @@
       "pcie_gen": null,
       "warmup_wall": null,
       "request_tokens": 82.5,
+      "output_tokens": 128.0,
       "experts_vram_start": null,
       "experts_vram_end": null,
       "experts_total": null,
@@ -3116,6 +3172,7 @@
       "pcie_gen": null,
       "warmup_wall": 2.703,
       "request_tokens": 84.0,
+      "output_tokens": 128.0,
       "experts_vram_start": null,
       "experts_vram_end": null,
       "experts_total": null,
@@ -3171,6 +3228,7 @@
       "pcie_gen": null,
       "warmup_wall": 2.0,
       "request_tokens": 73.0,
+      "output_tokens": 128.0,
       "experts_vram_start": null,
       "experts_vram_end": null,
       "experts_total": null,
@@ -3226,6 +3284,7 @@
       "pcie_gen": 4,
       "warmup_wall": 2.782,
       "request_tokens": 73.0,
+      "output_tokens": 128.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -3243,7 +3302,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 1.2 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 0.618
     },
     {
       "id": "E5_persist_after_restart",
@@ -3281,6 +3340,7 @@
       "pcie_gen": null,
       "warmup_wall": null,
       "request_tokens": 81.0,
+      "output_tokens": 128.0,
       "experts_vram_start": null,
       "experts_vram_end": null,
       "experts_total": null,
@@ -3336,6 +3396,7 @@
       "pcie_gen": 4,
       "warmup_wall": 2.812,
       "request_tokens": 82.5,
+      "output_tokens": 128.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -3353,7 +3414,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 3.2 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 1.433
     },
     {
       "id": "F1_hc_q8_off",
@@ -3391,6 +3452,7 @@
       "pcie_gen": 4,
       "warmup_wall": 2.453,
       "request_tokens": 82.5,
+      "output_tokens": 128.0,
       "experts_vram_start": 8587,
       "experts_vram_end": 8587,
       "experts_total": 24576,
@@ -3408,7 +3470,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 3.7 Swaps/round; 8587 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 1.72
     },
     {
       "id": "F1_kv_grow",
@@ -3446,6 +3508,7 @@
       "pcie_gen": 4,
       "warmup_wall": 2.735,
       "request_tokens": 82.5,
+      "output_tokens": 128.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -3463,7 +3526,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 3.3 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 1.499
     },
     {
       "id": "F1_kva_off",
@@ -3501,6 +3564,7 @@
       "pcie_gen": 4,
       "warmup_wall": 2.812,
       "request_tokens": 82.5,
+      "output_tokens": 128.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -3518,7 +3582,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 3.0 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 1.364
     },
     {
       "id": "F1_la_learn_off",
@@ -3556,6 +3620,7 @@
       "pcie_gen": 4,
       "warmup_wall": 2.578,
       "request_tokens": 82.5,
+      "output_tokens": 128.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -3573,7 +3638,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 3.3 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 1.539
     },
     {
       "id": "F1_no_hit_poke",
@@ -3611,6 +3676,7 @@
       "pcie_gen": 4,
       "warmup_wall": 3.719,
       "request_tokens": 82.5,
+      "output_tokens": 128.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -3628,7 +3694,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 3.6 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 1.637
     },
     {
       "id": "F1_no_ple_prefetch",
@@ -3666,6 +3732,7 @@
       "pcie_gen": 4,
       "warmup_wall": 2.594,
       "request_tokens": 82.5,
+      "output_tokens": 128.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -3683,7 +3750,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 3.2 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 1.445
     },
     {
       "id": "F1_no_pool",
@@ -3721,6 +3788,7 @@
       "pcie_gen": 4,
       "warmup_wall": 2.719,
       "request_tokens": 82.5,
+      "output_tokens": 128.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -3738,7 +3806,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 3.4 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 1.534
     },
     {
       "id": "F1_ple_io_mmap",
@@ -3776,6 +3844,7 @@
       "pcie_gen": 4,
       "warmup_wall": 2.75,
       "request_tokens": 82.5,
+      "output_tokens": 128.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -3793,7 +3862,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 3.5 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 1.564
     },
     {
       "id": "F1_ple_io_ram",
@@ -3831,6 +3900,7 @@
       "pcie_gen": 4,
       "warmup_wall": 2.828,
       "request_tokens": 82.5,
+      "output_tokens": 128.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -3848,7 +3918,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 3.5 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 1.556
     },
     {
       "id": "F1_prefill_head_alias",
@@ -3886,6 +3956,7 @@
       "pcie_gen": 4,
       "warmup_wall": 2.5,
       "request_tokens": 82.5,
+      "output_tokens": 128.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -3903,7 +3974,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 2.7 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 1.253
     },
     {
       "id": "F1_prompt_cache_0",
@@ -3941,6 +4012,7 @@
       "pcie_gen": 4,
       "warmup_wall": 2.594,
       "request_tokens": 82.5,
+      "output_tokens": 128.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -3958,7 +4030,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 3.5 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 1.569
     },
     {
       "id": "F1_route_resident_off",
@@ -3996,6 +4068,7 @@
       "pcie_gen": 4,
       "warmup_wall": 2.953,
       "request_tokens": 82.5,
+      "output_tokens": 128.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -4013,7 +4086,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 22.8 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 9.991
     },
     {
       "id": "F1_suffix_draft_0",
@@ -4051,6 +4124,7 @@
       "pcie_gen": 4,
       "warmup_wall": 2.719,
       "request_tokens": 82.5,
+      "output_tokens": 128.0,
       "experts_vram_start": 8793,
       "experts_vram_end": 8793,
       "experts_total": 24576,
@@ -4068,7 +4142,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 3.3 Swaps/round; 8793 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 1.455
     },
     {
       "id": "F1_swap2_off",
@@ -4106,6 +4180,7 @@
       "pcie_gen": 4,
       "warmup_wall": 2.516,
       "request_tokens": 82.5,
+      "output_tokens": 128.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -4123,7 +4198,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 3.2 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 1.498
     },
     {
       "id": "F2_mtp_off",
@@ -4161,6 +4236,7 @@
       "pcie_gen": 4,
       "warmup_wall": 3.625,
       "request_tokens": 82.5,
+      "output_tokens": 128.0,
       "experts_vram_start": 9109,
       "experts_vram_end": 9109,
       "experts_total": 24576,
@@ -4178,7 +4254,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 0.6 Swaps/round; 9109 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 0.546
     },
     {
       "id": "F2_spec_2",
@@ -4216,6 +4292,7 @@
       "pcie_gen": 4,
       "warmup_wall": 2.422,
       "request_tokens": 82.5,
+      "output_tokens": 128.0,
       "experts_vram_start": 8793,
       "experts_vram_end": 8793,
       "experts_total": 24576,
@@ -4233,7 +4310,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 1.7 Swaps/round; 8793 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 1.064
     },
     {
       "id": "F2_spec_6",
@@ -4271,6 +4348,7 @@
       "pcie_gen": 4,
       "warmup_wall": 2.875,
       "request_tokens": 82.5,
+      "output_tokens": 128.0,
       "experts_vram_start": 8790,
       "experts_vram_end": 8790,
       "experts_total": 24576,
@@ -4288,7 +4366,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 3.4 Swaps/round; 8790 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 1.479
     },
     {
       "id": "F2_temp_0",
@@ -4326,6 +4404,7 @@
       "pcie_gen": 4,
       "warmup_wall": 2.735,
       "request_tokens": 82.5,
+      "output_tokens": 128.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -4343,7 +4422,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 2.3 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 1.074
     },
     {
       "id": "F2_temp_1",
@@ -4381,6 +4460,7 @@
       "pcie_gen": 4,
       "warmup_wall": 2.61,
       "request_tokens": 82.5,
+      "output_tokens": 128.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -4398,7 +4478,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 2.8 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 1.313
     },
     {
       "id": "F3_reasoning_high",
@@ -4436,6 +4516,7 @@
       "pcie_gen": 4,
       "warmup_wall": 4.718,
       "request_tokens": 118.5,
+      "output_tokens": 256.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -4453,7 +4534,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 1.7 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 0.791
     },
     {
       "id": "F3_reasoning_low",
@@ -4491,6 +4572,7 @@
       "pcie_gen": 4,
       "warmup_wall": 3.546,
       "request_tokens": 106.5,
+      "output_tokens": 256.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -4508,7 +4590,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 2.9 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 1.098
     },
     {
       "id": "F3_reasoning_medium",
@@ -4546,6 +4628,7 @@
       "pcie_gen": 4,
       "warmup_wall": 3.765,
       "request_tokens": 80.5,
+      "output_tokens": 256.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -4563,7 +4646,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 3.1 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 1.21
     },
     {
       "id": "F3_reasoning_none",
@@ -4601,6 +4684,7 @@
       "pcie_gen": 4,
       "warmup_wall": 4.843,
       "request_tokens": 82.5,
+      "output_tokens": 256.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -4618,7 +4702,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 2.6 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 1.124
     },
     {
       "id": "F4_aux_cpus_auto",
@@ -4656,6 +4740,7 @@
       "pcie_gen": 4,
       "warmup_wall": 2.578,
       "request_tokens": 82.5,
+      "output_tokens": 128.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -4673,7 +4758,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 3.7 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 1.667
     },
     {
       "id": "F4_host_core_last",
@@ -4711,6 +4796,7 @@
       "pcie_gen": 4,
       "warmup_wall": 2.609,
       "request_tokens": 82.5,
+      "output_tokens": 128.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -4728,7 +4814,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 4.5 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 2.079
     },
     {
       "id": "F4_pool_workers_4",
@@ -4766,6 +4852,7 @@
       "pcie_gen": 4,
       "warmup_wall": 2.797,
       "request_tokens": 82.5,
+      "output_tokens": 128.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -4783,7 +4870,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 3.9 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 1.718
     },
     {
       "id": "F4_pool_workers_8",
@@ -4821,6 +4908,7 @@
       "pcie_gen": 4,
       "warmup_wall": 2.547,
       "request_tokens": 82.5,
+      "output_tokens": 128.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -4838,7 +4926,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 3.9 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 1.788
     },
     {
       "id": "F5_best_combination",
@@ -4876,6 +4964,7 @@
       "pcie_gen": 4,
       "warmup_wall": 2.797,
       "request_tokens": 82.5,
+      "output_tokens": 128.0,
       "experts_vram_start": 7998,
       "experts_vram_end": 7998,
       "experts_total": 24576,
@@ -4893,7 +4982,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 3.7 Swaps/round; 7998 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 1.624
     },
     {
       "id": "G2_ram_limit_30720",
@@ -4931,6 +5020,7 @@
       "pcie_gen": 4,
       "warmup_wall": 3.531,
       "request_tokens": 82.5,
+      "output_tokens": 128.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -4948,7 +5038,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 3.7 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 1.673
     },
     {
       "id": "G2_ram_limit_49152",
@@ -4986,6 +5076,7 @@
       "pcie_gen": 4,
       "warmup_wall": 2.672,
       "request_tokens": 82.5,
+      "output_tokens": 128.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -5003,7 +5094,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 3.7 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 1.62
     },
     {
       "id": "G2_ram_limit_65536",
@@ -5041,6 +5132,7 @@
       "pcie_gen": 4,
       "warmup_wall": 2.468,
       "request_tokens": 82.5,
+      "output_tokens": 128.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -5058,7 +5150,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 4.2 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 1.927
     },
     {
       "id": "G3_defender",
@@ -5096,6 +5188,7 @@
       "pcie_gen": null,
       "warmup_wall": null,
       "request_tokens": null,
+      "output_tokens": null,
       "experts_vram_start": null,
       "experts_vram_end": null,
       "experts_total": null,
@@ -5151,6 +5244,7 @@
       "pcie_gen": null,
       "warmup_wall": null,
       "request_tokens": null,
+      "output_tokens": null,
       "experts_vram_start": null,
       "experts_vram_end": null,
       "experts_total": null,
@@ -5206,6 +5300,7 @@
       "pcie_gen": null,
       "warmup_wall": null,
       "request_tokens": null,
+      "output_tokens": null,
       "experts_vram_start": null,
       "experts_vram_end": null,
       "experts_total": null,
@@ -5261,6 +5356,7 @@
       "pcie_gen": null,
       "warmup_wall": null,
       "request_tokens": null,
+      "output_tokens": null,
       "experts_vram_start": null,
       "experts_vram_end": null,
       "experts_total": null,
@@ -5316,6 +5412,7 @@
       "pcie_gen": null,
       "warmup_wall": null,
       "request_tokens": null,
+      "output_tokens": null,
       "experts_vram_start": null,
       "experts_vram_end": null,
       "experts_total": null,
@@ -5371,6 +5468,7 @@
       "pcie_gen": 4,
       "warmup_wall": 2.328,
       "request_tokens": 82.5,
+      "output_tokens": 128.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -5388,7 +5486,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 4.0 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 1.902
     },
     {
       "id": "I1_needle_128k",
@@ -5426,6 +5524,7 @@
       "pcie_gen": null,
       "warmup_wall": null,
       "request_tokens": null,
+      "output_tokens": null,
       "experts_vram_start": null,
       "experts_vram_end": null,
       "experts_total": null,
@@ -5481,6 +5580,7 @@
       "pcie_gen": null,
       "warmup_wall": null,
       "request_tokens": null,
+      "output_tokens": null,
       "experts_vram_start": null,
       "experts_vram_end": null,
       "experts_total": null,
@@ -5536,6 +5636,7 @@
       "pcie_gen": 4,
       "warmup_wall": 3.422,
       "request_tokens": 90.0,
+      "output_tokens": 128.0,
       "experts_vram_start": 9112,
       "experts_vram_end": 9112,
       "experts_total": 24576,
@@ -5553,7 +5654,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 0.5 Swaps/round; 9112 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 0.428
     },
     {
       "id": "I2_parity_mtp_on",
@@ -5591,6 +5692,7 @@
       "pcie_gen": 4,
       "warmup_wall": 2.64,
       "request_tokens": 90.0,
+      "output_tokens": 128.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -5608,7 +5710,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 1.7 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 0.767
     },
     {
       "id": "J1_parallel_1",
@@ -5646,6 +5748,7 @@
       "pcie_gen": null,
       "warmup_wall": null,
       "request_tokens": null,
+      "output_tokens": null,
       "experts_vram_start": null,
       "experts_vram_end": null,
       "experts_total": null,
@@ -5701,6 +5804,7 @@
       "pcie_gen": null,
       "warmup_wall": null,
       "request_tokens": null,
+      "output_tokens": null,
       "experts_vram_start": null,
       "experts_vram_end": null,
       "experts_total": null,
@@ -5756,6 +5860,7 @@
       "pcie_gen": null,
       "warmup_wall": null,
       "request_tokens": null,
+      "output_tokens": null,
       "experts_vram_start": null,
       "experts_vram_end": null,
       "experts_total": null,
@@ -5811,6 +5916,7 @@
       "pcie_gen": null,
       "warmup_wall": null,
       "request_tokens": null,
+      "output_tokens": null,
       "experts_vram_start": null,
       "experts_vram_end": null,
       "experts_total": null,
@@ -5866,6 +5972,7 @@
       "pcie_gen": null,
       "warmup_wall": null,
       "request_tokens": null,
+      "output_tokens": null,
       "experts_vram_start": null,
       "experts_vram_end": null,
       "experts_total": null,
@@ -5921,6 +6028,7 @@
       "pcie_gen": null,
       "warmup_wall": null,
       "request_tokens": null,
+      "output_tokens": null,
       "experts_vram_start": null,
       "experts_vram_end": null,
       "experts_total": null,
@@ -5976,6 +6084,7 @@
       "pcie_gen": 4,
       "warmup_wall": 2.485,
       "request_tokens": 82.5,
+      "output_tokens": 128.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -5993,7 +6102,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 4.2 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 2.018
     },
     {
       "id": "K2_config_reserve_2048",
@@ -6031,6 +6140,7 @@
       "pcie_gen": 4,
       "warmup_wall": 2.954,
       "request_tokens": 82.5,
+      "output_tokens": 128.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -6048,7 +6158,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 3.5 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 1.552
     },
     {
       "id": "K4_vision_off",
@@ -6086,6 +6196,7 @@
       "pcie_gen": null,
       "warmup_wall": null,
       "request_tokens": null,
+      "output_tokens": null,
       "experts_vram_start": null,
       "experts_vram_end": null,
       "experts_total": null,
@@ -6141,6 +6252,7 @@
       "pcie_gen": 4,
       "warmup_wall": 2.813,
       "request_tokens": 82.5,
+      "output_tokens": 128.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -6158,7 +6270,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 3.9 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 1.719
     },
     {
       "id": "K7_kv_grow_long",
@@ -6196,6 +6308,7 @@
       "pcie_gen": 4,
       "warmup_wall": 18.734,
       "request_tokens": 29834.0,
+      "output_tokens": 16.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -6213,7 +6326,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 6.4 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 2.0
     },
     {
       "id": "T1_record_off",
@@ -6251,6 +6364,7 @@
       "pcie_gen": 4,
       "warmup_wall": 2.547,
       "request_tokens": 82.5,
+      "output_tokens": 128.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -6268,7 +6382,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 3.1 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 1.463
     },
     {
       "id": "T1_record_on",
@@ -6306,6 +6420,7 @@
       "pcie_gen": 4,
       "warmup_wall": 2.328,
       "request_tokens": 82.5,
+      "output_tokens": 128.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -6323,7 +6438,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 3.6 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 1.622
     },
     {
       "id": "T1_recorder_off",
@@ -6361,6 +6476,7 @@
       "pcie_gen": 4,
       "warmup_wall": 3.047,
       "request_tokens": 82.5,
+      "output_tokens": 128.0,
       "experts_vram_start": null,
       "experts_vram_end": null,
       "experts_total": null,
@@ -6416,6 +6532,7 @@
       "pcie_gen": 4,
       "warmup_wall": 2.719,
       "request_tokens": 82.5,
+      "output_tokens": 128.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -6433,7 +6550,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 3.6 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 1.57
     },
     {
       "id": "TL_chat_de",
@@ -6471,6 +6588,7 @@
       "pcie_gen": 4,
       "warmup_wall": 4.563,
       "request_tokens": 81.0,
+      "output_tokens": 256.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -6488,7 +6606,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 1.8 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 1.159
     },
     {
       "id": "TL_coding",
@@ -6526,6 +6644,7 @@
       "pcie_gen": 4,
       "warmup_wall": 3.297,
       "request_tokens": 84.0,
+      "output_tokens": 256.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -6543,7 +6662,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 2.4 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 0.747
     },
     {
       "id": "TL_math_reasoning",
@@ -6581,6 +6700,7 @@
       "pcie_gen": 4,
       "warmup_wall": 3.125,
       "request_tokens": 99.0,
+      "output_tokens": 256.0,
       "experts_vram_start": 8791,
       "experts_vram_end": 8791,
       "experts_total": 24576,
@@ -6598,7 +6718,7 @@
       "tele_timeline_gaps": 0,
       "errors": 0,
       "cause": "GPU-bound: SSD path essentially unused; 2.2 Swaps/round; 8791 Experts in VRAM",
-      "swaps_per_token": null
+      "swaps_per_token": 0.632
     }
   ],
   "comparisons": {
@@ -6687,6 +6807,13 @@
       "r2": 0.001,
       "p": 0.723819,
       "slope": -0.00144
+    },
+    "swaps_per_token_vs_decode": {
+      "n": 94,
+      "r": 0.033,
+      "r2": 0.001,
+      "p": 0.749753,
+      "slope": 0.398
     }
   },
   "seed": 20261123

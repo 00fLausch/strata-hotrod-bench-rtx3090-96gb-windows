@@ -142,6 +142,7 @@ All values: median [IQR], bootstrap 95% CI. Decode tok/s from engine timings.
 | Relationship | n | r | r² | p | Slope |
 |---|---:|---:|---:|---:|---:|
 | experts_vs_decode | 94 | -0.037 | 0.001 | 0.7238 | -0.00144 |
+| swaps_per_token_vs_decode | 94 | 0.033 | 0.001 | 0.7498 | 0.398 |
 
 ## Working hypotheses
 
