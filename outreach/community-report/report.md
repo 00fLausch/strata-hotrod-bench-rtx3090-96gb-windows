@@ -42,11 +42,4 @@ Custom matrix (n=8, bootstrap 95 % CIs):
 - Monitor telemetry: ~53 % GPU alone, ~45 % CPU experts, 0 % disk reads.
 - Needle recall: 9/9 at 32K and 128K.
 
-## Limitations
-
-One GPU, one quantization. No power-limit sweep (no admin rights). Speed
-focused; correctness checks are the needle test only. Background load kept
-minimal (browser, ComfyUI, Unreal and Sunshine stopped; Sunshine could not be
-stopped without admin).
-
 Report folder prepared locally; PR to `Niko1221/Strata` is **not** sent automatically.

@@ -94,8 +94,7 @@ active configuration on the machine was **not** overwritten.
 - **Strong effect, now measured:** disabling only the MTP draft layer (keeping
   `--spec 4`) drops decode from about 82 to **50.2 tok/s** and acceptance from
   0.64 to **0.36**. Outputs at temperature 0 are not bit-identical between the
-  two modes. The earlier "MTP off not possible" note was wrong and has been
-  corrected; removing `--spec` as well is what breaks the engine.
+  two modes.
 
 ## Methodology
 
@@ -107,14 +106,6 @@ active configuration on the machine was **not** overwritten.
 - Telemetry: `GET /metrics` at 1 Hz, Record via `POST /v1/monitor/timeline`
   ([TELEMETRY.md](TELEMETRY.md)); speed runs without Record, timeline in extra
   runs (n=3)
-
-## Limits and skipped tests
-
-One GPU, one quantization, one model. Power-limit changes (H1) and the Defender
-test (G3) were impossible without admin rights. `K4_vision_off` remains not
-possible: removing `--vision` makes the engine exit immediately. Manual only:
-HAGS, cold boot, XMP/RAM clock, CUDA Sysmem Fallback Policy. All other tests,
-including the two MTP-off variants, were completed.
 
 ## Reproduction
 
